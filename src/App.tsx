@@ -1,19 +1,18 @@
-import React, { useRef } from 'react';
 import Logo from './components/logo'
 import Navigation from './components/navigation';
-import { Heading, SubHeading } from './components/heading';
 import SocialButtons from './components/socialbuttons';
+import { Heading, SubHeading } from './components/Header';
 
 function App() {
   return (
-    <section className="flex flex-col container pt-20px mx-auto">
+    <section className="flex flex-col container p-7 mx-auto">
       <section className="flex flex-col h-screen container">
         <header className="flex justify-end">
           <Navigation
             link1='download my resume'
             link2='portfolio'
-            link3='contact' 
-            link4='blog'
+            link3='blog'
+            link4='contact'
           />
         </header>
         <Heading
@@ -24,20 +23,15 @@ function App() {
             <SubHeading 
               subheading={`I'm a front-end developer \n from the US.`}
             />
-            <SocialButtons />
+            <SocialButtons/>
           </div>
           <Logo />
         </div>
       </section>
       <main>
         <section>
-          <h2 id="portfolio" className="flex font-mono text-forest-green leading-10 text-2xl uppercase">
-            Portfolio
-          </h2>
-          </section>
-        <section>
-          <h2 id="contact" className="flex justify-end font-mono text-forest-green leading-10 text-2xl uppercase">
-            Contact
+          <h2 id="projects" className="flex font-mono text-forest-green leading-10 text-2xl uppercase">
+            Projects
           </h2>
         </section>
         <section>
@@ -45,33 +39,17 @@ function App() {
             Blog
           </h2>
         </section>
-        
-
-      <Text text='Hello world!' i={9} />
+        <section>
+          <h2 id="contact" className="flex font-sans font-bold text-white leading-10 text-3xl">
+            Thank you!
+          </h2>
+          <span className="flex font-mono text-light-grey text-lg">
+            contact me: glennp167@gmail.com
+          </span>
+        </section>
       </main>
     </section>
   );
 }
-
-interface Props {
-  text: string;
-  i: number;
-  obj?: {
-
-  }
-  handleChange?: React.ChangeEventHandler<HTMLInputElement>;
-}
-
-const Text: React.FC<Props> = ({ handleChange }) => {
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  return (
-    <form>
-    <input ref={inputRef} onChange={handleChange}/>
-    <input type="reset"/>
-    <input type="submit"/>
-    </form>
-  );
-};
 
 export default App;

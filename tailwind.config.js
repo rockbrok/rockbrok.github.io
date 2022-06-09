@@ -6,10 +6,13 @@ module.exports = {
   ],
   theme: {
     screen: {
-      sm: '480px',
-      md: '768px',
-      lg: '976px',
-      xl: '1440px',
+      'xs': '320px',
+      'sm': '428px',
+      'md': '640px',
+      'lg': '768px',
+      'xl': '976px',
+      '2xl': '1280px',
+      '3xl': '1440px',
     },
     colors: {
       transparent: 'transparent',
@@ -25,7 +28,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: theme => ({
-        'profile-pic': "url('./img/profile.png')",
+        'profile-pic': "url('public/assets/newprofile.png')",
       })
     },
   },

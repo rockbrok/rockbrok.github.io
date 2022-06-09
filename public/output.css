@@ -523,6 +523,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -611,7 +615,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .bg-profile-pic {
-  background-image: url('./img/profile.png');
+  background-image: url('public/assets/newprofile.png');
 }
 
 .bg-contain {
@@ -626,8 +630,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-repeat: no-repeat;
 }
 
-.p-6 {
-  padding: 1.5rem;
+.p-7 {
+  padding: 1.75rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .font-mono {
@@ -643,19 +652,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2rem;
 }
 
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .font-normal {
@@ -705,5 +723,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:mt-10 {
     margin-top: 2.5rem;
+  }
+
+  .md\:flex {
+    display: flex;
   }
 }
