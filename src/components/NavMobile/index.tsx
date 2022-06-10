@@ -12,7 +12,7 @@ const NavMobile = () => {
         <a className="bg-email-icon inline-flex bg-no-repeat bg-contain bg-center w-12 h-12 white-filter px-3" href="#contact" />
 
       </div>
-      <a className="bg-download-icon bg-no-repeat bg-contain bg-center w-12 h-12 gold-filter px-3" href="resume.pdf" download />
+      <a className="bg-download-icon bg-no-repeat bg-contain bg-center w-14 h-14 gold-filter px-3" href="resume.pdf" download />
     </nav>
   );
 };
