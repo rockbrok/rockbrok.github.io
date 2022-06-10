@@ -37,12 +37,6 @@ export default function Home() {
           <h2 id="projects" className="flex font-mono text-forest-green leading-10 text-2xl uppercase">
             Projects
           </h2>
-          <span className="flex triangle"/>
-          <span className="flex font-mono text-blue">CSS</span>
-          <span className="flex circle"/>
-          <span className="flex font-mono text-red">React</span>
-          <span className="flex square"/>
-          <span className="flex font-mono text-gold">JavaScript</span>
           <Projects 
             project1={`Google Frontend`}
             project2={`Portfolio`}

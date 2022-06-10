@@ -14,8 +14,8 @@ interface SubHeadingProps {
 
 export const HeadingUpperCase: FC<HeadingUpperCaseProps> = ({ headinguppercase }) => {
   return (
-    <div className="flex flex-col flex-start mt-5 md:mt-10">
-      <h1 className="my-8 text-white font-sans text-5xl display-linebreak uppercase">{headinguppercase}</h1>
+    <div className="flex flex-col flex-start my-5 md:mt-10">
+      <h1 className="text-white font-sans text-5xl display-linebreak uppercase">{headinguppercase}</h1>
     </div>
   );
 };
@@ -23,7 +23,7 @@ export const HeadingUpperCase: FC<HeadingUpperCaseProps> = ({ headinguppercase }
 export const Heading: FC<HeadingProps> = ({ heading }) => {
   return (
     <div className="flex flex-start">
-      <h1 className="my-8 text-white font-sans text-5xl display-linebreak">{heading}</h1>
+      <h1 className="text-white font-sans text-5xl display-linebreak">{heading}</h1>
     </div>
   );
 };

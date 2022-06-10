@@ -505,13 +505,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 2rem;
 }
 
+.-mx-3 {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
 .my-24 {
   margin-top: 6rem;
   margin-bottom: 6rem;
 }
 
-.mt-20 {
-  margin-top: 5rem;
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .flex {
@@ -570,10 +575,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 32rem;
 }
 
-.flex-initial {
-  flex: 0 1 auto;
-}
-
 .select-none {
   -webkit-user-select: none;
       -ms-user-select: none;
@@ -600,8 +601,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   row-gap: 1rem;
 }
 
-.self-end {
-  align-self: flex-end;
+.justify-self-end {
+  justify-self: end;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .rounded-full {
@@ -615,6 +620,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-blog-pic {
   background-image: url('../portfolio/assets/blog-man.png');
+}
+
+.bg-github-icon {
+  background-image: url('../portfolio/assets/github-icon.png');
+}
+
+.bg-linkedin-icon {
+  background-image: url('../portfolio/assets/linkedin-icon.png');
 }
 
 .bg-email-icon {
@@ -700,11 +713,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(230 232 230 / var(--tw-text-opacity));
 }
 
-.text-gold {
-  --tw-text-opacity: 1;
-  color: rgb(251 188 5 / var(--tw-text-opacity));
-}
-
 .text-forest-green {
   --tw-text-opacity: 1;
   color: rgb(53 168 83 / var(--tw-text-opacity));
@@ -713,6 +721,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-grey {
   --tw-text-opacity: 1;
   color: rgb(164 164 164 / var(--tw-text-opacity));
+}
+
+.text-gold {
+  --tw-text-opacity: 1;
+  color: rgb(251 188 5 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
