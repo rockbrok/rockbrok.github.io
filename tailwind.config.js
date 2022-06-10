@@ -21,15 +21,20 @@ module.exports = {
       'light-grey': '#E6E8E6',
       'forest-green': '#35A853',
       'gold': '#FBBC05',
+      'blue': '#4285F5',
+      'red': '#EB4335',
     },
     fontFamily: {
       mono: ['Courier New'],
       sans: ['Montserrat']
     },
     extend: {
-      backgroundImage: theme => ({
-        'profile-pic': "url('public/assets/newprofile.png')",
-      })
+      backgroundImage: {
+        'profile-pic': "url('../portfolio/assets/profile.png')",
+        'blog-pic': "url('../portfolio/assets/blog-man.png')",
+        'email-icon': "url('../portfolio/assets/email-icon.png')",
+        'download-icon': "url('../portfolio/assets/download-icon.png')",
+      }
     },
   },
   plugins: [

@@ -9,6 +9,81 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.triangle {
+	width: 0;
+	height: 0;
+	border-right: 12px solid  transparent; 
+	border-left: 12px solid  transparent; 
+	border-bottom: 20.78461px solid #4285F5; /* (border-left-width 50px + border-right-width 50px) * 0.8660254 = 86.60254px  border-bottom-width = EquilateralTriangle height */
+}
+
+.circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #EB4335; 
+}
+
+.square {
+  width: 24px;
+  height: 24px;
+  background-color: #FBBC05;
+}
+
+.nav-mobile-icons {
+  height: 38px;
+  width: 38px;
+  color: white;
+}
+
+.gold-filter {
+  filter: invert(74%) sepia(77%) saturate(2178%) hue-rotate(1deg) brightness(105%) contrast(97%);
+}
+
+.white-filter {
+  filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(27deg) brightness(113%) contrast(101%);
+}
+
+.arrow-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.arrow-down {
+  position: absolute;
+  top: 30px;
+  width: 60px;
+  height: 6px;
+  background-color: #3ACA60;
+  border-radius: 6px;
+  transform: rotate(90deg);
+}
+
+.arrow-down::after, .arrow-down::before {
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 6px;
+  right: -2px;
+  background-color: #3ACA60;
+  border-radius: 6px;
+}
+
+.arrow-down::after {
+  top: 12px;
+  transform: rotate(-45deg);
+}
+
+.arrow-down::before {
+  top: -12px;
+  transform: rotate(45deg);
+}
+
 .link-underline,
 .link-underline-gold {
   background: linear-gradient(0deg, #35A853, #35A853) no-repeat left bottom / 0 2px;
