@@ -522,6 +522,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: inline-flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .hidden {
   display: none;
 }
@@ -534,6 +538,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 3rem;
 }
 
+.h-28 {
+  height: 7rem;
+}
+
 .h-7 {
   height: 1.75rem;
 }
@@ -544,6 +552,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-12 {
   width: 3rem;
+}
+
+.w-72 {
+  width: 18rem;
 }
 
 .w-48 {
@@ -562,6 +574,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex: 0 1 auto;
 }
 
+.select-none {
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -576,6 +598,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-y-4 {
+  row-gap: 1rem;
 }
 
 .self-end {
@@ -601,6 +627,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-download-icon {
   background-image: url('../portfolio/assets/download-icon.png');
+}
+
+.bg-google-logo {
+  background-image: url('../portfolio/assets/google-logo.png');
 }
 
 .bg-profile-pic {
@@ -647,6 +677,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -682,6 +717,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-forest-green {
   --tw-text-opacity: 1;
   color: rgb(53 168 83 / var(--tw-text-opacity));
+}
+
+.text-grey {
+  --tw-text-opacity: 1;
+  color: rgb(164 164 164 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {

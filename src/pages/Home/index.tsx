@@ -1,13 +1,14 @@
 import Logo from '../../components/logo';
 import Blog from '../../components/Blog';
+import Projects from '../../components/Projects';
 import Navigation from '../../components/navigation';
 import NavMobile from '../../components/NavMobile';
 import SocialButtons from '../../components/socialbuttons';
-import { Heading, SubHeading } from '../../components/Header';
+import { Heading, HeadingUpperCase, SubHeading } from '../../components/Header';
 
 export default function Home() {
   return (
-    <section className="flex flex-col container px-7 py-7 mx-auto">
+    <section className="flex flex-col container mx-auto">
       <section className="flex flex-col mx-auto h-screen container">
         <header className="flex justify-end">
           <NavMobile />
@@ -18,8 +19,8 @@ export default function Home() {
             link4='contact'
           />
         </header>
-        <Heading
-          heading={`Hi, I'm Glenn Phillips! \n`}
+        <HeadingUpperCase
+          headinguppercase={`Hi, I'm Glenn Phillips! \n`}
         />
         <div className="flex flex-row flex-wrap h-full w-full container">
           <div className="flex flex-col justify-start grow min-w-fit">
@@ -42,6 +43,10 @@ export default function Home() {
           <span className="flex font-mono text-red">React</span>
           <span className="flex square"/>
           <span className="flex font-mono text-gold">JavaScript</span>
+          <Projects 
+            project1={`Google Frontend`}
+            project2={`Portfolio`}
+          />
         </section>
         <section>
           <h2 id="blog" className="flex font-mono text-forest-green leading-10 text-2xl uppercase">
@@ -50,12 +55,12 @@ export default function Home() {
           <Blog />
         </section>
         <section>
-          <h2 id="contact" className="flex font-sans font-bold text-white leading-10 text-3xl">
-            Thank you!
-          </h2>
-          <span className="flex font-mono text-light-grey text-lg">
-            contact me: glennp167@gmail.com
-          </span>
+          <Heading 
+              heading={`Thank you!`}
+            />
+          <SubHeading 
+              subheading={`contact me: glennp167@gmail.com`}
+            />
         </section>
       </main>
     </section>

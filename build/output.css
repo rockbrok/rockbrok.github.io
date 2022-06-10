@@ -500,11 +500,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -523,28 +518,32 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: flex;
 }
 
-.h-screen {
-  height: 100vh;
+.inline-flex {
+  display: inline-flex;
 }
 
-.h-full {
-  height: 100%;
+.hidden {
+  display: none;
 }
 
 .h-96 {
   height: 24rem;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .h-7 {
   height: 1.75rem;
 }
 
-.w-full {
-  width: 100%;
-}
-
 .w-96 {
   width: 24rem;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .w-48 {
@@ -555,12 +554,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1.75rem;
 }
 
-.min-w-fit {
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-}
-
 .max-w-lg {
   max-width: 32rem;
 }
@@ -569,24 +562,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex: 0 1 auto;
 }
 
-.grow {
-  flex-grow: 1;
-}
-
 .flex-row {
   flex-direction: row;
 }
 
 .flex-col {
   flex-direction: column;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
-.justify-start {
-  justify-content: flex-start;
 }
 
 .justify-end {
@@ -610,8 +591,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-blog-pic {
+  background-image: url('../portfolio/assets/blog-man.png');
+}
+
+.bg-email-icon {
+  background-image: url('../portfolio/assets/email-icon.png');
+}
+
+.bg-download-icon {
+  background-image: url('../portfolio/assets/download-icon.png');
+}
+
 .bg-profile-pic {
-  background-image: url('./img/profile.png');
+  background-image: url('../portfolio/assets/profile.png');
 }
 
 .bg-contain {
@@ -626,31 +619,32 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-repeat: no-repeat;
 }
 
-.p-6 {
-  padding: 1.5rem;
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
-.font-mono {
-  font-family: Courier New;
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .font-sans {
   font-family: Montserrat;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
+.font-mono {
+  font-family: Courier New;
 }
 
-.text-6xl {
-  font-size: 3.75rem;
+.text-5xl {
+  font-size: 3rem;
   line-height: 1;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-sm {
@@ -670,11 +664,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2.5rem;
 }
 
-.text-forest-green {
-  --tw-text-opacity: 1;
-  color: rgb(53 168 83 / var(--tw-text-opacity));
-}
-
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -688,6 +677,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gold {
   --tw-text-opacity: 1;
   color: rgb(251 188 5 / var(--tw-text-opacity));
+}
+
+.text-forest-green {
+  --tw-text-opacity: 1;
+  color: rgb(53 168 83 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
@@ -705,5 +699,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:mt-10 {
     margin-top: 2.5rem;
+  }
+
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 }

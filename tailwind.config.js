@@ -19,6 +19,7 @@ module.exports = {
       current: 'currentColor',
       'white': '#FFFFFF',
       'light-grey': '#E6E8E6',
+      'grey': '#A4A4A4',
       'forest-green': '#35A853',
       'gold': '#FBBC05',
       'blue': '#4285F5',
@@ -34,6 +35,7 @@ module.exports = {
         'blog-pic': "url('../portfolio/assets/blog-man.png')",
         'email-icon': "url('../portfolio/assets/email-icon.png')",
         'download-icon': "url('../portfolio/assets/download-icon.png')",
+        'google-logo': "url('../portfolio/assets/google-logo.png')",
       }
     },
   },
