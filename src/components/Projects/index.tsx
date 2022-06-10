@@ -8,6 +8,9 @@ interface ProjectProps {
 const Projects: FC<ProjectProps> = ({ project1, project2 }) => {
   return (
     <>
+      <h2 id="projects" className="flex font-mono text-forest-green text-2xl uppercase">
+        Projects
+      </h2>
       <section className="flex flex-row w-auto justify-end pr-6">
         <section className="flex flex-col">
           <div className="flex flex-row mb-2 items-center">
@@ -25,7 +28,7 @@ const Projects: FC<ProjectProps> = ({ project1, project2 }) => {
         </section>
       </section>
       <section className="flex container my-8 justify-center">
-        <section className="grid grid-rows-auto gap-y-8">
+        <section className="grid grid-rows-auto gap-y-12">
           <section className="project-container">
               <div className="project-icons">
                 <span className="flex triangle"/>

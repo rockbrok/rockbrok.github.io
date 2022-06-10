@@ -504,14 +504,23 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: relative;
 }
 
+.m-3 {
+  margin: 0.75rem;
+}
+
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
 
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .-mx-3 {
@@ -524,12 +533,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 6rem;
 }
 
-.mb-3 {
-  margin-bottom: 0.75rem;
+.-mb-6 {
+  margin-bottom: -1.5rem;
 }
 
-.mt-3 {
-  margin-top: 0.75rem;
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .flex {
@@ -552,16 +561,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 13rem;
 }
 
-.h-96 {
-  height: 24rem;
+.h-80 {
+  height: 20rem;
 }
 
 .h-12 {
   height: 3rem;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
 .h-20 {
   height: 5rem;
+}
+
+.h-96 {
+  height: 24rem;
 }
 
 .h-7 {
@@ -576,16 +593,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
-.w-96 {
-  width: 24rem;
-}
-
 .w-12 {
   width: 3rem;
 }
 
+.w-14 {
+  width: 3.5rem;
+}
+
 .w-60 {
   width: 15rem;
+}
+
+.w-96 {
+  width: 24rem;
 }
 
 .w-48 {
@@ -630,8 +651,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: space-between;
 }
 
-.gap-y-7 {
-  row-gap: 1.75rem;
+.gap-y-8 {
+  row-gap: 2rem;
 }
 
 .justify-self-end {
@@ -681,6 +702,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-profile-pic {
   background-image: url('../portfolio/assets/profile.png');
+}
+
+.bg-cover {
+  background-size: cover;
 }
 
 .bg-contain {
@@ -735,6 +760,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -748,8 +778,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: uppercase;
 }
 
-.leading-10 {
-  line-height: 2.5rem;
+.leading-5 {
+  line-height: 1.25rem;
 }
 
 .text-red {

@@ -1,16 +1,15 @@
-import Logo from '../../components/logo';
 import Blog from '../../components/Blog';
 import Projects from '../../components/Projects';
-import Navigation from '../../components/navigation';
+import Navigation from '../../components/Nav';
 import NavMobile from '../../components/NavMobile';
-import SocialButtons from '../../components/socialbuttons';
+import SocialButtons from '../../components/Social';
 import { Heading, HeadingUpperCase, SubHeading } from '../../components/Header';
 
 export default function Home() {
   return (
     <section className="flex flex-col container mx-auto">
-      <section className="flex flex-col mx-auto h-screen container">
-        <header className="flex justify-end">
+      <header className="flex flex-col mx-auto h-screen container">
+        <section className="flex justify-end">
           <NavMobile />
           <Navigation
             link1='download my resume'
@@ -18,45 +17,33 @@ export default function Home() {
             link3='blog'
             link4='contact'
           />
-        </header>
-        <HeadingUpperCase
-          headinguppercase={`Hi, I'm Glenn Phillips! \n`}
-        />
+        </section>
+        <HeadingUpperCase headinguppercase={`Hi, I'm Glenn Phillips! \n`} />
         <div className="flex flex-col flex-wrap h-full w-full container">
           <div className="flex flex-col justify-start grow min-w-fit">
-            <SubHeading 
-              subheading={`I'm a front-end developer \n from the US.`}
-            />
+            <SubHeading subheading={`I'm a front-end developer \n from the US.`} />
             <SocialButtons/>
           </div>
-          <Logo />
+          <Profile />
         </div>
-      </section>
-      <main>
-        <section>
-          <h2 id="projects" className="flex font-mono text-forest-green leading-10 text-2xl uppercase">
-            Projects
-          </h2>
-          <Projects 
-            project1={`Google Frontend`}
-            project2={`Portfolio`}
-          />
-        </section>
-        <section>
-          <h2 id="blog" className="flex font-mono text-forest-green leading-10 text-2xl uppercase">
-            Blog
-          </h2>
-          <Blog />
-        </section>
-        <section>
-          <Heading 
-              heading={`Thank you!`}
-            />
-          <SubHeading 
-              subheading={`contact me: glennp167@gmail.com`}
-            />
-        </section>
+      </header>
+      <main className="flex flex-col container gap-8 my-8">
+        <Projects 
+          project1={`Google Frontend`}
+          project2={`Portfolio`}
+        />
+        <Blog />
+        <>
+          <Heading heading={`Thank you!`} />
+          <SubHeading subheading={`contact me: glennp167@gmail.com`} />
+        </>
       </main>
     </section>
   );
 }
+
+const Profile = () => (
+  <div className="flex flex-row justify-end">
+    <div className="bg-profile-pic bg-no-repeat bg-contain bg-center overflow-hidden justify-self-end -mx-3 w-96 h-96 flex" />
+  </div>
+)

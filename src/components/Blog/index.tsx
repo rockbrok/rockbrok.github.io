@@ -1,14 +1,19 @@
 const Blog = () => {
   return (
-    <section className="flex flex-col w-auto justify-center">
-      <UpArrow />
-      <div className="flex bg-white w-full h-52 p-3 rounded-xl text-red relative">
-        Hello
-        <span className="blog-post-triangle" />
-      </div>
-      <DownArrow />
-      <div className="bg-blog-pic flex bg-no-repeat bg-cover bg-center w-full h-80 px-3" />
-    </section>
+    <>
+      <h2 id="blog" className="flex font-mono text-forest-green leading-10 text-2xl uppercase">
+        Blog
+      </h2>
+      <section className="flex flex-col w-auto justify-center">
+        <UpArrow />
+        <div className="flex bg-white w-full h-52 p-3 rounded-xl text-red relative">
+          Hello
+          <span className="blog-post-triangle" />
+        </div>
+        <DownArrow />
+        <div className="bg-blog-pic flex bg-no-repeat bg-cover bg-center w-full h-80 px-3" />
+      </section>
+    </>
   );
 };
 

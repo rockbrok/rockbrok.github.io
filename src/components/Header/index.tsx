@@ -31,7 +31,7 @@ export const Heading: FC<HeadingProps> = ({ heading }) => {
 export const SubHeading: FC<SubHeadingProps> = ({ subheading }) => {
   return (
     <div className="flex flex-start">
-      <h3 className="text-light-grey font-normal font-mono leading-5 text-2xl display-linebreak -mb-6">{subheading}</h3>
+      <h3 className="text-light-grey font-normal font-mono leading-7 text-2xl display-linebreak -mb-10">{subheading}</h3>
     </div>
   );
 };
