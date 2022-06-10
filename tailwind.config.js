@@ -35,6 +35,8 @@ module.exports = {
         'blog-pic': "url('../portfolio/assets/blog-man.png')",
         'email-icon': "url('../portfolio/assets/email-icon.png')",
         'download-icon': "url('../portfolio/assets/download-icon.png')",
+        'github-icon': "url('../portfolio/assets/github-icon.png')",
+        'linkedin-icon': "url('../portfolio/assets/linkedin-icon.png')",
         'google-logo': "url('../portfolio/assets/google-logo.png')",
       }
     },

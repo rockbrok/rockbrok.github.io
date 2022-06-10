@@ -22,7 +22,7 @@ export default function Home() {
         <HeadingUpperCase
           headinguppercase={`Hi, I'm Glenn Phillips! \n`}
         />
-        <div className="flex flex-row flex-wrap h-full w-full container">
+        <div className="flex flex-col flex-wrap h-full w-full container">
           <div className="flex flex-col justify-start grow min-w-fit">
             <SubHeading 
               subheading={`I'm a front-end developer \n from the US.`}

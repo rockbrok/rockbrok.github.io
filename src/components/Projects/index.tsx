@@ -15,10 +15,10 @@ const Projects: FC<ProjectProps> = ({ project1, project2 }) => {
             <span className="flex square"/>
           </div>
           <div className="project">
-            <span className="bg-google-logo bg-no-repeat bg-contain bg-center w-72 h-28 flex" />
+            <span className="bg-google-logo bg-no-repeat bg-contain bg-center w-60 h-20 flex" />
           </div>
           <div className="project-title-bar">
-            <h4 className="text-grey text-3xl font-mono select-none">{project1}</h4>
+            <h4 className="text-grey text-2xl font-mono select-none">{project1}</h4>
           </div>
       </section>
       <section className="project-container">
@@ -28,10 +28,10 @@ const Projects: FC<ProjectProps> = ({ project1, project2 }) => {
             <span className="flex square"/>
           </div>
           <div className="project">
-            <span className="bg-google-logo bg-no-repeat bg-contain bg-center w-72 h-28 flex" />
+            <span className="bg-google-logo bg-no-repeat bg-contain bg-center w-60 h-20 flex" />
           </div>
           <div className="project-title-bar">
-            <h4 className="text-grey text-3xl font-mono select-none">{project2}</h4>
+            <h4 className="text-grey text-2xl font-mono select-none">{project2}</h4>
           </div>
       </section>
     </section>

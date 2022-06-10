@@ -14,7 +14,7 @@ interface SubHeadingProps {
 
 export const HeadingUpperCase: FC<HeadingUpperCaseProps> = ({ headinguppercase }) => {
   return (
-    <div className="flex flex-col flex-start mt-20 md:mt-10">
+    <div className="flex flex-col flex-start mt-5 md:mt-10">
       <h1 className="my-8 text-white font-sans text-5xl display-linebreak uppercase">{headinguppercase}</h1>
     </div>
   );
