@@ -43,18 +43,18 @@ body {
 
 /* X */
 .x {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   position: absolute;
   border-radius: 6px;
   top: 20px;
-  right: 20px;
+  right: 14px;
 }
 .x:before,
 .x:after {
   content: '';
   position: absolute;
-  width: 28px;
+  width: 32px;
   height: 3px;
   background-color: #35A853;
   border-radius: 2px;
@@ -157,10 +157,7 @@ div::-webkit-scrollbar-button:single-button {
   border-top-left-radius: 26px;
   border-top-right-radius: 26px;
   position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+
   top: 0;
 }
 
@@ -187,65 +184,60 @@ div::-webkit-scrollbar-button:single-button {
   position: fixed;
   left: 0;
   top: 0;
-  overflow-y: scroll;
+  overflow-y:scroll;
 }
-
-.project-mobile ::-webkit-scrollbar {
-  width: 30px;
-}
-
-.project-mobile::-webkit-scrollbar,
-.project-mobile::-webkit-scrollbar-corner,
-.project-mobile::-webkit-scrollbar-track,
-.project-mobile::-webkit-scrollbar-button:single-button {
-  background-color: #222;
-}
-.project-mobile::-webkit-scrollbar-thumb {
-  border: 2px solid transparent;
-  background-color: #35A853;
-}
-.project-mobile::-webkit-scrollbar-thumb:hover {
-  background-color: #3ACA60;
-}
-.project-mobile::-webkit-scrollbar-thumb:active {
-  background-color: #55d677;
-}
-
 
 .project-mobile-top {
-  padding: 20px;
-  width: stretch;
-  height: 50%;
+  padding: 40px 40px 0 40px;
+  height: 60%;
   background-color: #222;
-  border: 5px solid #35A853;
+  border-bottom: 5px solid #35A853;
   display: flex;
 }
 
 .project-mobile-bottom {
-  padding: 20px;
+  padding: 40px 40px 20px 40px;
   height: auto;
-  width: stretch;
+
   background-color: #fff;
-  border-left: 5px solid #35A853;
-  border-right: 5px solid #35A853;
-  border-bottom: 5px solid #35A853;
+
   display: flex;
+}
+
+.blog-post {
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 30px;
+  background-color: #222;
+}
+
+.blog-post-text {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 30px;
+  overflow-y: scroll;
 }
 
 /* BLOG ARROW */
 .arrow-icon {
   display: flex;
   position: relative;
-  width: 60px;
-  height: 60px;
+  width: 44px;
+  height: 44px;
   cursor: pointer;
   justify-content: center;
 }
 .arrow {
   position: absolute;
-  top: 30px;
-  width: 44px;
-  height: 6.5px;
+  top: 20px;
+  width: 40px;
+  height: 6px;
   background-color: #3ACA60;
   border-radius: 6px;
   transform: rotate(90deg);
@@ -254,9 +246,9 @@ div::-webkit-scrollbar-button:single-button {
 .arrow::before {
   content: '';
   position: absolute;
-  width: 30px;
-  height: 6.5px;
-  right: 26px;
+  width: 26px;
+  height: 6px;
+  right: 18px;
   background-color: #3ACA60;
   border-radius: 6px;
 }
