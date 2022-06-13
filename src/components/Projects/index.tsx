@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import {RemoveScrollBar} from 'react-remove-scroll-bar';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 interface ProjectProps {
 
@@ -28,11 +28,14 @@ const Projects: FC<ProjectProps> = ({ project2 }) => {
                 <Square />
               </div>
               <button onClick={() => setShow(!show)}>
-                <Test />
+                <>
+                  <Test />
+                  { show ? disableBodyScroll(Document as any) : enableBodyScroll(Document as any) }
+                </>
               </button>
               { show ? 
                 <>
-                <RemoveScrollBar />
+
                 <Mobile setShow={setShow} show={show} />
                 </>
               : null }
@@ -71,14 +74,34 @@ const Mobile: FC<Props> = ({setShow, show}) => (
   <>
     <div className="project-mobile">
 
-      <div className="project-mobile-top">
-        <button onClick={() => setShow(!show)}>
-          Close window
-        </button>
+      <div className="project-mobile-top flex flex-col justify-evenly">
+        <button className="x" onClick={() => setShow(!show)} />
+        <span />
+        <span className="bg-google-logo my-9 bg-no-repeat bg-contain bg-center w-60 h-20 flex self-center justify-self-center" />
+        <div className="flex flex-row justify-evenly text-white">
+          <a href="">see the full project</a>
+          <a href="">view code</a>
+        </div>
       </div>
 
-      <div className="project-mobile-bottom">
-        Content....
+      <div className="project-mobile-bottom flex flex-col">
+        <h1 className="text-dark-grey text-3xl font-mono uppercase">Google Frontend</h1>
+        <h3 className="my-3 text-forest-green text-2xl font-mono">Description</h3>
+        <p className="font-mono text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique voluptates in ad, excepturi esse debitis quos perferendis, inventore repudiandae dolorem placeat asperiores assumenda accusamus molestias veritatis beatae facilis molestiae ab.</p>
+        <h3 className="my-3 text-forest-green text-2xl font-mono">Tech used</h3>
+        <ul className="grid grid-cols-2 auto-cols-fr gap-x-7 list-disc list-inside">
+          <li>Typescript</li>
+          <li>ReactJS</li>
+          <li>Tailwind CSS</li>
+          <li>React Router</li>
+          <li>Typescript</li>
+          <li>Typescript</li>
+        </ul>
+        <div className="flex flex-row justify-end mt-3 gap-x-3">
+          <Triangle />
+          <Circle />
+          <Square />
+        </div>
       </div>
 
     </div>

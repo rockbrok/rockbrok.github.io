@@ -20,15 +20,15 @@ const Blog = () => {
 const UpArrow = () => (
   <div className="flex flex-row w-auto m-3 justify-end">
     <div className="arrow-icon">
-      <span className="arrow-up" />
+      <span className="arrow" />
     </div>
   </div>
 )
 
 const DownArrow = () => (
   <div className="flex flex-row w-auto m-3 justify-end">
-    <div className="arrow-icon">
-      <span className="arrow-down" />
+    <div className="arrow-icon rotate-180">
+      <span className="arrow" />
     </div>
   </div>
 )

@@ -15,7 +15,7 @@
   \***********************/
 /***/ (function() {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/ts-loader/index.js):\\nError: TypeScript emitted no output for /home/roqa/Documents/Git/portfolio/src/index.tsx.\\n    at makeSourceMapAndFinish (/home/roqa/Documents/Git/portfolio/node_modules/ts-loader/dist/index.js:52:18)\\n    at successLoader (/home/roqa/Documents/Git/portfolio/node_modules/ts-loader/dist/index.js:39:5)\\n    at Object.loader (/home/roqa/Documents/Git/portfolio/node_modules/ts-loader/dist/index.js:22:5)\");\n\n//# sourceURL=webpack://portfolio/./src/index.tsx?");
+eval("throw new Error(\"Module build failed (from ./node_modules/css-loader/dist/cjs.js):\\nCssSyntaxError\\n\\n(1:1) /home/roqa/Documents/Git/portfolio/src/index.tsx Unknown word\\n\\n\\u001b[1m\\u001b[31m>\\u001b[39m\\u001b[22m\\u001b[90m 1 | \\u001b[39mimport React from \\u001b[32m'react'\\u001b[39m\\u001b[33m;\\u001b[39m\\n \\u001b[90m   | \\u001b[39m\\u001b[1m\\u001b[31m^\\u001b[39m\\u001b[22m\\n \\u001b[90m 2 | \\u001b[39mimport ReactDOM from \\u001b[32m'react-dom/client'\\u001b[39m\\u001b[33m;\\u001b[39m\\n \\u001b[90m 3 | \\u001b[39mimport App from \\u001b[32m'./App'\\u001b[39m\\u001b[33m;\\u001b[39m\\n\");\n\n//# sourceURL=webpack://portfolio/./src/index.tsx?");
 
 /***/ })
 
