@@ -33,10 +33,14 @@ module.exports = {
       backgroundImage: {
         'profile-pic': "url('../portfolio/assets/profile.png')",
         'blog-pic': "url('../portfolio/assets/blog-man.png')",
+        '404-pic': "url('../portfolio/assets/404-man.png')",
+
         'email-icon': "url('../portfolio/assets/email-icon.png')",
         'download-icon': "url('../portfolio/assets/download-icon.png')",
         'github-icon': "url('../portfolio/assets/github-icon.png')",
         'linkedin-icon': "url('../portfolio/assets/linkedin-icon.png')",
+        'whatsapp-icon': "url('../portfolio/assets/whatsapp-icon.png')",
+
         'google-logo': "url('../portfolio/assets/google-logo.png')",
       }
     },

@@ -29,7 +29,7 @@ export default function Home() {
       </header>
       <main className="flex flex-col container gap-8 my-8">
         <Projects 
-          project1={`Google Frontend`}
+
           project2={`Portfolio`}
         />
         <Blog />

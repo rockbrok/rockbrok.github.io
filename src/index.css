@@ -60,7 +60,6 @@ body {
   width: 300px;
   height: 414px;
   position: relative;
-
 }
 
 .project {
@@ -83,8 +82,8 @@ body {
   background-color: white;
   color: lightgray;
   position: absolute;
-  border-bottom-left-radius: 35px;
-  border-bottom-right-radius: 35px;
+  border-bottom-left-radius: 26px;
+  border-bottom-right-radius: 26px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,14 +96,62 @@ body {
   height: 58px;
   border: 2px solid white;
   border-bottom: none;
-  border-top-left-radius: 35px;
-  border-top-right-radius: 35px;
+  border-top-left-radius: 26px;
+  border-top-right-radius: 26px;
   position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   top: 0;
+}
+
+.clear {
+  content: "x";
+  color: white;
+  height: 16px;
+  width: 16px;
+}
+
+.nav-icons {
+  background-repeat: no-repeat;
+  background-size: 60px 60px;
+  background-position: center;
+  height: 40px;
+  width: 40px;
+}
+
+.mail-icon {
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  background-position: center;
+  height: 40px;
+  width: 40px;
+}
+
+.project-mobile {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 5;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.project-mobile-top {
+  padding: 20px;
+  width: stretch;
+  height: 50%;
+  background-color: red;
+}
+
+.project-mobile-bottom {
+  padding: 20px;
+  height: 50%;
+  width: stretch;
+  background-color: yellow;
 }
 
 .arrow-icon {
