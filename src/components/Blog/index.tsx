@@ -6,10 +6,14 @@ const Blog = () => {
       </h2>
       <section className="flex flex-col w-auto justify-center">
         <UpArrow />
-        <div className="flex bg-white w-full h-52 p-3 rounded-xl text-red relative">
-          Hello
-          <span className="blog-post-triangle" />
+        <div className="flex flex-col bg-white w-full h-52 p-3 rounded-xl relative overflow-y-scroll">
+          <h6 className="text-dark-grey font-mono">First post</h6>
+          <p className="text-black font-mono">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime sit amet obcaecati quos eos repellendus magni, nemo, ex iusto modi alias explicabo neque laborum perferendis. Sequi repellat maiores pariatur cum?</p>
+          <p className="text-black font-mono">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime sit amet obcaecati quos eos repellendus magni, nemo, ex iusto modi alias explicabo neque laborum perferendis. Sequi repellat maiores pariatur cum?</p>
+          <h6 className="text-dark-grey font-mono self-end">14:46 - Tuesday, May 11th</h6>
+          
         </div>
+        <span className="blog-post-triangle" />
         <DownArrow />
         <div className="bg-blog-pic flex bg-no-repeat bg-cover bg-center w-full h-80 px-3" />
       </section>
