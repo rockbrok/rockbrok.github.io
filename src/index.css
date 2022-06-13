@@ -182,7 +182,7 @@ div::-webkit-scrollbar-button:single-button {
 
 .project-mobile {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: 5;
   position: fixed;
   left: 0;
@@ -223,7 +223,7 @@ div::-webkit-scrollbar-button:single-button {
 
 .project-mobile-bottom {
   padding: 20px;
-  height: max-content;
+  height: auto;
   width: stretch;
   background-color: #fff;
   border-left: 5px solid #35A853;
