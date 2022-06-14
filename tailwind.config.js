@@ -43,6 +43,9 @@ module.exports = {
         'whatsapp-icon': "url('../portfolio/assets/whatsapp-icon.png')",
 
         'google-logo': "url('../portfolio/assets/google-logo.png')",
+      },
+      rotate: {
+        '270': '270deg',
       }
     },
   },

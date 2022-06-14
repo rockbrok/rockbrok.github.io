@@ -1,0 +1,13 @@
+{
+  "posts": [
+    {
+      "title" : "First post",
+      "time" : "14:46",
+      "day" : "Tuesday",
+      "month" : "May",
+      "date" : "13",
+      "text" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa illum incidunt quibusdam, voluptate modi labore nihil debitis ab repudiandae obcaecati porro similique neque. Voluptatem optio voluptatibus, iste fugiat tenetur sunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa illum incidunt quibusdam, voluptate modi labore nihil debitis ab repudiandae obcaecati porro similique neque. Voluptatem optio voluptatibus, iste fugiat tenetur sunt.",
+      "id": 1
+    }
+  ]
+}

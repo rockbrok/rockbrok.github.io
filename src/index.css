@@ -45,20 +45,17 @@ body {
 .x {
   width: 36px;
   height: 36px;
-  position: absolute;
-  border-radius: 6px;
-  top: 20px;
-  right: 14px;
+  position: relative;
 }
 .x:before,
 .x:after {
   content: '';
   position: absolute;
   width: 32px;
-  height: 3px;
-  background-color: #35A853;
-  border-radius: 2px;
-  top: 8px;
+  height: 4px;
+  background-color: #3ACA60;
+  border-radius: 4px;
+  top: 16px;
 }
 .x:before {
   -webkit-transform: rotate(45deg);
@@ -157,7 +154,6 @@ div::-webkit-scrollbar-button:single-button {
   border-top-left-radius: 26px;
   border-top-right-radius: 26px;
   position: absolute;
-
   top: 0;
 }
 
@@ -188,8 +184,8 @@ div::-webkit-scrollbar-button:single-button {
 }
 
 .project-mobile-top {
-  padding: 40px 40px 0 40px;
-  height: 60%;
+  padding: 40px 40px 20px 40px;
+  height: auto;
   background-color: #222;
   border-bottom: 5px solid #35A853;
   display: flex;
@@ -198,9 +194,7 @@ div::-webkit-scrollbar-button:single-button {
 .project-mobile-bottom {
   padding: 40px 40px 20px 40px;
   height: auto;
-
   background-color: #fff;
-
   display: flex;
 }
 
@@ -211,17 +205,26 @@ div::-webkit-scrollbar-button:single-button {
   position: fixed;
   left: 0;
   top: 0;
-  padding: 30px;
-  background-color: #222;
+  padding: 30px 45px;
+  background-color: #fff;
 }
 
 .blog-post-text {
   width: 100%;
-  height: 100%;
-  border-radius: 8px;
+  height: calc(100% - 60px);
   background-color: #fff;
-  padding: 30px;
+
+  padding: 10px 0;
+  margin-top: 10px;
   overflow-y: scroll;
+}
+
+.blog-post-buttons {
+  width: 100%;
+  height: 60px;
+  border-top: 2px solid #3ACA60;
+  background-color: #fff;
+
 }
 
 /* BLOG ARROW */
