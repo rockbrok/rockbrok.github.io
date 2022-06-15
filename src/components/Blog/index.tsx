@@ -94,18 +94,10 @@ const Blog: FC<BlogProps> = ({heading}) => {
     }
   };
 
-  // prevent swipeable from working in component
-
-
-  const { ref: documentRef } = useSwipeable({
+  const handlers = useSwipeable({
     onSwipedLeft: () => decrease(),
     onSwipedRight: () => increase()
   });
-  
-  // attach swipeable to document
-  useEffect(() => {
-    documentRef(Document as any);
-  }, []);
 
   return (
     <>
@@ -132,7 +124,7 @@ const Blog: FC<BlogProps> = ({heading}) => {
         </button>
         <span className="blog-post-triangle" />
         { show ? 
-          <div className="blog-post">
+          <div className="blog-post" {...handlers}>
             <BlogPost 
               title={title} 
               time={time}
@@ -145,7 +137,6 @@ const Blog: FC<BlogProps> = ({heading}) => {
               setShow={setShow} 
               increase={increase}
               decrease={decrease}
- 
             />
           </div>
         : null }
