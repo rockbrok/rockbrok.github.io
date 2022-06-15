@@ -32,7 +32,9 @@ export default function Home() {
 
           project2={`Portfolio`}
         />
-        <Blog />
+        <Blog 
+          heading={`Blog`}
+        />
         <>
           <Heading heading={`Thank you!`} />
           <SubHeading subheading={`contact me: glennp167@gmail.com`} />
@@ -43,7 +45,7 @@ export default function Home() {
 }
 
 const Profile = () => (
-  <div className="flex flex-row justify-end">
-    <div className="bg-profile-pic bg-no-repeat bg-contain bg-center overflow-hidden justify-self-end -mx-3 w-96 h-96 flex" />
-  </div>
+
+    <div className="bg-profile bg-no-repeat bg-contain bg-center w-96 h-96" />
+
 )

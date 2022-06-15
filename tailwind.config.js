@@ -30,9 +30,12 @@ module.exports = {
       mono: ['Courier New'],
       sans: ['Montserrat']
     },
+    backgroundSize: {
+      '46': '52px'
+    },
     extend: {
       backgroundImage: {
-        'profile-pic': "url('../portfolio/assets/profile.png')",
+        'profile': "url('../portfolio/assets/profile.png')",
         'blog-pic': "url('../portfolio/assets/blog-man.png')",
         '404-pic': "url('../portfolio/assets/404-man.png')",
 
