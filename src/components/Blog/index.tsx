@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { FC, useState, useEffect } from 'react';
+import { useSwipeable } from "react-swipeable";
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 interface BlogProps {
@@ -15,8 +16,27 @@ const Blog: FC<BlogProps> = ({heading}) => {
   const [date, setDate] = useState([]);
   const [counter, setCounter] = useState(0);
   const [ids, setIDS] = useState(0);
-  const URL = "https://portfolio-blog-posts.herokuapp.com/posts/";
-  const URL0 = "https://portfolio-blog-posts.herokuapp.com/posts/0";
+  const URL:string = "https://portfolio-blog-posts.herokuapp.com/posts/";
+  const URL0:string = URL + 0;
+
+  // prevent swipeable from working in component
+  const handlersBox = useSwipeable({
+    onSwiped: ({ event }) => {
+      event.stopPropagation();
+    },
+    onSwiping: ({ event }) => event.stopPropagation(),
+  });
+
+  const { ref: documentRef } = useSwipeable({
+    onSwipedLeft: () => decrease(),
+    onSwipedRight: () => increase(),
+    preventScrollOnSwipe: false,
+  });
+
+  // attach swipeable to document
+  useEffect(() => {
+    documentRef(Document as any);
+  });
 
   // get total number of posts
   useEffect(() => {
@@ -41,7 +61,7 @@ const Blog: FC<BlogProps> = ({heading}) => {
         setDay(response.data.day);
         setDate(response.data.date);
       })
-  }, [])
+  }, [URL0])
 
   // next blog post
   const increase = async() => {
@@ -118,17 +138,22 @@ const Blog: FC<BlogProps> = ({heading}) => {
         </button>
         <span className="blog-post-triangle" />
         { show ? 
-          <BlogPost 
-            title={title} 
-            time={time}
-            text={text}
-            day={day}
-            date={date}
-            show={show} 
-            setShow={setShow} 
-            increase={increase}
-            decrease={decrease}
-          /> 
+          <div className="blog-post">
+            <BlogPost 
+              title={title} 
+              time={time}
+              text={text}
+              day={day}
+              date={date}
+            /> 
+            <BlogButtons
+              show={show} 
+              setShow={setShow} 
+              increase={increase}
+              decrease={decrease}
+              {...handlersBox}
+            />
+          </div>
         : null }
         <DownArrow />
         <div className="bg-blog-pic flex bg-no-repeat bg-cover bg-center w-full h-80 px-3" />
@@ -137,36 +162,37 @@ const Blog: FC<BlogProps> = ({heading}) => {
   );
 };
 
-const BlogPost = ({setShow, show, increase, decrease, title, text, time, day, date}:any) => (
-  <div className="blog-post">
-    <div className="blog-post-text scrollbar-hide">
-      <h6 className="flex text-dark-grey font-bold uppercase font-mono mb-3">
-        {title}
+const BlogPost = ({title, text, time, day, date}:any) => (
+  <div className="blog-post-text scrollbar-hide">
+    <h6 className="flex text-dark-grey font-bold uppercase font-mono mb-3">
+      {title}
+    </h6>
+    <p className="whitespace-pre-line break-words">
+      {text}
+    </p>
+    <div className="flex flex-col text-dark-grey text-sm text-left font-mono mt-3 items-end">
+      <h6 className="uppercase">
+        {time}&nbsp;{day}
       </h6>
-      <p className="whitespace-pre-line break-words">
-        {text}
-      </p>
-      <div className="flex flex-col text-dark-grey text-sm text-left font-mono mt-3 items-end">
-        <h6 className="uppercase">
-          {time}&nbsp;{day}
-        </h6>
-        <h6 className="uppercase">
-          {date}
-        </h6>
-      </div>
+      <h6 className="uppercase">
+        {date}
+      </h6>
     </div>
-    <div className="blog-post-buttons flex flex-row items-center justify-evenly">
-      <LeftArrow 
-        decrease={decrease}
-      />
-      <Close
-        show={show}
-        setShow={setShow}
-      />
-      <RightArrow 
-        increase={increase}
-      />
-    </div>
+  </div>
+)
+
+const BlogButtons = ({setShow, show, increase, decrease}:any) => (
+  <div className="blog-post-buttons flex flex-row items-center justify-evenly">
+    <LeftArrow 
+      decrease={decrease}
+    />
+    <Close
+      show={show}
+      setShow={setShow}
+    />
+    <RightArrow 
+      increase={increase}
+    />
   </div>
 )
 
@@ -187,7 +213,7 @@ const DownArrow = () => (
 )
 
 const LeftArrow = ({decrease}:any) => (
-  <button className="h-12 w-12" onClick={decrease}>
+  <button className="h-12 w-12" onClick={decrease} title="Previous">
     <div className="flex scale-50 items-center justify-center">
       <div className="arrow-icon rotate-270">
         <span className="arrow" />
@@ -197,7 +223,7 @@ const LeftArrow = ({decrease}:any) => (
 )
 
 const RightArrow = ({increase}:any) => (
-  <button className="h-12 w-12" onClick={increase}>
+  <button className="h-12 w-12" onClick={increase} title="Next">
     <div className="flex scale-50 items-center justify-center">
       <div className="arrow-icon rotate-90">
         <span className="arrow" />
@@ -207,7 +233,7 @@ const RightArrow = ({increase}:any) => (
 )
 
 const Close = ({setShow, show}:any) => (
-  <button className="h-12 w-12" onClick={() => setShow(!show)}>
+  <button className="h-12 w-12" onClick={() => setShow(!show)} title="Close">
     <div className="flex scale-75 justify-center items-center">
       <div className="x" />
     </div>
