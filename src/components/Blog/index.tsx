@@ -153,7 +153,7 @@ const BlogPost = ({title, text, time, day, date}:any) => (
     <h6 className="flex text-dark-grey font-bold uppercase font-mono mb-3">
       {title}
     </h6>
-    <p className="whitespace-pre-line break-words">
+    <p className="whitespace-pre-line break-words leading-5">
       {text}
     </p>
     <div className="flex flex-col text-dark-grey text-sm text-left font-mono mt-3 items-end">

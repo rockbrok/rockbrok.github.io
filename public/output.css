@@ -1025,6 +1025,14 @@ video {
   line-height: 1.25rem;
 }
 
+.leading-4 {
+  line-height: 1rem;
+}
+
+.leading-6 {
+  line-height: 1.5rem;
+}
+
 .text-forest-green {
   --tw-text-opacity: 1;
   color: rgb(53 168 83 / var(--tw-text-opacity));
