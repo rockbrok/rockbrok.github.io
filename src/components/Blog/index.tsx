@@ -131,7 +131,7 @@ const Blog: FC<BlogProps> = ({heading}) => {
               text={text}
               day={day}
               date={date}
-              {...handlers}
+              handlers={handlers}
             /> 
             <BlogButtons
               show={show} 
@@ -148,8 +148,8 @@ const Blog: FC<BlogProps> = ({heading}) => {
   );
 };
 
-const BlogPost = ({title, text, time, day, date}:any) => (
-  <div className="blog-post-text scrollbar-hide">
+const BlogPost = ({title, text, time, day, date, handlers}:any) => (
+  <div className="blog-post-text scrollbar-hide" {...handlers}>
     <h6 className="flex text-dark-grey font-bold uppercase font-mono mb-3">
       {title}
     </h6>
