@@ -124,13 +124,14 @@ const Blog: FC<BlogProps> = ({heading}) => {
         </button>
         <span className="blog-post-triangle" />
         { show ? 
-          <div className="blog-post" {...handlers}>
+          <div className="blog-post">
             <BlogPost 
               title={title} 
               time={time}
               text={text}
               day={day}
               date={date}
+              {...handlers}
             /> 
             <BlogButtons
               show={show} 
