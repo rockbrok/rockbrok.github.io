@@ -19,25 +19,6 @@ const Blog: FC<BlogProps> = ({heading}) => {
   const URL:string = "https://portfolio-blog-posts.herokuapp.com/posts/";
   const URL0:string = URL + 0;
 
-  // prevent swipeable from working in component
-  const handlersBox = useSwipeable({
-    onSwiped: ({ event }) => {
-      event.stopPropagation();
-    },
-    onSwiping: ({ event }) => event.stopPropagation(),
-  });
-
-  const { ref: documentRef } = useSwipeable({
-    onSwipedLeft: () => decrease(),
-    onSwipedRight: () => increase(),
-    preventScrollOnSwipe: false,
-  });
-
-  // attach swipeable to document
-  useEffect(() => {
-    documentRef(Document as any);
-  });
-
   // get total number of posts
   useEffect(() => {
     const fetchData = async () => {
@@ -113,6 +94,19 @@ const Blog: FC<BlogProps> = ({heading}) => {
     }
   };
 
+  // prevent swipeable from working in component
+
+
+  const { ref: documentRef } = useSwipeable({
+    onSwipedLeft: () => decrease(),
+    onSwipedRight: () => increase()
+  });
+  
+  // attach swipeable to document
+  useEffect(() => {
+    documentRef(Document as any);
+  }, []);
+
   return (
     <>
       <h2 id="blog" className="flex font-mono text-forest-green leading-10 text-2xl uppercase">
@@ -151,7 +145,7 @@ const Blog: FC<BlogProps> = ({heading}) => {
               setShow={setShow} 
               increase={increase}
               decrease={decrease}
-              {...handlersBox}
+ 
             />
           </div>
         : null }
