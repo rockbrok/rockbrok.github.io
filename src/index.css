@@ -101,35 +101,54 @@ div::-webkit-scrollbar-button:single-button {
 .blog-post-triangle {
   width: 0;
   height: 0;
-  position: absolute;
   border-style: solid;
   border-width: 30px 30px 0 0;
   border-color: white transparent transparent transparent;
-  margin-top: -82px;
-  margin-left: 40px;
+  margin-top: 180px;
+  margin-left: 30px;
+}
+
+.profile-pic {
+  background-image: url('http://localhost:3000/portfolio/assets/profile.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 323px;
+  height: 414.66666px;
+  overflow: hidden;
+  margin-top: -20px;
+}
+
+.pic-404 {
+  background-image: url('http://localhost:3000/portfolio/assets/404-man.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: -12px;
+  width: 258.07143px;
+  height: 200px;
+  overflow: hidden;
 }
 
 .project-container {
-  width: 300px;
-  height: 414px;
+  width: 264px;
+  height: 344px;
   position: relative;
 }
 
 .project {
   width: stretch;
-  height: 300px;
+  height: 244px;
   border: 2px solid #ffffff;
   display: flex;
   position: absolute;
   justify-content: center;
   align-items: center;
-  top: 56px;
+  top: 50px;
   cursor: pointer;
 }
 
 .project-title-bar {
   width: stretch;
-  height: 58px;
+  height: 50px;
   border: 2px solid white;
   border-top: none;
   background-color: white;
@@ -145,8 +164,8 @@ div::-webkit-scrollbar-button:single-button {
 }
 
 .project-icons {
-  width: 154px;
-  height: 58px;
+  width: 114px;
+  height: 50px;
   border: 2px solid white;
   border-bottom: none;
   border-top-left-radius: 26px;
@@ -200,7 +219,6 @@ div::-webkit-scrollbar-button:single-button {
   width: calc(100% - 90px);
   height: 60px;
   margin: 0 45px 9px 45px;
-
   border-top: 2px solid #3ACA60;
 }
 

@@ -31,13 +31,15 @@ module.exports = {
       sans: ['Montserrat']
     },
     backgroundSize: {
-      '46': '52px'
+      '46': '52px',
+      '200': '200px',
+      '280': '280px'
     },
     extend: {
       backgroundImage: {
-        'profile': "url('../portfolio/assets/profile.png')",
+        'profile': "url('http://localhost:3000/portfolio/assets/profile.png')",
         'blog-pic': "url('../portfolio/assets/blog-man.png')",
-        '404-pic': "url('../portfolio/assets/404-man.png')",
+        '404-man': "url('../portfolio/assets/404-man.png')",
 
         'email-icon': "url('../portfolio/assets/email-icon.png')",
         'download-icon': "url('../portfolio/assets/download-icon.png')",

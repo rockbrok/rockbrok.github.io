@@ -1,51 +1,17 @@
-import Blog from '../../components/Blog';
-import Projects from '../../components/Projects';
-import Navigation from '../../components/Nav';
-import NavMobile from '../../components/NavMobile';
-import SocialButtons from '../../components/Social';
-import { Heading, HeadingUpperCase, SubHeading } from '../../components/Header';
+import Header from './Header';
+import Blog from './Blog';
+import Projects from './Projects';
+import Footer from './Footer';
 
 export default function Home() {
   return (
     <section className="flex flex-col container mx-auto">
-      <header className="flex flex-col mx-auto h-screen container">
-        <section className="flex justify-end">
-          <NavMobile />
-          <Navigation
-            link1='download my resume'
-            link2='portfolio'
-            link3='blog'
-            link4='contact'
-          />
-        </section>
-        <HeadingUpperCase headinguppercase={`Hi, I'm Glenn Phillips! \n`} />
-        <div className="flex flex-col flex-wrap h-full w-full container">
-          <div className="flex flex-col justify-start grow min-w-fit">
-            <SubHeading subheading={`I'm a front-end developer \n from the US.`} />
-            <SocialButtons/>
-          </div>
-          <Profile />
-        </div>
-      </header>
+      <Header />
       <main className="flex flex-col container gap-8 my-8">
-        <Projects 
-
-          project2={`Portfolio`}
-        />
-        <Blog 
-          heading={`Blog`}
-        />
-        <>
-          <Heading heading={`Thank you!`} />
-          <SubHeading subheading={`contact me: glennp167@gmail.com`} />
-        </>
+        <Projects/>
+        <Blog/>
+        <Footer/>
       </main>
     </section>
   );
 }
-
-const Profile = () => (
-
-    <div className="bg-profile bg-no-repeat bg-contain bg-center w-96 h-96" />
-
-)
