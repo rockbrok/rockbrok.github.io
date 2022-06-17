@@ -33,6 +33,7 @@ module.exports = {
     backgroundSize: {
       '46': '52px',
       '200': '200px',
+      '260': '260px',
       '280': '280px'
     },
     extend: {
@@ -51,6 +52,9 @@ module.exports = {
       },
       rotate: {
         '270': '270deg',
+      },
+      spacing: {
+        '2px': '2px',
       }
     },
   },

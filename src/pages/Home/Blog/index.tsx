@@ -145,7 +145,7 @@ const Blog = () => {
       />
       <section className="flex flex-col w-auto justify-center md:flex-row-reverse">
         <>
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-8">
             <button onClick={() => setShow(!show)}>
               <>
                 <FirstBlogPost 
@@ -182,14 +182,14 @@ const Blog = () => {
             </div>
           : null }
         </>
-        <div className="flex bg-blog-pic bg-no-repeat bg-280 bg-center w-full h-52" />
+        <div className="flex bg-blog-pic bg-no-repeat bg-260 bg-center w-full h-52" />
       </section>
     </>
   );
 };
 
 const Heading: FC<BlogProps> = ({heading}) => (
-  <h2 id="blog" className="flex font-mono text-forest-green leading-10 text-2xl mb-4 uppercase">
+  <h2 id="blog" className="flex font-mono text-forest-green leading-10 text-2xl uppercase">
     {heading}
   </h2>
 )
@@ -211,7 +211,7 @@ const FirstBlogPost = ({title, text, time, day, date}:any) => (
 
 const SecondBlogPost = ({title2, text2}:any) => (
   <>
-  <div className="flex flex-col font-mono bg-white w-full h-28 pt-6 px-7 pb-4 mt-8 mb-12 rounded-t-xl relative justify-between md:w-80">
+  <div className="flex flex-col font-mono bg-white w-full h-28 pt-6 px-7 pb-4 rounded-t-xl relative justify-between md:w-80">
     <h6 className="flex text-dark-grey font-bold uppercase font-mono select-none">
       {title2}
     </h6>

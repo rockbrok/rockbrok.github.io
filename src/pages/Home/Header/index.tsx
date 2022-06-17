@@ -9,7 +9,7 @@ interface SubHeadingProps {
 
 const Header = () => {
   return (
-    <header className="flex flex-col mx-auto h-screen container">
+    <header className="flex flex-col mx-auto h-screen container overflow-fix">
       <NavBar/>
       <Heading 
         heading={`Hi, I'm Glenn Phillips! \n`} 
@@ -89,7 +89,9 @@ const SocialButtons = () => (
 );
 
 const Profile = () => (
-  <div className="flex profile-pic overflow-hidden" />
+  <div className="mt-8">
+    <div className="flex profile-pic" />
+  </div>
 );
 
 const Heading: FC<HeadingProps> = ({heading}) => (

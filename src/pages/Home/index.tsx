@@ -7,10 +7,16 @@ export default function Home() {
   return (
     <section className="flex flex-col container mx-auto">
       <Header />
-      <main className="flex flex-col container gap-8 my-8">
-        <Projects/>
-        <Blog/>
-        <Footer/>
+      <main>
+        <section className="flex flex-col container mt-24 gap-4">
+          <Projects/>
+        </section>
+        <section className="flex flex-col container mt-24 gap-4">
+          <Blog/>
+        </section>
+        <section className="flex flex-col container mt-24">
+          <Footer/>
+        </section>
       </main>
     </section>
   );

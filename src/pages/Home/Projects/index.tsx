@@ -21,8 +21,8 @@ const Projects = () => {
         Projects
       </h2>
       <Key />
-      <section className="flex container my-8 justify-center">
-        <section className="grid grid-rows-auto gap-y-12">
+      <section className="flex container justify-center">
+        <section className="grid grid-rows-auto gap-y-16">
           <Project1
             project1={`Google Frontend`}
             show={show}
@@ -40,10 +40,12 @@ const Projects = () => {
 };
 
 const Key = () => (
-  <section className="flex flex-row w-auto justify-end pr-6">
+  <section className="flex flex-row w-auto justify-end">
     <section className="flex flex-col">
       <div className="flex flex-row mb-1 items-center">
-        <Triangle />
+        <div className="-mt-1">
+          <Triangle />
+        </div>
         <span className="flex font-mono text-red pl-4">
           CSS
         </span>
@@ -61,13 +63,17 @@ const Key = () => (
         </span>
       </div>
       <div className="flex flex-row my-1 items-center">
-        <Diamond />
+        <div className="mt-1">
+          <Diamond />
+        </div>
         <span className="flex font-mono text-light-green pl-4">
           Typescript
         </span>
       </div>
       <div className="flex flex-row my-1 items-center">
-        <Star />
+        <div className="-mt-2">
+          <Star />
+        </div>
         <span className="flex font-mono text-white pl-4">
           Tailwind
           <br/>CSS
@@ -128,16 +134,16 @@ const ProjectOverlay1: FC<UseStateProps> = ({setShow, show}) => (
         <button className="x" onClick={() => setShow(!show)} />
       </div>
       <span className="bg-google-logo bg-no-repeat bg-200 bg-center w-52 h-20 flex my-9 self-center justify-self-center" />
-      <div className="flex flex-row flex-wrap gap-4 justify-evenly text-white">
+      <div className="flex flex-row flex-wrap gap-x-4  gap-y-2 justify-evenly text-white">
         <a className="whitespace-nowrap" href="">see the full project</a>
         <a className="whitespace-nowrap" href="">view code</a>
       </div>
     </div>
     <div className="project-overlay-bottom flex flex-col">
       <h1 className="text-dark-grey text-3xl font-mono uppercase mb-2">Google Frontend</h1>
-      <h3 className="my-3 text-forest-green text-2xl font-mono leading-10">Description</h3>
+      <h3 className="text-forest-green text-2xl font-mono mt-5 mb-3 leading-10">Description</h3>
       <p className="font-mono text-black leading-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique voluptates in ad, excepturi esse debitis quos perferendis, inventore repudiandae dolorem placeat asperiores assumenda accusamus molestias veritatis beatae facilis molestiae ab.</p>
-      <h3 className="my-3 text-forest-green text-2xl font-mono leading-10">Tech used</h3>
+      <h3 className="text-forest-green text-2xl font-mono mt-6 mb-3 leading-10">Tech used</h3>
       <ul className="inline-grid grid-cols-2 auto-cols-fr gap-x-4 list-disc list-outside">
         <li className="ml-4">Typescript</li>
         <li className="ml-4">ReactJS</li>
@@ -146,8 +152,10 @@ const ProjectOverlay1: FC<UseStateProps> = ({setShow, show}) => (
         <li className="ml-4">Typescript</li>
         <li className="ml-4">Typescript</li>
       </ul>
-      <div className="flex flex-row justify-end mt-6 gap-x-3">
-        <Triangle />
+      <div className="flex flex-row justify-end mt-8 mb-2 gap-x-3">
+        <div className="mt-2px">
+          <Triangle />
+        </div>
         <Circle />
         <Square />
       </div>
