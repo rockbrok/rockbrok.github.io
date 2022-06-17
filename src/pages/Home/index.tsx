@@ -8,10 +8,10 @@ export default function Home() {
     <section className="flex flex-col container mx-auto">
       <Header />
       <main>
-        <section className="flex flex-col container mt-24 gap-4">
+        <section className="flex flex-col container mt-28 gap-4">
           <Projects/>
         </section>
-        <section className="flex flex-col container mt-24 gap-4">
+        <section className="flex flex-col container mt-28 gap-4">
           <Blog/>
         </section>
         <section className="flex flex-col container mt-24">

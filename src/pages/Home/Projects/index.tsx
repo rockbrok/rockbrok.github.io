@@ -22,7 +22,7 @@ const Projects = () => {
       </h2>
       <Key />
       <section className="flex container justify-center">
-        <section className="grid grid-rows-auto gap-y-16">
+        <section className="grid grid-rows-auto gap-y-24">
           <Project1
             project1={`Google Frontend`}
             show={show}

@@ -134,8 +134,8 @@ const Blog = () => {
   };
 
   const handlers = useSwipeable({
-    onSwipedLeft: () => decrease(),
-    onSwipedRight: () => increase()
+    onSwipedLeft: () => increase(),
+    onSwipedRight: () => decrease()
   });
 
   return (

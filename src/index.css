@@ -144,7 +144,7 @@ div::-webkit-scrollbar-button:single-button {
 }
 
 .profile-pic {
-  background-image: url('http://localhost:3000/portfolio/assets/profile.png');
+  background-image: url('http://paq000.github.io/portfolio/assets/profile.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 323px;
@@ -154,7 +154,7 @@ div::-webkit-scrollbar-button:single-button {
 }
 
 .pic-404 {
-  background-image: url('http://localhost:3000/portfolio/assets/404-man.png');
+  background-image: url('http://paq000.github.io/portfolio/assets/404-man.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position-x: -12px;
