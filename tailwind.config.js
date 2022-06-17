@@ -2,11 +2,10 @@ module.exports = {
 
   content: [
     "./src/*.{js,jsx,ts,tsx}",
-    "./src/components/**/*.{js,jsx,ts,tsx}",
+    "./src/pages/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     screen: {
-      'xs': '320px',
       'sm': '428px',
       'md': '640px',
       'lg': '768px',
@@ -22,6 +21,7 @@ module.exports = {
       'dark-grey': '#222222',
       'grey': '#A4A4A4',
       'forest-green': '#35A853',
+      'light-green': '#3ACA60',
       'gold': '#FBBC05',
       'blue': '#4285F5',
       'red': '#EB4335',

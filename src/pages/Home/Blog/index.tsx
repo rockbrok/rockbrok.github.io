@@ -10,14 +10,17 @@ interface BlogProps {
 const Blog = () => {
   const [show, setShow] = useState(false);
   const [title, setTitle] = useState([]);
+  const [title2, setTitle2] = useState([]);
   const [text, setText] = useState([]);
+  const [text2, setText2] = useState([]);
   const [time, setTime] = useState([]);
   const [day, setDay] = useState([]);
   const [date, setDate] = useState([]);
   const [counter, setCounter] = useState(0);
   const [ids, setIDS] = useState(0);
   const URL:string = "https://portfolio-blog-posts.herokuapp.com/posts/";
-  const URL0:string = URL + 0;
+  const firstPostURL:string = URL + 0;
+  const secondPostURL:string = URL + 1;
 
   // get total number of posts
   useEffect(() => {
@@ -32,9 +35,12 @@ const Blog = () => {
       .catch(console.error);
   }, [ids])
 
+  // total posts - 1
+  let numPosts = (ids - 1);
+
   // get first blog post
   useEffect(() => {
-    axios.get(URL0)
+    axios.get(firstPostURL)
       .then((response:any) => {
         setTitle(response.data.title);
         setText(response.data.text);
@@ -42,11 +48,20 @@ const Blog = () => {
         setDay(response.data.day);
         setDate(response.data.date);
       })
-  }, [URL0])
+  }, [firstPostURL])
+
+  // get second blog post
+    useEffect(() => {
+      axios.get(secondPostURL)
+        .then((response:any) => {
+          setTitle2(response.data.title);
+          setText2(response.data.text);
+        })
+    }, [secondPostURL])
 
   // next blog post
   const increase = async() => {
-    if (counter < (ids - 1)) {
+    if (counter < numPosts) {
       setCounter(counter => counter + 1);
       await axios.get(URL + (counter + 1))
         .then((response:any) => {
@@ -56,9 +71,15 @@ const Blog = () => {
           setDay(response.data.day);
           setDate(response.data.date);
         })
-    } else if (counter === (ids - 1)) {
+      // get next post title
+      await axios.get(URL + (counter + 2))
+        .then((response:any) => {
+          setTitle2(response.data.title);
+          setText2(response.data.text);
+        })
+    } else if (counter === numPosts) {
       setCounter(counter => counter = 0);
-      await axios.get(URL0)
+      await axios.get(firstPostURL)
         .then((response:any) => {
           setTitle(response.data.title);
           setText(response.data.text);
@@ -66,20 +87,32 @@ const Blog = () => {
           setDay(response.data.day);
           setDate(response.data.date);
         })
+      // get next post title
+      await axios.get(secondPostURL)
+        .then((response:any) => {
+          setTitle2(response.data.title);
+          setText2(response.data.text);
+        })
     }
   };
  
   // previous blog post
   const decrease = async() => {
     if (counter === 0) {
-      setCounter(counter => counter = (ids - 1))
-      await axios.get(URL + (counter + (ids - 1)))
+      setCounter(counter => counter = numPosts)
+      await axios.get(URL + (counter + numPosts))
         .then((response:any) => {
           setTitle(response.data.title);
           setText(response.data.text);
           setTime(response.data.time);
           setDay(response.data.day);
           setDate(response.data.date);
+        })
+      // get next post title
+      await axios.get(URL + (counter + numPosts + 1))
+        .then((response:any) => {
+          setTitle2(response.data.title);
+          setText2(response.data.text);
         })
     } else if (counter > 0) {
         setCounter(counter => counter - 1);
@@ -90,6 +123,12 @@ const Blog = () => {
             setTime(response.data.time);
             setDay(response.data.day);
             setDate(response.data.date);
+          })
+        // get next post title
+        await axios.get(URL + counter)
+          .then((response:any) => {
+            setTitle2(response.data.title);
+            setText2(response.data.text);
           })
     }
   };
@@ -106,23 +145,24 @@ const Blog = () => {
       />
       <section className="flex flex-col w-auto justify-center md:flex-row-reverse">
         <>
-          <button onClick={() => setShow(!show)}>
-            <>
-              <div className="flex flex-col font-mono bg-white w-full h-52 pt-6 px-7 pb-4 mb-12 rounded-xl relative justify-between md:w-80">
-                <h6 className="flex text-dark-grey font-bold uppercase font-mono">
-                  {title}
-                </h6>
-                <p className="line-clamp-4 text-left">
-                  {text}
-                </p>
-                <h6 className="flex text-dark-grey text-sm font-mono self-end justify-end uppercase">
-                  {time}&nbsp;{day}&nbsp;{date}
-                </h6>
-                <span className="blog-post-triangle absolute" />
-              </div>
-              { show ? disableBodyScroll(Document as any) : enableBodyScroll(Document as any) } 
-            </>
-          </button>
+          <div className="flex flex-col">
+            <button onClick={() => setShow(!show)}>
+              <>
+                <FirstBlogPost 
+                  title={title} 
+                  time={time}
+                  text={text}
+                  day={day}
+                  date={date}
+                />
+                { show ? disableBodyScroll(Document as any) : enableBodyScroll(Document as any) } 
+              </>
+            </button>
+            <SecondBlogPost 
+              title2={title2}
+              text2={text2}
+            />
+          </div>
           { show ? 
             <div className="blog-post">
               <BlogPost 
@@ -152,6 +192,35 @@ const Heading: FC<BlogProps> = ({heading}) => (
   <h2 id="blog" className="flex font-mono text-forest-green leading-10 text-2xl mb-4 uppercase">
     {heading}
   </h2>
+)
+
+const FirstBlogPost = ({title, text, time, day, date}:any) => (
+  <div className="flex flex-col font-mono bg-white w-full h-52 pt-6 px-7 pb-4 mb-6 rounded-xl relative justify-between md:w-80">
+    <h6 className="flex text-dark-grey font-bold uppercase font-mono">
+      {title}
+    </h6>
+    <p className="line-clamp-4 text-left">
+      {text}
+    </p>
+    <h6 className="flex text-dark-grey text-sm font-mono self-end justify-end uppercase">
+      {time}&nbsp;{day}&nbsp;{date}
+    </h6>
+    <span className="blog-post-triangle absolute" />
+  </div>
+)
+
+const SecondBlogPost = ({title2, text2}:any) => (
+  <>
+  <div className="flex flex-col font-mono bg-white w-full h-28 pt-6 px-7 pb-4 mt-8 mb-12 rounded-t-xl relative justify-between md:w-80">
+    <h6 className="flex text-dark-grey font-bold uppercase font-mono select-none">
+      {title2}
+    </h6>
+    <p className="line-clamp-4 text-left select-none">
+      {text2}
+    </p>
+  </div>
+  <div className="blog-wrap" />
+  </>
 )
 
 const BlogPost = ({title, text, time, day, date, handlers}:any) => (

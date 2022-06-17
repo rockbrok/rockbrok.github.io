@@ -590,6 +590,10 @@ video {
   }
 }
 
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
 }
@@ -623,16 +627,25 @@ video {
   margin-bottom: 0.25rem;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
 .mb-3 {
   margin-bottom: 0.75rem;
 }
 
 .mt-3 {
   margin-top: 0.75rem;
-}
-
-.-mb-10 {
-  margin-bottom: -2.5rem;
 }
 
 .ml-4 {
@@ -663,10 +676,6 @@ video {
   height: 13rem;
 }
 
-.h-80 {
-  height: 20rem;
-}
-
 .h-12 {
   height: 3rem;
 }
@@ -681,6 +690,14 @@ video {
 
 .h-14 {
   height: 3.5rem;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .w-auto {
@@ -701,6 +718,10 @@ video {
 
 .w-60 {
   width: 15rem;
+}
+
+.w-52 {
+  width: 13rem;
 }
 
 .w-min {
@@ -794,6 +815,10 @@ video {
   align-items: center;
 }
 
+.justify-start {
+  justify-content: flex-start;
+}
+
 .justify-end {
   justify-content: flex-end;
 }
@@ -823,19 +848,14 @@ video {
   row-gap: 3rem;
 }
 
-.gap-x-4 {
-  -webkit-column-gap: 1rem;
-          column-gap: 1rem;
+.gap-x-3 {
+  -webkit-column-gap: 0.75rem;
+          column-gap: 0.75rem;
 }
 
 .gap-x-7 {
   -webkit-column-gap: 1.75rem;
           column-gap: 1.75rem;
-}
-
-.gap-x-3 {
-  -webkit-column-gap: 0.75rem;
-          column-gap: 0.75rem;
 }
 
 .gap-x-6 {
@@ -853,6 +873,10 @@ video {
 
 .justify-self-center {
   justify-self: center;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .whitespace-nowrap {
@@ -921,8 +945,16 @@ video {
   background-image: url('../portfolio/assets/google-logo.png');
 }
 
+.bg-280 {
+  background-size: 280px;
+}
+
 .bg-46 {
   background-size: 52px;
+}
+
+.bg-200 {
+  background-size: 200px;
 }
 
 .bg-center {
@@ -936,11 +968,6 @@ video {
 .px-7 {
   padding-left: 1.75rem;
   padding-right: 1.75rem;
-}
-
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 
 .px-5 {
@@ -1017,16 +1044,8 @@ video {
   line-height: 2.5rem;
 }
 
-.leading-7 {
-  line-height: 1.75rem;
-}
-
 .leading-5 {
   line-height: 1.25rem;
-}
-
-.leading-4 {
-  line-height: 1rem;
 }
 
 .leading-6 {
@@ -1105,5 +1124,13 @@ video {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:w-80 {
+    width: 20rem;
+  }
+
+  .md\:flex-row-reverse {
+    flex-direction: row-reverse;
   }
 }

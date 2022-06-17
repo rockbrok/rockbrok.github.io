@@ -25,20 +25,51 @@ body {
 .triangle {
 	width: 0;
 	height: 0;
+  margin-top: -2px;
 	border-right: 8px solid  transparent; 
 	border-left: 8px solid  transparent; 
-	border-bottom: 13.85641px solid #4285F5; /* (border-left-width 50px + border-right-width 50px) * 0.8660254 = 86.60254px  border-bottom-width = EquilateralTriangle height */
+	border-bottom: 13.85641px solid #EB4335; /* (border-left-width 50px + border-right-width 50px) * 0.8660254 = 86.60254px  border-bottom-width = EquilateralTriangle height */
 }
 .circle {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background-color: #EB4335; 
+  background-color: #4285F5;
+  margin-left: -1px;
 }
 .square {
   width: 16px;
   height: 16px;
   background-color: #FBBC05;
+}
+.diamond {
+  width: 14px;
+  height: 14px;
+  background-color: #3ACA60;
+  transform: rotate(45deg);
+  margin: 0 1px;
+}
+.star{
+  position:relative;
+  width: 10px;
+  margin: -9px 0 0 7px;
+  transform: rotate(45deg);
+}
+.star:before{
+  content:"";
+  position:absolute;
+  background: #fff;
+  width: 10px;
+  height:12px;
+  transform: rotate(-45deg) skewX(22.5deg) skewY(22.5deg);
+}
+.star:after{
+  content:"";
+  position:absolute;
+  background: #fff;
+  width: 10px;
+  height:12px;
+  transform: rotate(45deg) skewX(22.5deg) skewY(22.5deg);
 }
 
 /* X */
@@ -174,7 +205,8 @@ div::-webkit-scrollbar-button:single-button {
   top: 0;
 }
 
-.project-mobile {
+/* PROJECT OVERLAY */
+.project-overlay {
   width: 100%;
   height: 100%;
   z-index: 5;
@@ -183,20 +215,33 @@ div::-webkit-scrollbar-button:single-button {
   top: 0;
   overflow-y:scroll;
 }
-
-.project-mobile-top {
+.project-overlay-top {
   padding: 40px 40px 20px 40px;
   height: auto;
   background-color: #222;
   border-bottom: 5px solid #35A853;
   display: flex;
 }
-
-.project-mobile-bottom {
+.project-overlay-bottom {
   padding: 40px 40px 20px 40px;
   height: auto;
   background-color: #fff;
   display: flex;
+}
+.clear-container {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 20px;
+  right: 20px;
+}
+
+.blog-wrap {
+  height: 24px;
+  z-index: 5;
+  background-color: #222;
+  margin-top: -72px;
+  margin-bottom: 30px;
 }
 
 /* BLOG OVERLAY */
