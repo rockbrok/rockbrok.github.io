@@ -3,25 +3,31 @@ import { FC } from 'react';
 interface HeadingProps {
   heading: string;
 }
-interface SubHeadingProps {
-  subheading: string;
-}
 
 const Header = () => {
   return (
-    <header className="flex flex-col mx-auto h-screen container overflow-fix">
+    <header className="flex flex-col mx-auto h-screen container overflow-fix justify-between">
       <NavBar/>
-      <Heading 
-        heading={`Hi, I'm Glenn Phillips! \n`} 
-      />
-      <div className="flex flex-col flex-wrap h-full w-full container">
-        <div className="flex justify-start w-full container">
-          <SubHeading 
-            subheading={`I'm a front-end developer \n from the US.`} 
+      <div className="xl:flex flex-row container mx-auto justify-center xl:mt-12">
+        <div className="flex flex-col">
+          <Heading 
+            heading={`Hi, I'm Glenn Phillips! \n`} 
           />
-          <SocialButtons/>
+          <div className="flex flex-col h-full w-full container">
+            <div className="md:flex flex-row w-full container">
+              <div className="flex flex-col justify-start w-full container">
+                <SubHeading/>
+                <SocialButtons/>
+              </div>
+              <div className="flex flex-row justify-end mt-4 xl:hidden">
+                <div className="bg-[url('http://paq000.github.io/portfolio/assets/profile.png')] bg-no-repeat bg-center bg-[length:320px_414px] w-320 h-414 md:bg-[length:388px_498px] md:w-388 md:h-498 xl:hidden" />
+              </div>
+            </div>
+          </div>
         </div>
-        <Profile />
+        <div className="hidden xl:flex flex-row justify-end mt-16">
+          <div className="hidden xl:flex bg-[url('http://paq000.github.io/portfolio/assets/profile.png')] bg-no-repeat bg-center bg-[length:430px_552px] w-430 h-552" />
+        </div>
       </div>
     </header>
   )
@@ -88,21 +94,20 @@ const SocialButtons = () => (
   </div>
 );
 
-const Profile = () => (
-  <div className="mt-8">
-    <div className="flex profile-pic" />
-  </div>
-);
-
 const Heading: FC<HeadingProps> = ({heading}) => (
   <div className="flex flex-col flex-start my-5 md:mt-10">
     <h1 className="text-white font-sans text-5xl display-linebreak uppercase">{heading}</h1>
   </div>
 );
 
-const SubHeading: FC<SubHeadingProps> = ({ subheading }) => (
+const SubHeading = () => (
   <h3 className="flex flex-start text-light-grey font-normal font-mono leading-6 text-2xl display-linebreak">
-    {subheading}
+    <div className="xl:hidden">
+      {`I'm a front-end developer \n from the US.`}
+    </div>
+    <div className="hidden xl:flex">
+      {`I'm a front-end developer from the US.`}
+    </div>
   </h3>
 );
 

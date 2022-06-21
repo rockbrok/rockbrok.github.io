@@ -84,18 +84,19 @@ const Key = () => (
 );
 
 const Project1: FC<Project1Title & UseStateProps> = ({setShow, show, project1}: any) => (
-  <section className="project-container">
-    <div className="project-icons flex flex-row justify-center gap-x-3 items-center">
+  <section className="w-264 h-344 relative">
+
+    <div className="flex flex-row absolute top-0px h-50 w-118 border-solid border-t-2 border-x-2 border-white border-b-0 rounded-t-3xl justify-center gap-x-3 items-center">
       <Triangle />
       <Circle />
       <Square />
     </div>
     <button onClick={() => setShow(!show)}>
       <>
-        <div className="project">
+        <div className="flex border-2 border-solid border-white justify-center items-center absolute cursor-pointer top-50px w-full h-244">
           <span className="bg-google-logo bg-no-repeat bg-200 bg-center w-52 h-20 flex" />
         </div>
-        <div className="project-title-bar">
+        <div className="flex absolute justify-center items-center bottom-0px w-full cursor-pointer h-50 border-2 border-solid border-white border-t-0 rounded-br-3xl rounded-bl-3xl text-light-grey bg-white">
           <h4 className="text-grey text-xl font-mono select-none">{project1}</h4>
         </div>
         { show ? disableBodyScroll(Document as any) : enableBodyScroll(Document as any) }
@@ -106,18 +107,18 @@ const Project1: FC<Project1Title & UseStateProps> = ({setShow, show, project1}: 
 );
 
 const Project2: FC<Project2Title & UseStateProps>= ({setShow, show, project2}) => (
-  <section className="project-container">
-    <div className="project-icons flex flex-row justify-center gap-x-3 items-center">
+  <section className="w-264 h-344 relative">
+    <div className="flex flex-row absolute top-0px h-50 w-118 border-solid border-t-2 border-x-2 border-white border-b-0 rounded-t-3xl justify-center gap-x-3 items-center">
       <Circle />
       <Diamond />
       <Star />
     </div>
     <button onClick={() => setShow(!show)}>
       <>
-        <div className="project">
+        <div className="flex border-2 border-solid border-white justify-center items-center absolute cursor-pointer top-50px w-full h-244">
           <span className="bg-google-logo bg-no-repeat bg-200 bg-center w-52 h-20 flex" />
         </div>
-        <div className="project-title-bar">
+        <div className="flex absolute justify-center items-center bottom-0px w-full cursor-pointer h-50 border-2 border-solid border-white border-t-0 rounded-br-3xl rounded-bl-3xl text-light-grey bg-white ">
           <h4 className="text-grey text-xl font-mono select-none">{project2}</h4>
         </div>
         { show ? disableBodyScroll(Document as any) : enableBodyScroll(Document as any) }

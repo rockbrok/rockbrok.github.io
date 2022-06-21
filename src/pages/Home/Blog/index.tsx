@@ -205,7 +205,7 @@ const FirstBlogPost = ({title, text, time, day, date}:any) => (
     <h6 className="flex text-dark-grey text-sm font-mono self-end justify-end uppercase">
       {time}&nbsp;{day}&nbsp;{date}
     </h6>
-    <span className="blog-post-triangle absolute" />
+    <div className="h-0 w-0 border-t-white border-l-transparent border-r-transparent border-b-transparent border-solid border-t-30 border-r-30 border-b-0 border-l-0 mt-180px ml-30px absolute" />
   </div>
 )
 
@@ -219,7 +219,8 @@ const SecondBlogPost = ({title2, text2}:any) => (
       {text2}
     </p>
   </div>
-  <div className="blog-wrap" />
+
+  <div className="h-8 z-10 -mt-60px mb-8 -mx-2 bg-dark-grey" />
   </>
 )
 
