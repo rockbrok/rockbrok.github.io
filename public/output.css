@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.2 | MIT License | https://tailwindcss.com
+! tailwindcss v3.1.4 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -353,13 +353,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   /* 2 */
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
@@ -590,12 +583,27 @@ video {
   }
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
 
 .relative {
   position: relative;
+}
+
+.inset-0 {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.bottom-25px {
+  bottom: 25px;
 }
 
 .top-0px {
@@ -610,8 +618,24 @@ video {
   bottom: 0px;
 }
 
+.z-30 {
+  z-index: 30;
+}
+
+.z-40 {
+  z-index: 40;
+}
+
+.z-20 {
+  z-index: 20;
+}
+
 .z-10 {
   z-index: 10;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .mx-auto {
@@ -627,6 +651,11 @@ video {
 .-mx-2 {
   margin-left: -0.5rem;
   margin-right: -0.5rem;
+}
+
+.mx-45px {
+  margin-left: 45px;
+  margin-right: 45px;
 }
 
 .my-1 {
@@ -675,6 +704,14 @@ video {
   margin-top: 0.75rem;
 }
 
+.mt-0 {
+  margin-top: 0px;
+}
+
+.mb-10px {
+  margin-bottom: 10px;
+}
+
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -689,22 +726,6 @@ video {
 
 .ml-4 {
   margin-left: 1rem;
-}
-
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-
-.-mt-1 {
-  margin-top: -0.25rem;
-}
-
-.mt-1 {
-  margin-top: 0.25rem;
-}
-
-.-mt-2 {
-  margin-top: -0.5rem;
 }
 
 .mb-2 {
@@ -731,16 +752,24 @@ video {
   display: flex;
 }
 
-.grid {
-  display: grid;
-}
-
 .inline-grid {
   display: inline-grid;
 }
 
 .hidden {
   display: none;
+}
+
+.h-206 {
+  height: 206px;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-5 {
+  height: 5px;
 }
 
 .h-52 {
@@ -759,6 +788,14 @@ video {
   height: 2rem;
 }
 
+.h-\[calc\(100\%-70px\)\] {
+  height: calc(100% - 70px);
+}
+
+.h-60 {
+  height: 60px;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -767,12 +804,12 @@ video {
   height: 100vh;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-414 {
   height: 414px;
+}
+
+.h-552 {
+  height: 552px;
 }
 
 .h-10 {
@@ -799,8 +836,8 @@ video {
   height: 5rem;
 }
 
-.h-552 {
-  height: 552px;
+.w-264 {
+  width: 264px;
 }
 
 .w-auto {
@@ -815,12 +852,20 @@ video {
   width: 0px;
 }
 
+.w-\[calc\(100\%-90px\)\] {
+  width: calc(100% - 90px);
+}
+
 .w-12 {
   width: 3rem;
 }
 
 .w-320 {
   width: 320px;
+}
+
+.w-430 {
+  width: 430px;
 }
 
 .w-10 {
@@ -840,20 +885,12 @@ video {
   width: 2rem;
 }
 
-.w-264 {
-  width: 264px;
-}
-
 .w-118 {
   width: 118px;
 }
 
 .w-52 {
   width: 13rem;
-}
-
-.w-430 {
-  width: 430px;
 }
 
 .max-w-lg {
@@ -896,7 +933,6 @@ video {
 
 .select-none {
   -webkit-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -964,6 +1000,10 @@ video {
   gap: 2rem;
 }
 
+.gap-20 {
+  gap: 5rem;
+}
+
 .gap-x-2 {
   -webkit-column-gap: 0.5rem;
           column-gap: 0.5rem;
@@ -974,8 +1014,9 @@ video {
           column-gap: 1.5rem;
 }
 
-.gap-y-24 {
-  row-gap: 6rem;
+.gap-x-12 {
+  -webkit-column-gap: 3rem;
+          column-gap: 3rem;
 }
 
 .gap-x-3 {
@@ -1002,6 +1043,10 @@ video {
 
 .justify-self-center {
   justify-self: center;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
 }
 
 .whitespace-nowrap {
@@ -1067,6 +1112,11 @@ video {
   border-style: solid;
 }
 
+.border-light-green {
+  --tw-border-opacity: 1;
+  border-color: rgb(58 202 96 / var(--tw-border-opacity));
+}
+
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -1103,8 +1153,12 @@ video {
   background-color: transparent;
 }
 
-.bg-blog-pic {
-  background-image: url('../portfolio/assets/blog-man.png');
+.bg-\[url\(\'http\:\/\/paq000\.github\.io\/portfolio\/assets\/404-man\.png\'\)\] {
+  background-image: url('http://paq000.github.io/portfolio/assets/404-man.png');
+}
+
+.bg-\[url\(\'http\:\/\/paq000\.github\.io\/portfolio\/assets\/blog-man\.png\'\)\] {
+  background-image: url('http://paq000.github.io/portfolio/assets/blog-man.png');
 }
 
 .bg-\[url\(\'http\:\/\/paq000\.github\.io\/portfolio\/assets\/profile\.png\'\)\] {
@@ -1135,12 +1189,16 @@ video {
   background-image: url('../portfolio/assets/google-logo.png');
 }
 
-.bg-260 {
-  background-size: 260px;
+.bg-\[length\:264px_206px\] {
+  background-size: 264px 206px;
 }
 
 .bg-\[length\:320px_414px\] {
   background-size: 320px 414px;
+}
+
+.bg-\[length\:430px_552px\] {
+  background-size: 430px 552px;
 }
 
 .bg-46 {
@@ -1149,10 +1207,6 @@ video {
 
 .bg-200 {
   background-size: 200px;
-}
-
-.bg-\[length\:430px_552px\] {
-  background-size: 430px 552px;
 }
 
 .bg-center {
@@ -1167,9 +1221,18 @@ video {
   padding: 1.75rem;
 }
 
+.p-20px {
+  padding: 20px;
+}
+
 .px-7 {
   padding-left: 1.75rem;
   padding-right: 1.75rem;
+}
+
+.px-45px {
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
 .px-5 {
@@ -1183,6 +1246,14 @@ video {
 
 .pb-4 {
   padding-bottom: 1rem;
+}
+
+.pt-50px {
+  padding-top: 50px;
+}
+
+.pb-10px {
+  padding-bottom: 10px;
 }
 
 .pl-4 {
@@ -1312,9 +1383,26 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:absolute {
+    position: absolute;
+  }
+
+  .md\:relative {
+    position: relative;
+  }
+
+  .md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .md\:my-10 {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
+  }
+
+  .md\:mb-0 {
+    margin-bottom: 0px;
   }
 
   .md\:mt-10 {
@@ -1329,12 +1417,20 @@ video {
     display: none;
   }
 
+  .md\:h-414 {
+    height: 414px;
+  }
+
   .md\:h-498 {
     height: 498px;
   }
 
   .md\:w-80 {
     width: 20rem;
+  }
+
+  .md\:w-768 {
+    width: 768px;
   }
 
   .md\:w-388 {
@@ -1345,8 +1441,62 @@ video {
     flex-direction: row-reverse;
   }
 
+  .md\:gap-x-12 {
+    -webkit-column-gap: 3rem;
+            column-gap: 3rem;
+  }
+
+  .md\:self-end {
+    align-self: flex-end;
+  }
+
   .md\:bg-\[length\:388px_498px\] {
     background-size: 388px 498px;
+  }
+
+  .md\:px-50px {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:h-302 {
+    height: 302px;
+  }
+
+  .lg\:w-400 {
+    width: 400px;
+  }
+
+  .lg\:w-1180 {
+    width: 1180px;
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
+  .lg\:bg-\[length\:400px_302px\] {
+    background-size: 400px 302px;
+  }
+
+  .lg\:px-70px {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
+  .lg\:scrollbar-default {
+    -ms-overflow-style: auto;
+    scrollbar-width: auto;
+  }
+
+  .lg\:scrollbar-default::-webkit-scrollbar {
+    display: block;
   }
 }
 

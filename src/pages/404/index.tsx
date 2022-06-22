@@ -11,10 +11,7 @@ export default function NotFound() {
           </h3>
           </div>
 
-
-          <div className="flex">
-            <div className="pic-404"/>
-          </div>
+          <div className="md:flex self-center md:self-end z-30 bg-[url('http://paq000.github.io/portfolio/assets/404-man.png')] bg-no-repeat bg-center bg-[length:264px_206px] w-264 h-206 lg:bg-[length:400px_302px] lg:w-400 lg:h-302" />
     </section>
   );
 }

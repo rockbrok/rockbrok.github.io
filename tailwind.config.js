@@ -10,8 +10,6 @@ module.exports = {
       'md': '640px',
       'lg': '768px',
       'xl': '976px',
-      '2xl': '1280px',
-      '3xl': '1440px',
     },
     borderWidth: {
       '2': '2px',
@@ -42,8 +40,6 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'blog-pic': "url('../portfolio/assets/blog-man.png')",
-        '404-man': "url('../portfolio/assets/404-man.png')",
         'email-icon': "url('../portfolio/assets/email-icon.png')",
         'download-icon': "url('../portfolio/assets/download-icon.png')",
         'github-icon': "url('../portfolio/assets/github-icon.png')",
@@ -56,8 +52,13 @@ module.exports = {
       },
       spacing: {
         '2px': '2px',
+        '10px': '10px',
+        '20px': '20px',
         '30px': '30px',
+        '45px': '45px',
+        '50px': '50px',
         '60px': '60px',
+        '70px': '70px',
         '180px': '180px'
       },
       width: {
@@ -65,11 +66,19 @@ module.exports = {
         '264': '264px',
         '320': '320px',
         '388': '388px',
-        '430': '430px'
+        '400': '400px',
+        '430': '430px',
+        '600': '600px',
+        '768': '768px',
+        '1180': '1180px',
       },
       height: {
+        '5': '5px',
         '50': '50px',
+        '60': '60px',
+        '206': '206px',
         '244': '244px',
+        '302': '302px',
         '344': '344px',
         '414': '414px',
         '498': '498px',
@@ -77,6 +86,9 @@ module.exports = {
       },
       inset: {
         '0px': '0px',
+        '10px': '10px',
+        '15px': '15px',
+        '25px': '25px',
         '50px': '50px'
       }
     },

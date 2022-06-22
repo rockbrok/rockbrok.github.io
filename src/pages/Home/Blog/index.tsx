@@ -143,47 +143,50 @@ const Blog = () => {
       <Heading 
         heading={`Blog`}
       />
-      <section className="flex flex-col w-auto justify-center md:flex-row-reverse">
-        <>
-          <div className="flex flex-col gap-8">
-            <button onClick={() => setShow(!show)}>
-              <>
-                <FirstBlogPost 
+      <div className="md:flex justify-center md:relative md:h-414">
+        <section className="flex flex-col w-auto justify-center md:flex-row-reverse md:gap-x-12 md:absolute">
+          <>
+            <div className="flex flex-col gap-8">
+              <button onClick={() => setShow(!show)}>
+                <>
+                  <FirstBlogPost 
+                    title={title} 
+                    time={time}
+                    text={text}
+                    day={day}
+                    date={date}
+                  />
+                  { show ? disableBodyScroll(Document as any) : enableBodyScroll(Document as any) } 
+                </>
+              </button>
+              <SecondBlogPost 
+                title2={title2}
+                text2={text2}
+              />
+            </div>
+            { show ? 
+              <div className="w-full h-full z-40 fixed bg-white inset-0">
+                <BlogPost 
                   title={title} 
                   time={time}
                   text={text}
                   day={day}
                   date={date}
+                  handlers={handlers}
+                /> 
+                <BlogButtons
+                  show={show} 
+                  setShow={setShow} 
+                  increase={increase}
+                  decrease={decrease}
                 />
-                { show ? disableBodyScroll(Document as any) : enableBodyScroll(Document as any) } 
-              </>
-            </button>
-            <SecondBlogPost 
-              title2={title2}
-              text2={text2}
-            />
-          </div>
-          { show ? 
-            <div className="blog-post">
-              <BlogPost 
-                title={title} 
-                time={time}
-                text={text}
-                day={day}
-                date={date}
-                handlers={handlers}
-              /> 
-              <BlogButtons
-                show={show} 
-                setShow={setShow} 
-                increase={increase}
-                decrease={decrease}
-              />
-            </div>
-          : null }
-        </>
-        <div className="flex bg-blog-pic bg-no-repeat bg-260 bg-center w-full h-52" />
-      </section>
+              </div>
+            : null }
+          </>
+          <div className="md:flex self-center md:self-end z-30 bg-[url('http://paq000.github.io/portfolio/assets/blog-man.png')] bg-no-repeat bg-center bg-[length:264px_206px] w-264 h-206 lg:bg-[length:400px_302px] lg:w-400 lg:h-302" />
+          <div className="hidden md:flex z-20 h-5 bg-white w-full absolute bottom-25px" />
+        </section>
+      </div>
     </>
   );
 };
@@ -219,13 +222,12 @@ const SecondBlogPost = ({title2, text2}:any) => (
       {text2}
     </p>
   </div>
-
-  <div className="h-8 z-10 -mt-60px mb-8 -mx-2 bg-dark-grey" />
+  <div className="h-8 z-10 -mt-60px mb-8 md:mb-0 -mx-2 bg-dark-grey" />
   </>
 )
 
 const BlogPost = ({title, text, time, day, date, handlers}:any) => (
-  <div className="blog-post-text scrollbar-hide" {...handlers}>
+  <div className="h-[calc(100%-70px)] overflow-y-scroll w-full md:w-768 scrollbar-hide pt-50px pb-10px px-45px md:mx-auto lg:scrollbar-default" {...handlers}>
     <h6 className="flex text-dark-grey font-bold uppercase font-mono mb-3">
       {title}
     </h6>
@@ -244,17 +246,19 @@ const BlogPost = ({title, text, time, day, date, handlers}:any) => (
 )
 
 const BlogButtons = ({setShow, show, increase, decrease}:any) => (
-  <div className="blog-post-buttons flex flex-row items-center justify-evenly">
-    <LeftArrow 
-      decrease={decrease}
-    />
-    <Close
-      show={show}
-      setShow={setShow}
-    />
-    <RightArrow 
-      increase={increase}
-    />
+  <div className="md:flex justify-center">
+    <div className="h-60 mt-0 mb-10px mx-45px border-t-2 border-solid border-light-green w-[calc(100%-90px)] flex flex-row items-center justify-evenly md:w-768">
+      <LeftArrow 
+        decrease={decrease}
+      />
+      <Close
+        show={show}
+        setShow={setShow}
+      />
+      <RightArrow 
+        increase={increase}
+      />
+    </div>
   </div>
 )
 
