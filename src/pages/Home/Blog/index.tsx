@@ -139,14 +139,14 @@ const Blog = () => {
   });
 
   return (
-    <>
+    <section className="flex flex-col container mt-28 gap-4 xl:mt-40">
       <Heading 
         heading={`Blog`}
       />
       <div className="md:flex justify-center md:relative md:h-414">
         <section className="flex flex-col w-auto justify-center md:flex-row-reverse md:gap-x-12 md:absolute">
           <>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-8 md:mb-[-2px] lg:mb-[4px]">
               <button onClick={() => setShow(!show)}>
                 <>
                   <FirstBlogPost 
@@ -183,11 +183,10 @@ const Blog = () => {
               </div>
             : null }
           </>
-          <div className="md:flex self-center md:self-end z-30 bg-[url('http://paq000.github.io/portfolio/assets/blog-man.png')] bg-no-repeat bg-center bg-[length:264px_206px] w-264 h-206 lg:bg-[length:400px_302px] lg:w-400 lg:h-302" />
-          <div className="hidden md:flex z-20 h-5 bg-white w-full absolute bottom-25px" />
+          <BlogPic />
         </section>
       </div>
-    </>
+    </section>
   );
 };
 
@@ -195,6 +194,16 @@ const Heading: FC<BlogProps> = ({heading}) => (
   <h2 id="blog" className="flex font-mono text-forest-green leading-10 text-2xl uppercase">
     {heading}
   </h2>
+)
+
+const BlogPic = () => (
+  <>
+    <div className="md:hidden flex h-0 w-3/4 pb-55p relative self-center">
+      <div className="absolute inset-0 md:flex self-center md:self-end z-30 bg-[url('http://paq000.github.io/portfolio/assets/blog-man.png')] bg-no-repeat bg-center bg-[length:100%_100%] w-full h-full" />
+    </div>
+    <div className="hidden md:flex self-center md:self-end z-30 bg-[url('http://paq000.github.io/portfolio/assets/blog-man.png')] bg-no-repeat bg-center bg-[length:320px_244px] w-320 h-244 lg:bg-[length:400px_302px] lg:w-400 lg:h-302" />
+    <div className="hidden md:flex z-20 h-2 bg-white md:w-688 lg:w-884 xl:w-1040 absolute bottom-28px lg:bottom-35px" />
+  </>
 )
 
 const FirstBlogPost = ({title, text, time, day, date}:any) => (

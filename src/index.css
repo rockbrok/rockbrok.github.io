@@ -15,6 +15,15 @@ body {
   overflow-x: visible;
 }
 
+.heightfix {
+  height: 100vh;
+}
+@media (min-height: 1080px) {
+  .heightfix {
+    height: 920px;
+  }
+}
+
 /* FILTERS */
 .gold-filter {
   filter: invert(74%) sepia(77%) saturate(2178%) hue-rotate(1deg) brightness(105%) contrast(97%);

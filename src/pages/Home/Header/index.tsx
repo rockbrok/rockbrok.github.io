@@ -6,7 +6,7 @@ interface HeadingProps {
 
 const Header = () => {
   return (
-    <header className="flex flex-col mx-auto h-screen container overflow-fix justify-between">
+    <header className="flex flex-col mx-auto container overflow-fix justify-between heightfix">
       <NavBar/>
       <div className="xl:flex flex-row container mx-auto justify-center xl:mt-12">
         <div className="flex flex-col">
@@ -19,15 +19,11 @@ const Header = () => {
                 <SubHeading/>
                 <SocialButtons/>
               </div>
-              <div className="flex flex-row justify-end mt-4 xl:hidden">
-                <div className="bg-[url('http://paq000.github.io/portfolio/assets/profile.png')] bg-no-repeat bg-center bg-[length:320px_414px] w-320 h-414 md:bg-[length:388px_498px] md:w-388 md:h-498 xl:hidden" />
-              </div>
+              <Profile/>
             </div>
           </div>
         </div>
-        <div className="hidden xl:flex flex-row justify-end mt-16">
-          <div className="hidden xl:flex bg-[url('http://paq000.github.io/portfolio/assets/profile.png')] bg-no-repeat bg-center bg-[length:430px_552px] w-430 h-552" />
-        </div>
+        <ProfileXL/>
       </div>
     </header>
   )
@@ -109,6 +105,18 @@ const SubHeading = () => (
       {`I'm a front-end developer from the US.`}
     </div>
   </h3>
+);
+
+const Profile = () => (
+  <div className="flex flex-row justify-end mt-4 xl:hidden">
+    <div className="bg-[url('http://paq000.github.io/portfolio/assets/profile.png')] bg-no-repeat bg-center bg-[length:320px_414px] w-320 h-414 md:bg-[length:388px_498px] md:w-388 md:h-498 xl:hidden" />
+  </div>
+);
+
+const ProfileXL = () => (
+  <div className="hidden xl:flex flex-row justify-end mt-16">
+    <div className="hidden xl:flex bg-[url('http://paq000.github.io/portfolio/assets/profile.png')] bg-no-repeat bg-center bg-[length:430px_552px] w-430 h-552" />
+  </div>
 );
 
 export default Header;

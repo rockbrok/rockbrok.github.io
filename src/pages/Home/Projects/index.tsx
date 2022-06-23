@@ -27,40 +27,49 @@ const Projects = () => {
   const tech = "Tech used";
 
   return (
-    <>
-      <div className="lg:flex flex-row justify-between">
-        <h2 id="projects" className="flex font-mono text-forest-green text-2xl uppercase">
+    <section className="flex flex-col container mt-28 gap-4">
+      <div className="xl:flex flex-row justify-between items-center content-center xl:mb-12 xl:mt-20">
+        <h2 id="projects" className="flex font-mono text-forest-green text-2xl leading-6 uppercase self-end">
           Projects
         </h2>
         <Key />
       </div>
-        <section className="flex flex-wrap container justify-center gap-20 z-40">
-          <Project1
-            title={`Google Frontend`}
-            showProject1={showProject1}
-            setShowProject1={setShowProject1}
-            description={description}
-            viewProject={viewProject}
-            viewCode={viewCode}
-            tech={tech}
-          />
-          <Project2
-            title={`Portfolio`}
-            showProject2={showProject2}
-            setShowProject2={setShowProject2}
-            description={description}
-            viewProject={viewProject}
-            viewCode={viewCode}
-            tech={tech}
-          />
-        </section>
-    </>
+      <section className="flex flex-wrap container justify-center md:grid md:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr gap-y-20 gap-x-[50px] md:gap-x-[110px] lg:gap-x-[46px] xl:gap-x-[124px] z-40">
+        <Project1
+          title={`Google Frontend`}
+          showProject1={showProject1}
+          setShowProject1={setShowProject1}
+          description={description}
+          viewProject={viewProject}
+          viewCode={viewCode}
+          tech={tech}
+        />
+        <Project2
+          title={`Portfolio`}
+          showProject2={showProject2}
+          setShowProject2={setShowProject2}
+          description={description}
+          viewProject={viewProject}
+          viewCode={viewCode}
+          tech={tech}
+        />
+        <Project2
+          title={`Shop`}
+          showProject2={showProject2}
+          setShowProject2={setShowProject2}
+          description={description}
+          viewProject={viewProject}
+          viewCode={viewCode}
+          tech={tech}
+        />
+      </section>
+    </section>
   );
 };
 
 const Key = () => (
-  <section className="flex flex-row w-auto justify-end">
-    <section className="flex flex-col lg:flex-row gap-x-12">
+  <section className="flex flex-row w-auto justify-end mb-4 xl:mb-0">
+    <section className="flex flex-col xl:flex-row gap-x-12">
       <div className="flex flex-row my-1 items-center">
         <Triangle />
         <span className="flex font-mono text-red pl-4">
@@ -196,15 +205,21 @@ const Project2Overlay: FC<Project2Props & ProjectProps> = ({setShowProject2, sho
     <div className="project-overlay-bottom flex flex-col">
       <h1 className="text-dark-grey text-3xl font-mono uppercase mb-2">{title}</h1>
       <h3 className="text-forest-green text-2xl font-mono mt-5 mb-3 leading-10">{description}</h3>
-      <p className="font-mono text-black leading-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique voluptates in ad, excepturi esse debitis quos perferendis, inventore repudiandae dolorem placeat asperiores assumenda accusamus molestias veritatis beatae facilis molestiae ab.</p>
+      <p className="font-mono text-black leading-5">This project's purpose is to serve as a demonstration of my past projects, and skills as a front-end developer. It was made using TailwindCSS, ReactJS, and TypeScript. It was designed by my partner. It was built with a mobile-first design.</p>
+      <p className="font-mono text-black leading-5 mt-4">The project is extremely simple and uses minimal dependencies. My blog posts are fetched using Axios and pages are switched by using a button (or swipe) which act as a counter, increasing (to the next) or decreasing (to the previous).</p>
       <h3 className="text-forest-green text-2xl font-mono mt-6 mb-3 leading-10">{tech}</h3>
       <ul className="inline-grid grid-cols-2 auto-cols-fr gap-x-4 list-disc list-outside">
         <li className="ml-4">Typescript</li>
         <li className="ml-4">ReactJS</li>
         <li className="ml-4">Tailwind CSS</li>
         <li className="ml-4">React Router</li>
-        <li className="ml-4">Typescript</li>
-        <li className="ml-4">TypescriptDD</li>
+        <li className="ml-4">Axios</li>
+        <li className="ml-4">Body Scroll Lock</li>
+        <li className="ml-4">React Swipeable</li>
+        <li className="ml-4">useState</li>
+        <li className="ml-4">useEffect</li>
+        <li className="ml-4">Function Components</li>
+        <li className="ml-4">JSON Server (Heroku)</li>
       </ul>
       <div className="flex flex-row justify-end mt-8 mb-2 gap-x-3">
         <div className="mt-2px">
