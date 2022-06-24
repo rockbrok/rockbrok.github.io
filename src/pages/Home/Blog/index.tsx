@@ -165,7 +165,7 @@ const Blog = () => {
               />
             </div>
             { show ? 
-              <div className="w-full h-full z-40 fixed bg-white inset-0">
+              <div className="w-full h-full z-40 fixed bg-white md:bg-dark-grey inset-0">
                 <BlogPost 
                   title={title} 
                   time={time}
@@ -236,7 +236,7 @@ const SecondBlogPost = ({title2, text2}:any) => (
 )
 
 const BlogPost = ({title, text, time, day, date, handlers}:any) => (
-  <div className="h-[calc(100%-70px)] overflow-y-scroll w-full md:w-768 scrollbar-hide pt-50px pb-10px px-45px md:mx-auto lg:scrollbar-default" {...handlers}>
+  <div className="h-[calc(100%-70px)] overflow-y-scroll w-full md:w-768 bg-white scrollbar-hide pt-50px pb-10px px-45px md:mx-auto lg:scrollbar-default" {...handlers}>
     <h6 className="flex text-dark-grey font-bold uppercase font-mono mb-3">
       {title}
     </h6>
@@ -255,7 +255,7 @@ const BlogPost = ({title, text, time, day, date, handlers}:any) => (
 )
 
 const BlogButtons = ({setShow, show, increase, decrease}:any) => (
-  <div className="md:flex justify-center">
+  <div className="md:flex justify-center bg-white md:w-768 mx-auto">
     <div className="h-60 mt-0 mb-10px mx-45px border-t-2 border-solid border-light-green w-[calc(100%-90px)] flex flex-row items-center justify-evenly md:w-768">
       <LeftArrow 
         decrease={decrease}
