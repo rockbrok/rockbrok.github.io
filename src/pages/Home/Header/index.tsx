@@ -67,12 +67,12 @@ const NavMobile = () => (
 
 const SocialButtons = () => (
   <div className="hidden flex-row w-min gap-x-6 flex-start md:flex md:my-10">
-    <a href="">
+    <a href="https://github.com/paq000">
       <div className="flex items-center justify-center rounded-full border-2 bg-transparent border-white w-11 h-11">
         <div className="flex bg-github-icon bg-no-repeat bg-46 bg-center h-8 w-8"/>
       </div>
     </a>
-    <a href="">
+    <a href="https://www.linkedin.com/in/glenn-p/">
       <div className="flex items-center justify-center rounded-full border-2 bg-transparent border-white w-11 h-11">
         <div className="flex bg-linkedin-icon bg-no-repeat bg-46 bg-center h-8 w-8"/>
       </div>
