@@ -109,13 +109,13 @@ const SubHeading = () => (
 
 const Profile = () => (
   <div className="flex flex-row justify-end mt-4 xl:hidden">
-    <div className="bg-[url('http://paq000.github.io/portfolio/assets/profile.png')] bg-no-repeat bg-center bg-[length:320px_414px] w-320 h-414 md:bg-[length:388px_498px] md:w-388 md:h-498 xl:hidden" />
+    <div className="bg-[url('https://glennphil.github.io/assets/profile.png')] bg-no-repeat bg-center bg-[length:320px_414px] w-320 h-414 md:bg-[length:388px_498px] md:w-388 md:h-498 xl:hidden" />
   </div>
 );
 
 const ProfileXL = () => (
   <div className="hidden xl:flex flex-row justify-end mt-16">
-    <div className="hidden xl:flex bg-[url('http://paq000.github.io/portfolio/assets/profile.png')] bg-no-repeat bg-center bg-[length:430px_552px] w-430 h-552" />
+    <div className="hidden xl:flex bg-[url('https://glennphil.github.io/assets/profile.png')] bg-no-repeat bg-center bg-[length:430px_552px] w-430 h-552" />
   </div>
 );
 

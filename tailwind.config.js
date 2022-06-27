@@ -41,12 +41,12 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'email-icon': "url('../portfolio/assets/email-icon.png')",
-        'download-icon': "url('../portfolio/assets/download-icon.png')",
-        'github-icon': "url('../portfolio/assets/github-icon.png')",
-        'linkedin-icon': "url('../portfolio/assets/linkedin-icon.png')",
-        'whatsapp-icon': "url('../portfolio/assets/whatsapp-icon.png')",
-        'google-logo': "url('../portfolio/assets/google-logo.png')",
+        'email-icon': "url('../assets/email-icon.png')",
+        'download-icon': "url('../assets/download-icon.png')",
+        'github-icon': "url('../assets/github-icon.png')",
+        'linkedin-icon': "url('../assets/linkedin-icon.png')",
+        'whatsapp-icon': "url('../assets/whatsapp-icon.png')",
+        'google-logo': "url('../assets/google-logo.png')",
       },
       rotate: {
         '270': '270deg',

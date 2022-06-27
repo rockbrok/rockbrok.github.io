@@ -23,7 +23,7 @@ const Heading = () => (
 const Image = () => (
   <div className="flex justify-center absolute container">
     <div className="flex h-0 w-70p pb-50p relative self-center">
-      <div className="absolute inset-0 md:flex self-center md:self-end z-30 bg-[url('http://paq000.github.io/portfolio/assets/404-man.png')] bg-no-repeat bg-center bg-[length:100%_100%] w-full h-full" />
+      <div className="absolute inset-0 md:flex self-center md:self-end z-30 bg-[url('https://glennphil.github.io/assets/404-man.png')] bg-no-repeat bg-center bg-[length:100%_100%] w-full h-full" />
     </div>
   </div>
 )
