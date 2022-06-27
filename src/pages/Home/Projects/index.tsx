@@ -141,8 +141,8 @@ const Project1Overlay: FC<Project1Props & ProjectProps> = ({setShowProject1, sho
         </div>
         <span className="bg-google-logo bg-no-repeat bg-200 bg-center w-52 h-20 flex my-9 self-center justify-self-center" />
         <div className="flex flex-row flex-wrap gap-x-4  gap-y-2 justify-evenly text-white">
-          <a className="whitespace-nowrap" href="https://paq000.github.io/Google/" target="_blank" rel="noreferrer" >{viewProject}</a>
-          <a className="whitespace-nowrap" href="https://github.com/paq000/Google" target="_blank" rel="noreferrer" >{viewCode}</a>
+          <a className="whitespace-nowrap" href="https://glennphil.github.io/Google/" target="_blank" rel="noreferrer" >{viewProject}</a>
+          <a className="whitespace-nowrap" href="https://github.com/glennphil/Google" target="_blank" rel="noreferrer" >{viewCode}</a>
         </div>
       </div>
       <div className="project-overlay-bottom flex flex-col md:w-768">
@@ -208,7 +208,7 @@ const Project2Overlay: FC<Project2Props & ProjectProps> = ({setShowProject2, sho
         </div>
         <span className="bg-google-logo bg-no-repeat bg-200 bg-center w-52 h-20 flex my-9 self-center justify-self-center" />
         <div className="flex flex-row flex-wrap gap-x-4  gap-y-2 justify-evenly text-white">
-          <a className="whitespace-nowrap" href="https://github.com/paq000/portfolio" target="_blank" rel="noreferrer">{viewCode}</a>
+          <a className="whitespace-nowrap" href="https://github.com/glennphil/glennphil.github.io" target="_blank" rel="noreferrer">{viewCode}</a>
         </div>
       </div>
       <div className="project-overlay-bottom flex flex-col md:w-768">
