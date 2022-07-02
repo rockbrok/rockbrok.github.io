@@ -1211,12 +1211,12 @@ video {
   background-color: rgb(217 217 217 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'http\:\/\/paq000\.github\.io\/portfolio\/assets\/404-man\.png\'\)\] {
-  background-image: url('http://paq000.github.io/portfolio/assets/404-man.png');
+.bg-\[url\(\'https\:\/\/glennphil\.github\.io\/assets\/404-man\.png\'\)\] {
+  background-image: url('https://glennphil.github.io/assets/404-man.png');
 }
 
-.bg-\[url\(\'http\:\/\/paq000\.github\.io\/portfolio\/assets\/blog-man\.png\'\)\] {
-  background-image: url('http://paq000.github.io/portfolio/assets/blog-man.png');
+.bg-\[url\(\'https\:\/\/glennphil\.github\.io\/assets\/blog-man\.png\'\)\] {
+  background-image: url('https://glennphil.github.io/assets/blog-man.png');
 }
 
 .bg-github-icon {
@@ -1239,28 +1239,12 @@ video {
   background-image: url('../assets/download-icon.png');
 }
 
-.bg-\[url\(\'http\:\/\/paq000\.github\.io\/portfolio\/assets\/profile\.png\'\)\] {
-  background-image: url('http://paq000.github.io/portfolio/assets/profile.png');
-}
-
-.bg-google-logo {
-  background-image: url('../assets/google-logo.png');
-}
-
-.bg-\[url\(\'http\:\/\/glennphil\.github\.io\/assets\/profile\.png\'\)\] {
-  background-image: url('http://glennphil.github.io/assets/profile.png');
-}
-
 .bg-\[url\(\'https\:\/\/glennphil\.github\.io\/assets\/profile\.png\'\)\] {
   background-image: url('https://glennphil.github.io/assets/profile.png');
 }
 
-.bg-\[url\(\'https\:\/\/glennphil\.github\.io\/assets\/blog-man\.png\'\)\] {
-  background-image: url('https://glennphil.github.io/assets/blog-man.png');
-}
-
-.bg-\[url\(\'https\:\/\/glennphil\.github\.io\/assets\/404-man\.png\'\)\] {
-  background-image: url('https://glennphil.github.io/assets/404-man.png');
+.bg-google-logo {
+  background-image: url('../assets/google-logo.png');
 }
 
 .bg-\[length\:100\%_100\%\] {

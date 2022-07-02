@@ -1,3 +1,4 @@
+import OutsideClickHandler from 'react-outside-click-handler';
 import { FC, useState } from 'react';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
@@ -128,22 +129,32 @@ const Project1: FC<Project1Props & ProjectProps> = (obj: {setShowProject1:any; s
         { obj.showProject1 ? disableBodyScroll(Document as unknown as HTMLElement | Element) : enableBodyScroll(Document as unknown as HTMLElement | Element) }
       </>
     </button>
-    { obj.showProject1 ? 
-      <Project1Overlay 
-        setShowProject1={obj.setShowProject1} 
-        showProject1={obj.showProject1} 
-        title={obj.title} 
-        description={obj.description} 
-        viewProject={obj.viewProject} 
-        viewCode={obj.viewCode} 
-        tech={obj.tech} 
-      />
-     : null }
+    
+        { obj.showProject1 ? 
+        <div className="z-40 fixed w-full h-full inset-0 bg-dark-grey">
+        <div className="z-40 fixed mx-auto md:w-768 inset-0">
+          <OutsideClickHandler onOutsideClick={() => { obj.setShowProject1(false) }}>
+            { obj.showProject1 ?
+          <Project1Overlay 
+            setShowProject1={obj.setShowProject1} 
+            showProject1={obj.showProject1} 
+            title={obj.title} 
+            description={obj.description} 
+            viewProject={obj.viewProject} 
+            viewCode={obj.viewCode} 
+            tech={obj.tech} 
+          /> : null }
+                  </OutsideClickHandler>
+</div>
+</div>
+        : null }
+
+
   </section>
 );
 
 const Project1Overlay: FC<Project1Props & ProjectProps> = (obj: {setShowProject1:any; showProject1:boolean; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
-  <div className="md:bg-dark-grey md:w-full md:fixed md:inset-0 z-50 flex justify-center">
+  <div className="md:bg-dark-grey md:w-768 md:fixed mx-auto md:inset-0 z-50 flex justify-center">
     <section className="fixed md:static w-full h-screen top-0px left-0px md:flex-col overflow-y-scroll scrollbar-hide z-50 md:w-768">
       <div className="project-overlay-top flex flex-col justify-self-center justify-evenly md:w-768 relative">
         <div className="clear-container">
@@ -200,8 +211,7 @@ const Project2: FC<Project2Props & ProjectProps>= (obj: {setShowProject2:any; sh
     <button onClick={() => obj.setShowProject2(!obj.showProject2)}>
       <>
         <div className="flex border-2 border-solid border-white justify-center items-center absolute cursor-pointer top-50px w-full h-264">
-          <span className="bg-grey-2 h-2 w-373 -rotate-45 absolute" />
-          <span className="bg-grey-2 h-2 w-373 rotate-45 absolute" />
+          <span className="bg-portfolio-logo bg-no-repeat bg-200 bg-center w-52 h-20 flex" />
         </div>
         <div className="flex absolute justify-center items-center bottom-0px w-full cursor-pointer h-50 border-2 border-solid border-white border-t-0 rounded-br-3xl rounded-bl-3xl text-light-grey bg-white ">
           <h4 className="text-grey text-xl font-mono select-none">{obj.title}</h4>
@@ -230,7 +240,7 @@ const Project2Overlay: FC<Project2Props & ProjectProps> = (obj: {setShowProject2
         <div className="clear-container">
           <button className="x" onClick={() => obj.setShowProject2(!obj.showProject2)} />
         </div>
-        <span className="bg-google-logo bg-no-repeat bg-200 bg-center w-52 h-20 flex my-9 self-center justify-self-center" />
+        <span className="bg-portfolio-logo bg-no-repeat bg-200 bg-center w-52 h-20 flex my-9 self-center justify-self-center" />
         <div className="flex flex-row flex-wrap gap-x-4  gap-y-2 justify-evenly text-white">
           <a className="whitespace-nowrap" href="https://github.com/glennphil/glennphil.github.io" target="_blank" rel="noreferrer">
             {obj.viewCode}

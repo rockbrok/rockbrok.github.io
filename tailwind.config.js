@@ -45,8 +45,8 @@ module.exports = {
         'download-icon': "url('../assets/download-icon.png')",
         'github-icon': "url('../assets/github-icon.png')",
         'linkedin-icon': "url('../assets/linkedin-icon.png')",
-        'whatsapp-icon': "url('../assets/whatsapp-icon.png')",
         'google-logo': "url('../assets/google-logo.png')",
+        'portfolio-logo': "url('../assets/portfolio-logo.png')",
       },
       rotate: {
         '270': '270deg',
@@ -63,7 +63,11 @@ module.exports = {
         '50px': '50px',
         '60px': '60px',
         '70px': '70px',
-        '180px': '180px'
+        '180px': '180px',
+        '200px': '200px'
+      },
+      margin: {
+        '75px': '75px',
       },
       width: {
         '70p': '70%',

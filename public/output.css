@@ -614,6 +614,10 @@ video {
   bottom: 28px;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .top-0px {
   top: 0px;
 }
@@ -634,16 +638,16 @@ video {
   z-index: 30;
 }
 
-.z-40 {
-  z-index: 40;
-}
-
 .z-20 {
   z-index: 20;
 }
 
 .z-10 {
   z-index: 10;
+}
+
+.z-40 {
+  z-index: 40;
 }
 
 .z-50 {
@@ -684,20 +688,20 @@ video {
   margin-top: 7rem;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
-.mt-180px {
-  margin-top: 180px;
+.mt-200px {
+  margin-top: 200px;
 }
 
 .ml-30px {
   margin-left: 30px;
 }
 
-.-mt-60px {
-  margin-top: -60px;
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.-mt-75px {
+  margin-top: -75px;
 }
 
 .mb-8 {
@@ -738,10 +742,6 @@ video {
 
 .mt-16 {
   margin-top: 4rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
 }
 
 .mb-2 {
@@ -1044,6 +1044,10 @@ video {
   gap: 1rem;
 }
 
+.gap-16 {
+  gap: 4rem;
+}
+
 .gap-8 {
   gap: 2rem;
 }
@@ -1227,10 +1231,6 @@ video {
   background-image: url('../assets/linkedin-icon.png');
 }
 
-.bg-whatsapp-icon {
-  background-image: url('../assets/whatsapp-icon.png');
-}
-
 .bg-email-icon {
   background-image: url('../assets/email-icon.png');
 }
@@ -1245,6 +1245,10 @@ video {
 
 .bg-google-logo {
   background-image: url('../assets/google-logo.png');
+}
+
+.bg-portfolio-logo {
+  background-image: url('../assets/portfolio-logo.png');
 }
 
 .bg-\[length\:100\%_100\%\] {
@@ -1316,6 +1320,10 @@ video {
 
 .pb-4 {
   padding-bottom: 1rem;
+}
+
+.pb-0 {
+  padding-bottom: 0px;
 }
 
 .pt-50px {
