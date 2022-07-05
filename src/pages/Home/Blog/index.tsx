@@ -3,6 +3,8 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import { FC, useState, useEffect } from 'react';
 import { useSwipeable } from "react-swipeable";
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { Close } from '../../../components/Buttons/Close';
+import { LeftArrow, RightArrow } from '../../../components/Buttons/Arrows';
 
 interface BlogProps {
   heading: string;
@@ -202,7 +204,7 @@ const Blog = () => {
               text2={text2}
               time2={time2}
               day2={day2}
-              date2={date}
+              date2={date2}
               handlers={handlers}
               increase={increase}
               decrease={decrease}
@@ -370,68 +372,26 @@ const BlogPost2Big = (obj: {title2:string; text2:string; time2:string; day2:stri
       </h6>
     </div>
   </div>
-)
+);
 
 const BlogButtons = (obj: {setShowBlog1:any; showBlog1:boolean; increase:() => void; decrease:() => void}) => (
   <div className="md:flex justify-center fixed bottom-0 bg-white w-full md:w-768 mx-auto">
     <div className="h-60 mt-0 mb-10px mx-45px border-t-2 border-solid border-light-green w-[calc(100%-90px)] flex flex-row items-center justify-evenly md:w-768">
-      <LeftArrow 
-        decrease={obj.decrease}
-      />
-      <Close
-        show={obj.showBlog1}
-        setShow={obj.setShowBlog1}
-      />
-      <RightArrow 
-        increase={obj.increase}
-      />
+      <LeftArrow decrease={obj.decrease} />
+      <Close show={obj.showBlog1} setShow={obj.setShowBlog1} />
+      <RightArrow increase={obj.increase} />
     </div>
   </div>
-)
+);
 
 const BlogButtons2 = (obj: {setShowBlog2:any; showBlog2:boolean; increase:() => void; decrease:() => void}) => (
   <div className="md:flex justify-center fixed bottom-0 bg-white w-full md:w-768 mx-auto">
     <div className="h-60 mt-0 mb-10px mx-45px border-t-2 border-solid border-light-green w-[calc(100%-90px)] flex flex-row items-center justify-evenly md:w-768">
-      <LeftArrow 
-        decrease={obj.decrease}
-      />
-      <Close
-        show={obj.showBlog2}
-        setShow={obj.setShowBlog2}
-      />
-      <RightArrow 
-        increase={obj.increase}
-      />
+      <LeftArrow decrease={obj.decrease} />
+      <Close show={obj.showBlog2} setShow={obj.setShowBlog2} />
+      <RightArrow increase={obj.increase} />
     </div>
   </div>
-)
-
-const LeftArrow = (obj: {decrease: () => void}) => (
-  <button className="h-12 w-12" onClick={obj.decrease} title="Previous">
-    <div className="flex scale-50 items-center justify-center">
-      <div className="arrow-icon rotate-270">
-        <span className="arrow" />
-      </div>
-    </div>
-  </button>
-)
-
-const RightArrow = (obj: {increase: () => void}) => (
-  <button className="h-12 w-12" onClick={obj.increase} title="Next">
-    <div className="flex scale-50 items-center justify-center">
-      <div className="arrow-icon rotate-90">
-        <span className="arrow" />
-      </div>
-    </div>
-  </button>
-)
-
-const Close = (obj: {setShow: any, show: boolean}) => (
-  <button className="h-12 w-12" onClick={() => obj.setShow(!obj.show)} title="Close">
-    <div className="flex scale-75 justify-center items-center">
-      <div className="x" />
-    </div>
-  </button>
-)
+);
 
 export default Blog;

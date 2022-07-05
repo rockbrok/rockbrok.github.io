@@ -1,37 +1,54 @@
 import OutsideClickHandler from 'react-outside-click-handler';
 import { FC, useState } from 'react';
+import { useSwipeable } from "react-swipeable";
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { Close } from '../../../components/Buttons/Close';
+import { RightArrow, LeftArrow } from '../../../components/Buttons/Arrows';
 
-interface Project1Props {
-  title: string;
-  showProject1: boolean;
-  setShowProject1: any;
-}
-interface Project2Props {
-  title: string;
-  showProject2: boolean;
-  setShowProject2: any;
-}
-interface Project3Props {
-  title: string;
-  showProject3: boolean;
-  setShowProject3: any;
-}
 interface ProjectProps {
   description: string;
   viewProject: string;
   viewCode: string;
   tech: string;
-}
+  title: string;
+  handlers: object;
+};
+interface useStateProps {
+  show: boolean;
+  setShow: any;
+};
+interface CounterProps {
+  setCounter: any;
+  counter: number;
+};
+interface ArrowProps {
+  increase:() => void;
+  decrease:() => void;
+};
 
 const Projects = () => {
-  const [showProject1, setShowProject1] = useState<boolean>(false);
-  const [showProject2, setShowProject2] = useState<boolean>(false);
-  const [showProject3, setShowProject3] = useState<boolean>(false);
+  const [show, setShow] = useState<boolean>(false);
   const description = "Description";
   const viewProject = "see the full project";
   const viewCode = "view code";
   const tech = "Tech used";
+
+  // total projects
+  const numProjects = 3;
+
+  let [counter, setCounter] = useState<number>(0);
+
+  const increase = () => {
+    setCounter(c => (c + 1) % numProjects);
+  };
+  const decrease = () => {
+    setCounter(c => (c - 1 + numProjects) % numProjects);
+  };
+
+  const handlers = useSwipeable({
+    onSwipedLeft: () => increase(),
+    onSwipedRight: () => decrease()
+  });
 
   return (
     <section className="flex flex-col container mt-28 gap-4">
@@ -44,30 +61,45 @@ const Projects = () => {
       <section className="flex flex-wrap container justify-center md:grid md:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr gap-y-20 gap-x-[50px] md:gap-x-[110px] lg:gap-x-[46px] xl:gap-x-[124px] z-40">
         <Project1
           title={`Google Frontend`}
-          showProject1={showProject1}
-          setShowProject1={setShowProject1}
           description={description}
           viewProject={viewProject}
           viewCode={viewCode}
           tech={tech}
+          increase={increase}
+          decrease={decrease}
+          counter={counter}
+          setCounter={setCounter}
+          show={show}
+          setShow={setShow}
+          handlers={handlers}
         />
         <Project2
           title={`Portfolio`}
-          showProject2={showProject2}
-          setShowProject2={setShowProject2}
           description={description}
           viewProject={viewProject}
           viewCode={viewCode}
           tech={tech}
+          increase={increase}
+          decrease={decrease}
+          counter={counter}
+          setCounter={setCounter}
+          show={show}
+          setShow={setShow}
+          handlers={handlers}
         />
         <Project3
           title={`Coffee Shop`}
-          showProject3={showProject3}
-          setShowProject3={setShowProject3}
           description={description}
           viewProject={viewProject}
           viewCode={viewCode}
           tech={tech}
+          increase={increase}
+          decrease={decrease}
+          counter={counter}
+          setCounter={setCounter}
+          show={show}
+          setShow={setShow}
+          handlers={handlers}
         />
       </section>
     </section>
@@ -111,14 +143,14 @@ const Key = () => (
   </section>
 );
 
-const Project1: FC<Project1Props & ProjectProps> = (obj: {setShowProject1:any; showProject1:boolean; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
+const Project1:FC <CounterProps & ArrowProps & ProjectProps & useStateProps> = (obj: {handlers:any; show:boolean; setShow:any; counter:number; setCounter:any; decrease:() => void; increase:() => void; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
   <section className="w-264 h-364 relative">
     <div className="flex flex-row absolute top-0px h-50 w-118 border-solid border-t-2 border-x-2 border-white border-b-0 rounded-t-3xl justify-center gap-x-3 items-center">
       <Triangle />
       <Circle />
       <Square />
     </div>
-    <button onClick={() => obj.setShowProject1(!obj.showProject1)}>
+    <button onClick={() => {obj.setCounter(0); obj.setShow(!obj.show);}}>
       <>
         <div className="flex border-2 border-solid border-white justify-center items-center absolute cursor-pointer top-50px w-full h-264">
           <span className="bg-google-logo bg-no-repeat bg-200 bg-center w-52 h-20 flex" />
@@ -126,40 +158,40 @@ const Project1: FC<Project1Props & ProjectProps> = (obj: {setShowProject1:any; s
         <div className="flex absolute justify-center items-center bottom-0px w-full cursor-pointer h-50 border-2 border-solid border-white border-t-0 rounded-br-3xl rounded-bl-3xl text-light-grey bg-white">
           <h4 className="text-grey text-xl font-mono select-none">{obj.title}</h4>
         </div>
-        { obj.showProject1 ? disableBodyScroll(Document as unknown as HTMLElement | Element) : enableBodyScroll(Document as unknown as HTMLElement | Element) }
+        { obj.counter === 0 && obj.show ? disableBodyScroll(Document as unknown as HTMLElement | Element) : enableBodyScroll(Document as unknown as HTMLElement | Element) }
       </>
     </button>
-    
-        { obj.showProject1 ? 
-        <div className="z-40 fixed w-full h-full inset-0 bg-dark-grey">
-        <div className="z-40 fixed mx-auto md:w-768 inset-0">
-          <OutsideClickHandler onOutsideClick={() => { obj.setShowProject1(false) }}>
-            { obj.showProject1 ?
-          <Project1Overlay 
-            setShowProject1={obj.setShowProject1} 
-            showProject1={obj.showProject1} 
-            title={obj.title} 
-            description={obj.description} 
-            viewProject={obj.viewProject} 
-            viewCode={obj.viewCode} 
-            tech={obj.tech} 
-          /> : null }
-                  </OutsideClickHandler>
-</div>
-</div>
-        : null }
-
-
+    { obj.counter === 0 && obj.show ?
+      <div className="z-40 fixed w-full h-full inset-0 bg-dark-grey">
+        <div className="z-40 fixed mx-auto md:w-768 inset-0 overflow-y-scroll scrollbar-default">
+          <OutsideClickHandler onOutsideClick={() => obj.setShow(false)}>
+              <>
+                <Project1Big 
+                  title={obj.title}
+                  description={obj.description}
+                  viewProject={obj.viewProject}
+                  viewCode={obj.viewCode}
+                  tech={obj.tech}
+                  handlers={obj.handlers}
+                /> 
+                <ProjectButtons
+                  show={obj.show}
+                  setShow={obj.setShow}
+                  increase={obj.increase}
+                  decrease={obj.decrease}
+                />
+              </>
+          </OutsideClickHandler>
+        </div>
+      </div>
+    : null }
   </section>
 );
 
-const Project1Overlay: FC<Project1Props & ProjectProps> = (obj: {setShowProject1:any; showProject1:boolean; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
-  <div className="md:bg-dark-grey md:w-768 md:fixed mx-auto md:inset-0 z-50 flex justify-center">
-    <section className="fixed md:static w-full h-screen top-0px left-0px md:flex-col overflow-y-scroll scrollbar-hide z-50 md:w-768">
-      <div className="project-overlay-top flex flex-col justify-self-center justify-evenly md:w-768 relative">
-        <div className="clear-container">
-          <button className="x" onClick={() => obj.setShowProject1(!obj.showProject1)} />
-        </div>
+const Project1Big: FC<ProjectProps> = (obj: {handlers:object; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
+  <section {...obj.handlers}>
+    <div className="flex flex-col bg-dark-grey h-auto justify-self-center justify-evenly md:w-768">
+      <div className="fixed flex flex-col top-0 justify-self-center h-206 w-full md:w-768 bg-dark-grey border-b-[5px] border-forest-green">
         <span className="bg-google-logo bg-no-repeat bg-200 bg-center w-52 h-20 flex my-9 self-center justify-self-center" />
         <div className="flex flex-row flex-wrap gap-x-4  gap-y-2 justify-evenly text-white">
           <a className="whitespace-nowrap" href="https://glennphil.github.io/Google/" target="_blank" rel="noreferrer" >
@@ -170,7 +202,9 @@ const Project1Overlay: FC<Project1Props & ProjectProps> = (obj: {setShowProject1
           </a>
         </div>
       </div>
-      <div className="project-overlay-bottom flex flex-col md:w-768">
+    </div>
+    <div className="h-[calc(100%-276px)] top-206px fixed overflow-y-scroll bg-white md:w-768">
+      <div className="flex flex-col pt-40px pr-40px pb-20px pl-40px overflow-y-scroll scrollbar-hidden lg:scrollbar-default">
         <h1 className="text-dark-grey text-3xl font-mono uppercase mb-2">{obj.title}</h1>
         <h3 className="text-forest-green text-2xl font-mono mt-5 mb-3 leading-10">{obj.description}</h3>
         <p className="font-mono text-black leading-5">This project developed from a suggestion that my friend Pae gave which was to recreate the Google landing page. Currently, the goal of this project is to replicate the design and function of the Google (Argentina) Search landing page and of the Sign In, Sign Up, Login, Account, and 404 pages.</p>
@@ -197,18 +231,18 @@ const Project1Overlay: FC<Project1Props & ProjectProps> = (obj: {setShowProject1
           <Square />
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 );
 
-const Project2: FC<Project2Props & ProjectProps>= (obj: {setShowProject2:any; showProject2:boolean; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
+const Project2: FC<ProjectProps & CounterProps & ArrowProps & useStateProps> = (obj: {handlers:object; show:boolean; setShow:any; decrease:() => void; increase:() => void; setCounter:any; counter:number; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
   <section className="w-264 h-364 relative">
     <div className="flex flex-row absolute top-0px h-50 w-118 border-solid border-t-2 border-x-2 border-white border-b-0 rounded-t-3xl justify-center gap-x-3 items-center">
       <Circle />
       <Diamond />
       <Star />
     </div>
-    <button onClick={() => obj.setShowProject2(!obj.showProject2)}>
+    <button onClick={() => {obj.setCounter(1); obj.setShow(!obj.show);}}>
       <>
         <div className="flex border-2 border-solid border-white justify-center items-center absolute cursor-pointer top-50px w-full h-264">
           <span className="bg-portfolio-logo bg-no-repeat bg-200 bg-center w-52 h-20 flex" />
@@ -216,30 +250,40 @@ const Project2: FC<Project2Props & ProjectProps>= (obj: {setShowProject2:any; sh
         <div className="flex absolute justify-center items-center bottom-0px w-full cursor-pointer h-50 border-2 border-solid border-white border-t-0 rounded-br-3xl rounded-bl-3xl text-light-grey bg-white ">
           <h4 className="text-grey text-xl font-mono select-none">{obj.title}</h4>
         </div>
-        { obj.showProject2 ? disableBodyScroll(Document as unknown as HTMLElement | Element) : null }
+        { obj.counter === 1 && obj.show ? disableBodyScroll(Document as unknown as HTMLElement | Element) : null }
       </>
     </button>
-    { obj.showProject2 ? 
-      <Project2Overlay 
-        setShowProject2={obj.setShowProject2} 
-        showProject2={obj.showProject2} 
-        title={obj.title} 
-        description={obj.description} 
-        viewProject={obj.viewProject} 
-        viewCode={obj.viewCode} 
-        tech={obj.tech} 
-      />
-     : null }
+    { obj.counter === 1 && obj.show ? 
+      <div className="z-40 fixed w-full h-full inset-0 bg-dark-grey">
+        <div className="z-40 fixed mx-auto md:w-768 inset-0 overflow-y-scroll scrollbar-default">
+          <OutsideClickHandler onOutsideClick={() => obj.setShow(false)}>
+            <>
+              <Project2Big 
+                title={obj.title}
+                description={obj.description}
+                viewProject={obj.viewProject}
+                viewCode={obj.viewCode}
+                tech={obj.tech}
+                handlers={obj.handlers}
+              /> 
+              <ProjectButtons
+                show={obj.show}
+                setShow={obj.setShow}
+                increase={obj.increase}
+                decrease={obj.decrease}
+              />
+            </>
+          </OutsideClickHandler>
+        </div>
+      </div>
+    : null }
   </section>
 );
 
-const Project2Overlay: FC<Project2Props & ProjectProps> = (obj: {setShowProject2:any; showProject2:boolean; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
-  <div className="md:bg-dark-grey md:w-full md:fixed md:inset-0 z-50 flex justify-center">
-    <section className="fixed md:static w-full h-screen top-0px left-0px md:flex-col overflow-y-scroll scrollbar-hide z-50 md:w-768">
-      <div className="project-overlay-top flex flex-col justify-self-center justify-evenly md:w-768 relative">
-        <div className="clear-container">
-          <button className="x" onClick={() => obj.setShowProject2(!obj.showProject2)} />
-        </div>
+const Project2Big: FC<ProjectProps> = (obj: {handlers:object; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
+  <section {...obj.handlers}>
+    <div className="flex flex-col bg-dark-grey h-auto justify-self-center justify-evenly md:w-768">
+      <div className="fixed flex flex-col top-0 justify-self-center h-206 w-full md:w-768 bg-dark-grey border-b-[5px] border-forest-green">
         <span className="bg-portfolio-logo bg-no-repeat bg-200 bg-center w-52 h-20 flex my-9 self-center justify-self-center" />
         <div className="flex flex-row flex-wrap gap-x-4  gap-y-2 justify-evenly text-white">
           <a className="whitespace-nowrap" href="https://github.com/glennphil/glennphil.github.io" target="_blank" rel="noreferrer">
@@ -247,7 +291,9 @@ const Project2Overlay: FC<Project2Props & ProjectProps> = (obj: {setShowProject2
           </a>
         </div>
       </div>
-      <div className="project-overlay-bottom flex flex-col md:w-768">
+    </div>
+    <div className="h-[calc(100%-276px)] top-206px fixed overflow-y-scroll bg-white md:w-768">
+      <div className="flex flex-col pt-40px pr-40px pb-20px pl-40px overflow-y-scroll scrollbar-hidden lg:scrollbar-default">
         <h1 className="text-dark-grey text-3xl font-mono uppercase mb-2">{obj.title}</h1>
         <h3 className="text-forest-green text-2xl font-mono mt-5 mb-3 leading-10">{obj.description}</h3>
         <p className="font-mono text-black leading-5">This project's purpose is to serve as a demonstration of my past projects, and skills as a front-end developer. It was made using TailwindCSS, ReactJS, and TypeScript. It was designed by my partner. It was built with a mobile-first design.</p>
@@ -265,6 +311,7 @@ const Project2Overlay: FC<Project2Props & ProjectProps> = (obj: {setShowProject2
           <li className="ml-4">useEffect</li>
           <li className="ml-4">Function Components</li>
           <li className="ml-4">JSON Server (Heroku)</li>
+          <li className="ml-4">React Scroll</li>
         </ul>
         <div className="flex flex-row justify-end mt-8 mb-2 gap-x-3">
           <div className="mt-2px">
@@ -274,16 +321,16 @@ const Project2Overlay: FC<Project2Props & ProjectProps> = (obj: {setShowProject2
           <Square />
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 );
 
-const Project3: FC<Project3Props & ProjectProps>= (obj: {setShowProject3:any; showProject3:boolean; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
+const Project3: FC<ProjectProps & CounterProps & ArrowProps & useStateProps> = (obj: {handlers:object; show:boolean; setShow:any; decrease:() => void; increase:() => void; setCounter:any; counter:number; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
   <section className="w-264 h-364 relative">
     <div className="flex flex-row absolute top-0px h-50 w-118 border-solid border-t-2 border-x-2 border-white border-b-0 rounded-t-3xl justify-center gap-x-3 items-center">
 
     </div>
-    <button onClick={() => obj.setShowProject3(!obj.showProject3)}>
+    <button onClick={() => {obj.setCounter(2); obj.setShow(!obj.show);}}>
       <>
         <div className="flex border-2 border-solid border-white justify-center items-center absolute cursor-pointer top-50px w-full h-264">
           <span className="bg-grey-2 h-2 w-373 -rotate-45 absolute" />
@@ -292,39 +339,51 @@ const Project3: FC<Project3Props & ProjectProps>= (obj: {setShowProject3:any; sh
         <div className="flex absolute justify-center items-center bottom-0px w-full cursor-pointer h-50 border-2 border-solid border-white border-t-0 rounded-br-3xl rounded-bl-3xl text-light-grey bg-white ">
           <h4 className="text-grey text-xl font-mono select-none">{obj.title}</h4>
         </div>
-        { obj.showProject3 ? disableBodyScroll(Document as unknown as HTMLElement | Element) : null }
+        { obj.counter === 2 && obj.show ? disableBodyScroll(Document as unknown as HTMLElement | Element) : null }
       </>
     </button>
-    { obj.showProject3 ? 
-      <Project3Overlay 
-        setShowProject3={obj.setShowProject3} 
-        showProject3={obj.showProject3} 
-        title={obj.title} 
-        description={obj.description} 
-        viewProject={obj.viewProject} 
-        viewCode={obj.viewCode} 
-        tech={obj.tech} 
-      /> 
+    { obj.counter === 2 && obj.show ? 
+      <div className="z-40 fixed w-full h-full inset-0 bg-dark-grey">
+        <div className="z-40 fixed mx-auto md:w-768 inset-0 overflow-y-scroll scrollbar-default">
+          <OutsideClickHandler onOutsideClick={() => obj.setShow(false)}>
+              <>
+                <Project3Big 
+                  title={obj.title}
+                  description={obj.description}
+                  viewProject={obj.viewProject}
+                  viewCode={obj.viewCode}
+                  tech={obj.tech}
+                  handlers={obj.handlers}
+                /> 
+                <ProjectButtons
+                  show={obj.show}
+                  setShow={obj.setShow}
+                  increase={obj.increase}
+                  decrease={obj.decrease}
+                />
+              </>
+          </OutsideClickHandler>
+        </div>
+      </div>
     : null }
   </section>
 );
 
-const Project3Overlay: FC<Project3Props & ProjectProps> = (obj: {setShowProject3:any; showProject3:boolean; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
-  <div className="md:bg-dark-grey md:w-full md:fixed md:inset-0 z-50 flex justify-center">
-    <section className="fixed md:static w-full h-screen top-0px left-0px md:flex-col overflow-y-scroll scrollbar-hide z-50 md:w-768">
-      <div className="project-overlay-top flex flex-col justify-self-center justify-evenly md:w-768 relative">
-        <div className="clear-container">
-          <button className="x" onClick={() => obj.setShowProject3(!obj.showProject3)} />
-        </div>
+const Project3Big: FC<ProjectProps> = (obj: {handlers:object; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
+  <section {...obj.handlers}>
+    <div className="flex flex-col bg-dark-grey h-auto justify-self-center justify-evenly md:w-768">
+      <div className="fixed flex flex-col top-0 justify-self-center h-206 w-full md:w-768 bg-dark-grey border-b-[5px] border-forest-green">
         <span className="w-52 h-20 flex my-9 text-white text-center text-3xl justify-center font-sans self-center">
           Shop
-          </span>
+        </span>
         <div className="flex flex-row flex-wrap gap-x-4  gap-y-2 justify-evenly text-white">
           <a className="whitespace-nowrap" href="#">{obj.viewProject}</a>
           <a className="whitespace-nowrap" href="https://github.com/glennphil/CoffeeStore" target="_blank" rel="noreferrer">{obj.viewCode}</a>
         </div>
       </div>
-      <div className="project-overlay-bottom flex flex-col md:w-768">
+    </div>
+    <div className="h-[calc(100%-276px)] top-206px fixed overflow-y-scroll bg-white md:w-768">
+      <div className="flex flex-col pt-40px pr-40px pb-20px pl-40px overflow-y-scroll scrollbar-hidden lg:scrollbar-default">
         <h1 className="text-dark-grey text-3xl font-mono uppercase mb-2">{obj.title}</h1>
         <h3 className="text-forest-green text-2xl font-mono mt-5 mb-3 leading-10">{obj.description}</h3>
         <p className="font-mono text-black leading-5">My next project is a work in progress. I am creating an online store which allows users to shop as guests or to create an account and receive discounts. The app will integrate Stripe's payment services so that users can purchase goods through with existing credit or debit card. </p>
@@ -345,7 +404,17 @@ const Project3Overlay: FC<Project3Props & ProjectProps> = (obj: {setShowProject3
           <Square />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+);
+
+const ProjectButtons = (obj: {decrease:() => void; increase:() => void; show:boolean; setShow:any}) => (
+  <div className="md:flex justify-center fixed bottom-0 bg-white w-full md:w-768 mx-auto">
+    <div className="h-60 mt-0 mb-10px mx-45px border-t-2 border-solid border-light-green w-[calc(100%-90px)] flex flex-row items-center justify-evenly md:w-768">
+      <LeftArrow decrease={obj.decrease} />
+      <Close show={obj.show} setShow={obj.setShow} />
+      <RightArrow increase={obj.increase} />
+    </div>
   </div>
 );
 

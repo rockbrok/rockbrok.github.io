@@ -1,8 +1,13 @@
 import { FC } from 'react';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 interface HeadingProps {
   heading: string;
 }
+
+const linkedinURL:string = "https://www.linkedin.com/in/glenn-p/";
+const githubURL:string = "https://github.com/glennphil/";
+const resumeURL:string = "docs/resume.pdf";
 
 const Header = () => {
   return (
@@ -38,49 +43,81 @@ const NavBar = () => (
 
 const Navigation = () => (
   <nav className="flex-row container justify-between px-5 text-sm max-w-lg hidden md:flex">
-    <a className="text-gold link-underline-gold" href="resume.pdf" download>
+    <a className="text-gold link-underline-gold" href={resumeURL} download>
       download my resume
     </a>
-    <a className="text-forest-green link-underline" href="#projects">
-      portfolio
-    </a>
-    <a className="text-forest-green link-underline" href="#blog">
-      blog
-    </a>
-    <a className="text-forest-green link-underline" href="#contact">
+    <Link
+      activeClass="active"
+      to="projects"
+      spy={true}
+      smooth={true}
+      offset={-70}
+      duration={500}
+      className="text-forest-green link-underline cursor-pointer"
+    >
+      portfolio 
+    </Link>
+    <Link
+      activeClass="active"
+      to="blog"
+      spy={true}
+      smooth={true}
+      offset={-95}
+      duration={600}
+      className="text-forest-green link-underline cursor-pointer"
+    >
+      blog 
+    </Link>
+    <Link
+      activeClass="active"
+      to="contact"
+      spy={true}
+      smooth={true}
+      offset={-70}
+      duration={1000}
+      className="text-forest-green link-underline cursor-pointer"
+    >
       contact
-    </a>
+    </Link>
   </nav>
 );
 
 const NavMobile = () => (
   <nav className="flex flex-row container justify-end justify-between md:hidden">
     <div className="flex flex-row items-center gap-x-2">
-      <a className="bg-github-icon bg-no-repeat bg-46 bg-center h-10 w-10" href="https://github.com/paq000" target="_blank" rel="noreferrer" />
-      <a className="bg-linkedin-icon bg-no-repeat bg-46 bg-center h-10 w-10" href="https://www.linkedin.com/in/glenn-p/" />
+      <a className="bg-github-icon bg-no-repeat bg-46 bg-center h-10 w-10" href={githubURL} target="_blank" rel="noreferrer" />
+      <a className="bg-linkedin-icon bg-no-repeat bg-46 bg-center h-10 w-10" href={linkedinURL} />
       <a className="bg-email-icon bg-no-repeat bg-46 bg-center h-10 w-10" href="#contact" />
     </div>
-    <a className="bg-download-icon bg-no-repeat bg-46 bg-center w-12 h-12 shrink-0 ml-4 gold-filter" href="resume.pdf" download />
+    <a className="bg-download-icon bg-no-repeat bg-46 bg-center w-12 h-12 shrink-0 ml-4 gold-filter" href={resumeURL} download />
   </nav>
 );
 
 const SocialButtons = () => (
   <div className="hidden flex-row w-min gap-x-6 flex-start md:flex md:my-10">
-    <a href="https://github.com/paq000">
+    <a href={githubURL}>
       <div className="flex items-center justify-center rounded-full border-2 bg-transparent border-white w-11 h-11">
         <div className="flex bg-github-icon bg-no-repeat bg-46 bg-center h-8 w-8"/>
       </div>
     </a>
-    <a href="https://www.linkedin.com/in/glenn-p/">
+    <a href={linkedinURL}>
       <div className="flex items-center justify-center rounded-full border-2 bg-transparent border-white w-11 h-11">
         <div className="flex bg-linkedin-icon bg-no-repeat bg-46 bg-center h-8 w-8"/>
       </div>
     </a>
-    <a href="#contact">
+    <Link
+      activeClass="active"
+      to="contact"
+      spy={true}
+      smooth={true}
+      offset={-70}
+      duration={1000}
+      className="cursor-pointer"
+    >
       <div className="flex items-center justify-center rounded-full border-2 bg-transparent border-white w-11 h-11">
         <div className="flex bg-email-icon bg-no-repeat bg-46 bg-center h-8 w-8"/>
       </div>
-    </a>
+    </Link>
   </div>
 );
 

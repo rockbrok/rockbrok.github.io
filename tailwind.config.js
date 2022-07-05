@@ -59,6 +59,7 @@ module.exports = {
         '10px': '10px',
         '20px': '20px',
         '30px': '30px',
+        '40px': '40px',
         '45px': '45px',
         '50px': '50px',
         '60px': '60px',
@@ -113,7 +114,8 @@ module.exports = {
         '25px': '25px',
         '28px': '28px',
         '35px': '35px',
-        '50px': '50px'
+        '50px': '50px',
+        '206px': '206px'
       }
     },
   },
