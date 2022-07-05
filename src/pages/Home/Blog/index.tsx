@@ -3,8 +3,7 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import { FC, useState, useEffect } from 'react';
 import { useSwipeable } from "react-swipeable";
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import { Close } from '../../../components/Buttons/Close';
-import { LeftArrow, RightArrow } from '../../../components/Buttons/Arrows';
+import { FileNav, X } from '../../../components/Buttons/Nav';
 
 interface BlogProps {
   heading: string;
@@ -185,30 +184,34 @@ const Blog = () => {
                 text2={text2}
               />
             </div>
-            <BlogPostOverlay 
-              showBlog1={showBlog1}
-              setShowBlog1={setShowBlog1}
-              title={title}
-              time={time}
-              text={text}
-              day={day}
-              date={date}
-              handlers={handlers}
-              increase={increase}
-              decrease={decrease}
-            />
-            <BlogPost2Overlay 
-              showBlog2={showBlog2}
-              setShowBlog2={setShowBlog2}
-              title2={title2}
-              text2={text2}
-              time2={time2}
-              day2={day2}
-              date2={date2}
-              handlers={handlers}
-              increase={increase}
-              decrease={decrease}
-            />
+            { showBlog1 ? 
+              <BlogPostOverlay 
+                showBlog1={showBlog1}
+                setShowBlog1={setShowBlog1}
+                title={title}
+                time={time}
+                text={text}
+                day={day}
+                date={date}
+                handlers={handlers}
+                increase={increase}
+                decrease={decrease}
+              /> 
+            : null }
+            { showBlog2 ? 
+              <BlogPost2Overlay 
+                showBlog2={showBlog2}
+                setShowBlog2={setShowBlog2}
+                title2={title2}
+                text2={text2}
+                time2={time2}
+                day2={day2}
+                date2={date2}
+                handlers={handlers}
+                increase={increase}
+                decrease={decrease}
+              />
+            : null }
           </>
           <BlogPic />
         </section>
@@ -275,65 +278,55 @@ const BlogPost2Mini = (obj: {showBlog2:boolean, setShowBlog2:any; title2:string;
 )
 
 const BlogPostOverlay = (obj: {showBlog1:boolean; setShowBlog1:any; title:string; time: string; text: string; day: string; date: number; handlers: object; increase:() => void; decrease:() => void}) => (
-  <>
-    { obj.showBlog1 ? 
-      <div className="z-40 fixed w-full h-full inset-0 bg-dark-grey">
-        <div className="z-40 fixed mx-auto md:w-768 inset-0">
-          <OutsideClickHandler onOutsideClick={() => { obj.setShowBlog1(false) }}>
-            { obj.showBlog1 ? 
-              <>
-                <BlogPostBig
-                  title={obj.title}
-                  time={obj.time}
-                  text={obj.text}
-                  day={obj.day}
-                  date={obj.date}
-                  handlers={obj.handlers}
-                /> 
-                <BlogButtons
-                  showBlog1={obj.showBlog1} 
-                  setShowBlog1={obj.setShowBlog1} 
-                  increase={obj.increase}
-                  decrease={obj.decrease}
-                />
-              </>
-            : null }
-          </OutsideClickHandler>
-        </div>
-      </div>
-    : null }
-  </>
+  <div className="z-40 fixed w-full h-full inset-0 bg-dark-grey">
+    <X />
+    <div className="z-40 fixed mx-auto md:w-768 inset-0">
+      <OutsideClickHandler onOutsideClick={() => { obj.setShowBlog1(false) }}>
+        <>
+        <BlogPostBig
+          title={obj.title}
+          time={obj.time}
+          text={obj.text}
+          day={obj.day}
+          date={obj.date}
+          handlers={obj.handlers}
+        /> 
+        <FileNav
+          show={obj.showBlog1} 
+          setShow={obj.setShowBlog1} 
+          increase={obj.increase}
+          decrease={obj.decrease}
+        />
+        </>
+      </OutsideClickHandler>
+    </div>
+  </div>
 )
 
-const BlogPost2Overlay = (obj: {showBlog2:boolean; setShowBlog2:any; title2:string; time2: string; text2: string; day2: string; date2: number; handlers: object; increase:() => void; decrease:() => void}) => (
-  <>
-    { obj.showBlog2 ? 
-      <div className="z-40 fixed w-full h-full inset-0 bg-dark-grey">
-        <div className="z-40 fixed mx-auto md:w-768 inset-0">
-          <OutsideClickHandler onOutsideClick={() => { obj.setShowBlog2(false) }}>
-            { obj.showBlog2 ? 
-              <>
-                <BlogPost2Big 
-                  title2={obj.title2}
-                  text2={obj.text2}
-                  time2={obj.time2}
-                  day2={obj.day2}
-                  date2={obj.date2}
-                  handlers={obj.handlers}
-                /> 
-                <BlogButtons2
-                  showBlog2={obj.showBlog2} 
-                  setShowBlog2={obj.setShowBlog2} 
-                  increase={obj.increase}
-                  decrease={obj.decrease}
-                />
-              </>
-            : null }
-          </OutsideClickHandler>
-        </div>
-      </div>
-    : null }
-  </>
+const BlogPost2Overlay = (obj: { showBlog2:boolean; setShowBlog2:any; title2:string; time2: string; text2: string; day2: string; date2: number; handlers: object; increase:() => void; decrease:() => void}) => (
+  <div className="z-40 fixed w-full h-full inset-0 bg-dark-grey">
+    <X />
+    <div className="z-40 fixed mx-auto md:w-768 inset-0">
+      <OutsideClickHandler onOutsideClick={() => { obj.setShowBlog2(false) }}>
+        <>
+        <BlogPost2Big 
+          title2={obj.title2}
+          text2={obj.text2}
+          time2={obj.time2}
+          day2={obj.day2}
+          date2={obj.date2}
+          handlers={obj.handlers}
+        /> 
+        <FileNav
+          show={obj.showBlog2} 
+          setShow={obj.setShowBlog2} 
+          increase={obj.increase}
+          decrease={obj.decrease}
+        />
+        </>
+      </OutsideClickHandler>
+    </div>
+  </div>
 )
 
 const BlogPostBig = (obj: {title:string; text:string; time:string; day:string; date:number; handlers:object}) => (
@@ -370,26 +363,6 @@ const BlogPost2Big = (obj: {title2:string; text2:string; time2:string; day2:stri
       <h6 className="uppercase">
         {obj.date2}
       </h6>
-    </div>
-  </div>
-);
-
-const BlogButtons = (obj: {setShowBlog1:any; showBlog1:boolean; increase:() => void; decrease:() => void}) => (
-  <div className="md:flex justify-center fixed bottom-0 bg-white w-full md:w-768 mx-auto">
-    <div className="h-60 mt-0 mb-10px mx-45px border-t-2 border-solid border-light-green w-[calc(100%-90px)] flex flex-row items-center justify-evenly md:w-768">
-      <LeftArrow decrease={obj.decrease} />
-      <Close show={obj.showBlog1} setShow={obj.setShowBlog1} />
-      <RightArrow increase={obj.increase} />
-    </div>
-  </div>
-);
-
-const BlogButtons2 = (obj: {setShowBlog2:any; showBlog2:boolean; increase:() => void; decrease:() => void}) => (
-  <div className="md:flex justify-center fixed bottom-0 bg-white w-full md:w-768 mx-auto">
-    <div className="h-60 mt-0 mb-10px mx-45px border-t-2 border-solid border-light-green w-[calc(100%-90px)] flex flex-row items-center justify-evenly md:w-768">
-      <LeftArrow decrease={obj.decrease} />
-      <Close show={obj.showBlog2} setShow={obj.setShowBlog2} />
-      <RightArrow increase={obj.increase} />
     </div>
   </div>
 );

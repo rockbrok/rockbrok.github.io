@@ -2,8 +2,7 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import { FC, useState } from 'react';
 import { useSwipeable } from "react-swipeable";
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import { Close } from '../../../components/Buttons/Close';
-import { RightArrow, LeftArrow } from '../../../components/Buttons/Arrows';
+import { FileNav, X } from '../../../components/Buttons/Nav';
 
 interface ProjectProps {
   description: string;
@@ -13,21 +12,18 @@ interface ProjectProps {
   title: string;
   handlers: object;
 };
-interface useStateProps {
+interface StateProps {
   show: boolean;
   setShow: any;
-};
-interface CounterProps {
-  setCounter: any;
   counter: number;
-};
-interface ArrowProps {
+  setCounter: any;
   increase:() => void;
   decrease:() => void;
 };
 
 const Projects = () => {
   const [show, setShow] = useState<boolean>(false);
+  let [counter, setCounter] = useState<number>(0);
   const description = "Description";
   const viewProject = "see the full project";
   const viewCode = "view code";
@@ -35,8 +31,6 @@ const Projects = () => {
 
   // total projects
   const numProjects = 3;
-
-  let [counter, setCounter] = useState<number>(0);
 
   const increase = () => {
     setCounter(c => (c + 1) % numProjects);
@@ -143,7 +137,7 @@ const Key = () => (
   </section>
 );
 
-const Project1:FC <CounterProps & ArrowProps & ProjectProps & useStateProps> = (obj: {handlers:any; show:boolean; setShow:any; counter:number; setCounter:any; decrease:() => void; increase:() => void; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
+const Project1:FC <ProjectProps & StateProps> = (obj: {handlers:any; show:boolean; setShow:any; counter:number; setCounter:any; decrease:() => void; increase:() => void; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
   <section className="w-264 h-364 relative">
     <div className="flex flex-row absolute top-0px h-50 w-118 border-solid border-t-2 border-x-2 border-white border-b-0 rounded-t-3xl justify-center gap-x-3 items-center">
       <Triangle />
@@ -163,6 +157,7 @@ const Project1:FC <CounterProps & ArrowProps & ProjectProps & useStateProps> = (
     </button>
     { obj.counter === 0 && obj.show ?
       <div className="z-40 fixed w-full h-full inset-0 bg-dark-grey">
+        <X />
         <div className="z-40 fixed mx-auto md:w-768 inset-0 overflow-y-scroll scrollbar-default">
           <OutsideClickHandler onOutsideClick={() => obj.setShow(false)}>
               <>
@@ -174,7 +169,7 @@ const Project1:FC <CounterProps & ArrowProps & ProjectProps & useStateProps> = (
                   tech={obj.tech}
                   handlers={obj.handlers}
                 /> 
-                <ProjectButtons
+                <FileNav
                   show={obj.show}
                   setShow={obj.setShow}
                   increase={obj.increase}
@@ -235,7 +230,7 @@ const Project1Big: FC<ProjectProps> = (obj: {handlers:object; title:string; desc
   </section>
 );
 
-const Project2: FC<ProjectProps & CounterProps & ArrowProps & useStateProps> = (obj: {handlers:object; show:boolean; setShow:any; decrease:() => void; increase:() => void; setCounter:any; counter:number; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
+const Project2: FC<ProjectProps & StateProps> = (obj: {handlers:object; show:boolean; setShow:any; decrease:() => void; increase:() => void; setCounter:any; counter:number; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
   <section className="w-264 h-364 relative">
     <div className="flex flex-row absolute top-0px h-50 w-118 border-solid border-t-2 border-x-2 border-white border-b-0 rounded-t-3xl justify-center gap-x-3 items-center">
       <Circle />
@@ -255,6 +250,7 @@ const Project2: FC<ProjectProps & CounterProps & ArrowProps & useStateProps> = (
     </button>
     { obj.counter === 1 && obj.show ? 
       <div className="z-40 fixed w-full h-full inset-0 bg-dark-grey">
+        <X />
         <div className="z-40 fixed mx-auto md:w-768 inset-0 overflow-y-scroll scrollbar-default">
           <OutsideClickHandler onOutsideClick={() => obj.setShow(false)}>
             <>
@@ -266,7 +262,7 @@ const Project2: FC<ProjectProps & CounterProps & ArrowProps & useStateProps> = (
                 tech={obj.tech}
                 handlers={obj.handlers}
               /> 
-              <ProjectButtons
+              <FileNav
                 show={obj.show}
                 setShow={obj.setShow}
                 increase={obj.increase}
@@ -325,7 +321,7 @@ const Project2Big: FC<ProjectProps> = (obj: {handlers:object; title:string; desc
   </section>
 );
 
-const Project3: FC<ProjectProps & CounterProps & ArrowProps & useStateProps> = (obj: {handlers:object; show:boolean; setShow:any; decrease:() => void; increase:() => void; setCounter:any; counter:number; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
+const Project3: FC<ProjectProps & StateProps> = (obj: {handlers:object; show:boolean; setShow:any; decrease:() => void; increase:() => void; setCounter:any; counter:number; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
   <section className="w-264 h-364 relative">
     <div className="flex flex-row absolute top-0px h-50 w-118 border-solid border-t-2 border-x-2 border-white border-b-0 rounded-t-3xl justify-center gap-x-3 items-center">
 
@@ -344,6 +340,7 @@ const Project3: FC<ProjectProps & CounterProps & ArrowProps & useStateProps> = (
     </button>
     { obj.counter === 2 && obj.show ? 
       <div className="z-40 fixed w-full h-full inset-0 bg-dark-grey">
+        <X />
         <div className="z-40 fixed mx-auto md:w-768 inset-0 overflow-y-scroll scrollbar-default">
           <OutsideClickHandler onOutsideClick={() => obj.setShow(false)}>
               <>
@@ -355,7 +352,7 @@ const Project3: FC<ProjectProps & CounterProps & ArrowProps & useStateProps> = (
                   tech={obj.tech}
                   handlers={obj.handlers}
                 /> 
-                <ProjectButtons
+                <FileNav
                   show={obj.show}
                   setShow={obj.setShow}
                   increase={obj.increase}
@@ -406,16 +403,6 @@ const Project3Big: FC<ProjectProps> = (obj: {handlers:object; title:string; desc
       </div>
     </div>
   </section>
-);
-
-const ProjectButtons = (obj: {decrease:() => void; increase:() => void; show:boolean; setShow:any}) => (
-  <div className="md:flex justify-center fixed bottom-0 bg-white w-full md:w-768 mx-auto">
-    <div className="h-60 mt-0 mb-10px mx-45px border-t-2 border-solid border-light-green w-[calc(100%-90px)] flex flex-row items-center justify-evenly md:w-768">
-      <LeftArrow decrease={obj.decrease} />
-      <Close show={obj.show} setShow={obj.setShow} />
-      <RightArrow increase={obj.increase} />
-    </div>
-  </div>
 );
 
 const Triangle = () => <span className="flex triangle"/>;

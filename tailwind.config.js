@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./src/*.{js,jsx,ts,tsx}",
     "./src/pages/**/*.{js,jsx,ts,tsx}",
+    "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     screen: {
@@ -57,6 +58,7 @@ module.exports = {
         '75p': '75%',
         '2px': '2px',
         '10px': '10px',
+        '14px': '14px',
         '20px': '20px',
         '30px': '30px',
         '40px': '40px',
