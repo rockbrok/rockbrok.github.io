@@ -29,17 +29,21 @@ const LeftArrow = (obj: {decrease: () => void}) => (
 );
 
 const Close = (obj: {setShow: any, show: boolean}) => (
-  <div className="h-12 w-12">
-    <button className="h-12 w-12 flex xl:hidden" onClick={() => obj.setShow(!obj.show)} title="Close">
-      <div className="flex scale-75 justify-center items-center">
-        <div className="x" />
-      </div>
+  <div className="w-9 flex justify-items-center">
+    <button className="flex xl:hidden" onClick={() => obj.setShow(!obj.show)} title="Close">
+      <XIcon />
     </button>
   </div>
 );
 
 export const X = () => (
   <div className="xl:flex hidden flex-row justify-end pr-14px pt-14px">
-    <div className="x flex h-12 w-12 cursor-pointer" />
+    <XIcon />
+  </div>
+);
+
+const XIcon = () => (
+  <div className="flex scale-75 justify-center items-center cursor-pointer">
+    <div className="x" />
   </div>
 );

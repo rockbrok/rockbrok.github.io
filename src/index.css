@@ -129,14 +129,6 @@ div::-webkit-scrollbar-button:single-button {
   height: 6px;
 }
 
-.clear-container {
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  top: 20px;
-  right: 20px;
-}
-
 /* BLOG ARROW */
 .arrow-icon {
   display: flex;

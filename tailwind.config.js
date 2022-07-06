@@ -36,6 +36,7 @@ module.exports = {
     },
     backgroundSize: {
       '46': '52px',
+      '160': '160px',
       '200': '200px',
       '260': '260px',
       '280': '280px'
