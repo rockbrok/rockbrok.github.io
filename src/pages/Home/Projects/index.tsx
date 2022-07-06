@@ -198,7 +198,7 @@ const Project1Big: FC<ProjectProps> = (obj: {handlers:object; title:string; desc
         </div>
       </div>
     </div>
-    <div className="h-[calc(100%-276px)] top-206px fixed overflow-y-scroll bg-white md:w-768">
+    <div className="h-[calc(100%-276px)] w-full top-206px fixed overflow-y-scroll bg-white md:w-768">
       <div className="flex flex-col pt-40px pr-[16px] pb-20px pl-40px overflow-y-scroll scrollbar-hidden lg:scrollbar-default">
         <h1 className="text-dark-grey text-3xl font-mono uppercase mb-2">{obj.title}</h1>
         <h3 className="text-forest-green text-2xl font-mono mt-5 mb-3 leading-10">{obj.description}</h3>
@@ -292,7 +292,7 @@ const Project2Big: FC<ProjectProps> = (obj: {handlers:object; title:string; desc
         </div>
       </div>
     </div>
-    <div className="h-[calc(100%-276px)] top-206px fixed overflow-y-scroll bg-white md:w-768">
+    <div className="h-[calc(100%-276px)] w-full top-206px fixed overflow-y-scroll bg-white md:w-768">
       <div className="flex flex-col pt-40px pr-[16px] pb-20px pl-40px overflow-y-scroll scrollbar-hidden lg:scrollbar-default">
         <h1 className="text-dark-grey text-3xl font-mono uppercase mb-2">{obj.title}</h1>
         <h3 className="text-forest-green text-2xl font-mono mt-5 mb-3 leading-10">{obj.description}</h3>
@@ -383,7 +383,7 @@ const Project3Big: FC<ProjectProps> = (obj: {handlers:object; title:string; desc
         </div>
       </div>
     </div>
-    <div className="h-[calc(100%-276px)] top-206px fixed overflow-y-scroll bg-white md:w-768">
+    <div className="h-[calc(100%-276px)] w-full top-206px fixed overflow-y-scroll bg-white md:w-768">
       <div className="flex flex-col pt-40px pr-[16px] pb-20px pl-40px overflow-y-scroll scrollbar-hidden lg:scrollbar-default">
         <h1 className="text-dark-grey text-3xl font-mono uppercase mb-2">{obj.title}</h1>
         <h3 className="text-forest-green text-2xl font-mono mt-5 mb-3 leading-10">{obj.description}</h3>
