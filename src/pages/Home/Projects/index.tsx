@@ -318,9 +318,7 @@ const Project2Big: FC<ProjectProps> = (obj: {handlers:object; title:string; desc
         <div className="flex flex-row justify-end align-items-center h-12 mt-8 mb-2 gap-x-3 mr-4">
           <Circle />
           <Diamond />
-          <div className="ml-[2px] mt-[12px]">
-            <div className="star filter contrast-200 brightness-50 drop-shadow" />
-          </div>
+          <DarkStar />
         </div>
       </div>
     </div>
@@ -329,8 +327,11 @@ const Project2Big: FC<ProjectProps> = (obj: {handlers:object; title:string; desc
 
 const Project3: FC<ProjectProps & StateProps> = (obj: {handlers:object; show:boolean; setShow:any; decrease:() => void; increase:() => void; setCounter:any; counter:number; title:string; description:string; viewProject:string; viewCode:string; tech:string}) => (
   <section className="w-264 h-364 relative">
-    <div className="flex flex-row absolute top-0px h-50 w-118 border-solid border-t-2 border-x-2 border-white border-b-0 rounded-t-3xl justify-center gap-x-3 items-center">
-
+    <div className="flex flex-row absolute top-0px h-50 w-118 border-solid border-t-2 border-x-2 border-white border-b-0 rounded-t-3xl justify-start gap-x-3 items-center">
+      <div className="flex gap-x-3 ml-[19px]">
+        <Circle />
+        <Diamond />
+      </div>
     </div>
     <button onClick={() => {obj.setCounter(2); obj.setShow(!obj.show);}}>
       <>
@@ -380,7 +381,6 @@ const Project3Big: FC<ProjectProps> = (obj: {handlers:object; title:string; desc
           Shop
         </span>
         <div className="flex flex-row flex-wrap gap-x-4  gap-y-2 justify-evenly text-white">
-          <a className="whitespace-nowrap" href="#">{obj.viewProject}</a>
           <a className="whitespace-nowrap" href="https://github.com/glennphil/CoffeeStore" target="_blank" rel="noreferrer">{obj.viewCode}</a>
         </div>
       </div>
@@ -389,18 +389,23 @@ const Project3Big: FC<ProjectProps> = (obj: {handlers:object; title:string; desc
       <div className="flex flex-col pt-40px pr-[16px] pb-20px pl-40px overflow-y-scroll scrollbar-hidden lg:scrollbar-default">
         <h1 className="text-dark-grey text-3xl font-mono uppercase mb-2">{obj.title}</h1>
         <h3 className="text-forest-green text-2xl font-mono mt-5 mb-3 leading-10">{obj.description}</h3>
-        <p className="font-mono text-black leading-5">My next project is a work in progress. I am creating an online store which allows users to shop as guests or to create an account and receive discounts. The app will integrate Stripe's payment services so that users can purchase goods through with existing credit or debit card. </p>
+        <p className="font-mono text-black leading-5">My next project is currently a work in progress. I am building a React app for a mock online coffee store. User authentication will be made possible using JSON Web Tokens (JWT), and React Stripe will be used to integrate Stripe's payment services into the app. I'm using MongoDB for the back end to store user and item data. Three.js is used to render a 3D scene on the homepage.  </p>
+        <p className="font-mono text-black leading-5 mt-4">This is very exciting for me as I've been heavily interested in user authentication and 3D rendering within the browser for some time. Stay tuned to check the progress of this project and for future projects! </p>
         <h3 className="text-forest-green text-2xl font-mono mt-6 mb-3 leading-10">{obj.tech}</h3>
         <div className="flex flex-row justify-start sm:gap-x-12 md:gap-x-16">
           <ul className="list-disc list-outside flex flex-col w-40 sm:w-48">
             <li className="ml-4">ReactJS</li>
             <li className="ml-4">TypeScript</li>
             <li className="ml-4">CSS</li>
+            <li className="ml-4">React Hook Form</li>
+            <li className="ml-4">JSON Web Tokens (JWT)</li>
           </ul>
           <ul className="list-disc list-outside flex flex-col w-40 sm:w-48">
             <li className="ml-4">MongoDB</li>
             <li className="ml-4">Mongoose</li>
             <li className="ml-4">React Router</li>
+            <li className="ml-4">React Stripe</li>
+            <li className="ml-4">Three Fiber</li>
           </ul>
         </div>
       </div>
@@ -413,5 +418,10 @@ const Circle = () => <span className="flex circle"/>;
 const Square = () => <span className="flex square"/>;
 const Diamond = () => <div className="diamond" />;
 const Star = () => <div className="star" />;
+const DarkStar = () => (
+  <div className="ml-[2px] mt-[12px]">
+    <div className="star filter contrast-200 brightness-50 drop-shadow" />
+  </div>
+);
 
 export default Projects;
