@@ -7,7 +7,7 @@ interface HeadingProps {
 
 const linkedinURL:string = "https://www.linkedin.com/in/glenn-p/";
 const githubURL:string = "https://github.com/glennphil/";
-const resumeURL:string = "assets/GlennPhillips_Resume.pdf";
+const resumeURL:string = "assets/docs/GlennPhillips_Resume.pdf";
 
 const Header = () => {
   return (
@@ -140,13 +140,13 @@ const SubHeading = () => (
 
 const Profile = () => (
   <div className="flex flex-row justify-end mt-4 xl:hidden">
-    <div className="bg-[url('https://glennphil.github.io/assets/profile.png')] bg-no-repeat bg-center bg-[length:320px_414px] w-320 h-414 md:bg-[length:388px_498px] md:w-388 md:h-498 xl:hidden" />
+    <div className="bg-[url('https://glennphil.github.io/assets/imgs/profile.png')] bg-no-repeat bg-center bg-[length:320px_414px] w-320 h-414 md:bg-[length:388px_498px] md:w-388 md:h-498 xl:hidden" />
   </div>
 );
 
 const ProfileXL = () => (
   <div className="hidden xl:flex flex-row justify-end mt-16">
-    <div className="hidden xl:flex bg-[url('https://glennphil.github.io/assets/profile.png')] bg-no-repeat bg-center bg-[length:430px_552px] w-430 h-552" />
+    <div className="hidden xl:flex bg-[url('https://glennphil.github.io/assets/imgs/profile.png')] bg-no-repeat bg-center bg-[length:430px_552px] w-430 h-552" />
   </div>
 );
 

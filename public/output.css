@@ -784,14 +784,6 @@ video {
   margin-bottom: 10px;
 }
 
-.-mb-\[10px\] {
-  margin-bottom: -10px;
-}
-
-.-mb-\[16px\] {
-  margin-bottom: -16px;
-}
-
 .flex {
   display: flex;
 }
@@ -1268,36 +1260,36 @@ video {
   background-image: url('https://glennphil.github.io/assets/404-man.png');
 }
 
-.bg-\[url\(\'https\:\/\/glennphil\.github\.io\/assets\/blog-man\.png\'\)\] {
-  background-image: url('https://glennphil.github.io/assets/blog-man.png');
+.bg-\[url\(\'https\:\/\/glennphil\.github\.io\/assets\/imgs\/blog-man\.png\'\)\] {
+  background-image: url('https://glennphil.github.io/assets/imgs/blog-man.png');
 }
 
 .bg-github-icon {
-  background-image: url('../assets/github-icon.png');
+  background-image: url('../assets/imgs/github-icon.png');
 }
 
 .bg-linkedin-icon {
-  background-image: url('../assets/linkedin-icon.png');
+  background-image: url('../assets/imgs/linkedin-icon.png');
 }
 
 .bg-email-icon {
-  background-image: url('../assets/email-icon.png');
+  background-image: url('../assets/imgs/email-icon.png');
 }
 
 .bg-download-icon {
-  background-image: url('../assets/download-icon.png');
+  background-image: url('../assets/imgs/download-icon.png');
 }
 
-.bg-\[url\(\'https\:\/\/glennphil\.github\.io\/assets\/profile\.png\'\)\] {
-  background-image: url('https://glennphil.github.io/assets/profile.png');
+.bg-\[url\(\'https\:\/\/glennphil\.github\.io\/assets\/imgs\/profile\.png\'\)\] {
+  background-image: url('https://glennphil.github.io/assets/imgs/profile.png');
 }
 
 .bg-google-logo {
-  background-image: url('../assets/google-logo.png');
+  background-image: url('../assets/imgs/google-logo.png');
 }
 
 .bg-portfolio-logo {
-  background-image: url('../assets/portfolio-logo.png');
+  background-image: url('../assets/imgs/portfolio-logo.png');
 }
 
 .bg-\[length\:100\%_100\%\] {

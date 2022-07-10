@@ -229,9 +229,9 @@ const Heading: FC<BlogProps> = ({heading}) => (
 const BlogPic = () => (
   <>
     <div className="md:hidden flex h-0 w-3/4 pb-55p relative self-center">
-      <div className="absolute inset-0 md:flex self-center md:self-end z-30 bg-[url('https://glennphil.github.io/assets/blog-man.png')] bg-no-repeat bg-center bg-[length:100%_100%] w-full h-full" />
+      <div className="absolute inset-0 md:flex self-center md:self-end z-30 bg-[url('https://glennphil.github.io/assets/imgs/blog-man.png')] bg-no-repeat bg-center bg-[length:100%_100%] w-full h-full" />
     </div>
-    <div className="hidden md:flex self-center md:self-end z-30 bg-[url('https://glennphil.github.io/assets/blog-man.png')] bg-no-repeat bg-center bg-[length:320px_244px] w-320 h-244 lg:bg-[length:400px_302px] lg:w-400 lg:h-302" />
+    <div className="hidden md:flex self-center md:self-end z-30 bg-[url('https://glennphil.github.io/assets/imgs/blog-man.png')] bg-no-repeat bg-center bg-[length:320px_244px] w-320 h-244 lg:bg-[length:400px_302px] lg:w-400 lg:h-302" />
     <div className="hidden md:flex z-20 h-2 bg-white md:w-688 lg:w-884 xl:w-1040 absolute bottom-28px lg:bottom-35px" />
   </>
 )
