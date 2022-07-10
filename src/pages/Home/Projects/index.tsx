@@ -315,7 +315,7 @@ const Project2Big: FC<ProjectProps> = (obj: {handlers:object; title:string; desc
             <li className="ml-4">Function Components</li>
           </ul>
         </div>
-        <div className="flex flex-row justify-end align-items-center h-12 mt-8 mb-2 gap-x-3 mr-4">
+        <div className="flex flex-row justify-end align-items-center mt-8 mb-2 gap-x-3 mr-4">
           <Circle />
           <Diamond />
           <DarkStar />
@@ -407,6 +407,10 @@ const Project3Big: FC<ProjectProps> = (obj: {handlers:object; title:string; desc
             <li className="ml-4">React Stripe</li>
             <li className="ml-4">Three Fiber</li>
           </ul>
+        </div>
+        <div className="flex flex-row justify-end mt-8 mb-2 gap-x-3">
+          <Circle />
+          <Diamond />
         </div>
       </div>
     </div>

@@ -764,6 +764,10 @@ video {
   margin-right: 1rem;
 }
 
+.ml-\[19px\] {
+  margin-left: 19px;
+}
+
 .ml-\[2px\] {
   margin-left: 2px;
 }
@@ -780,20 +784,12 @@ video {
   margin-bottom: 10px;
 }
 
-.ml-\[15px\] {
-  margin-left: 15px;
+.-mb-\[10px\] {
+  margin-bottom: -10px;
 }
 
-.ml-\[20px\] {
-  margin-left: 20px;
-}
-
-.ml-\[10px\] {
-  margin-left: 10px;
-}
-
-.ml-\[19px\] {
-  margin-left: 19px;
+.-mb-\[16px\] {
+  margin-bottom: -16px;
 }
 
 .flex {
