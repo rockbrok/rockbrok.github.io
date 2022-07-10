@@ -64,7 +64,7 @@ body {
 .star:before{
   content: "";
   position: absolute;
-  background: #fff;
+  background: rgb(224, 224, 224);
   width: 10px;
   height: 12px;
   transform: rotate(-45deg) skewX(22.5deg) skewY(22.5deg);
@@ -72,10 +72,15 @@ body {
 .star:after{
   content: "";
   position: absolute;
-  background: #fff;
+  background: rgb(224, 224, 244);
   width: 10px;
   height: 12px;
   transform: rotate(45deg) skewX(22.5deg) skewY(22.5deg);
+}
+@media (prefers-color-scheme: dark) {
+  star:before, .star:after {
+    background: rgb(224, 224, 224);
+  }
 }
 
 /* X */

@@ -273,7 +273,9 @@ const BlogPost2Mini = (obj: {showBlog2:boolean, setShowBlog2:any; title2:string;
         { obj.showBlog2 ? disableBodyScroll(Document as unknown as HTMLElement | Element) : null } 
       </>
     </button>
+
     <div className="h-8 z-10 -mt-75px mb-8 md:mb-0 -mx-2 bg-dark-grey" />
+    <div className="flex md:hidden w-full h-2 z-20 bg-white -mt-130px mb-8 md:mb-0" />
   </>
 )
 

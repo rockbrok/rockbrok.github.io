@@ -7,7 +7,7 @@ interface HeadingProps {
 
 const linkedinURL:string = "https://www.linkedin.com/in/glenn-p/";
 const githubURL:string = "https://github.com/glennphil/";
-const resumeURL:string = "docs/resume.pdf";
+const resumeURL:string = "assets/GlennPhillips_Resume.pdf";
 
 const Header = () => {
   return (

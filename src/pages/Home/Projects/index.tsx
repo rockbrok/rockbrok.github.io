@@ -318,7 +318,9 @@ const Project2Big: FC<ProjectProps> = (obj: {handlers:object; title:string; desc
         <div className="flex flex-row justify-end align-items-center h-12 mt-8 mb-2 gap-x-3 mr-4">
           <Circle />
           <Diamond />
-          <Star />
+          <div className="ml-[2px] mt-[12px]">
+            <div className="star filter contrast-200 brightness-50 drop-shadow" />
+          </div>
         </div>
       </div>
     </div>

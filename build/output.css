@@ -756,40 +756,16 @@ video {
   margin-top: 2px;
 }
 
+.mr-4 {
+  margin-right: 1rem;
+}
+
 .mt-0 {
   margin-top: 0px;
 }
 
 .mb-10px {
   margin-bottom: 10px;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.-mr-2 {
-  margin-right: -0.5rem;
-}
-
-.-ml-2 {
-  margin-left: -0.5rem;
-}
-
-.-mr-4 {
-  margin-right: -1rem;
-}
-
-.-mr-0 {
-  margin-right: -0px;
-}
-
-.mr-4 {
-  margin-right: 1rem;
 }
 
 .flex {
@@ -864,8 +840,8 @@ video {
   height: 264px;
 }
 
-.h-16 {
-  height: 4rem;
+.h-14 {
+  height: 3.5rem;
 }
 
 .h-auto {
@@ -886,10 +862,6 @@ video {
 
 .h-60 {
   height: 60px;
-}
-
-.h-14 {
-  height: 3.5rem;
 }
 
 .w-884 {
@@ -1324,12 +1296,12 @@ video {
   background-size: 430px 552px;
 }
 
-.bg-200 {
-  background-size: 200px;
-}
-
 .bg-160 {
   background-size: 160px;
+}
+
+.bg-200 {
+  background-size: 200px;
 }
 
 .bg-center {
@@ -1417,6 +1389,22 @@ video {
 
 .pt-14px {
   padding-top: 14px;
+}
+
+.pr-40px {
+  padding-right: 40px;
+}
+
+.pt-20px {
+  padding-top: 20px;
+}
+
+.pl-20px {
+  padding-left: 20px;
+}
+
+.pt-30px {
+  padding-top: 30px;
 }
 
 .text-left {
@@ -1529,12 +1517,6 @@ video {
   color: rgb(164 164 164 / var(--tw-text-opacity));
 }
 
-.drop-shadow {
-  --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
-  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -1568,6 +1550,18 @@ video {
   .sm\:gap-x-12 {
     -webkit-column-gap: 3rem;
             column-gap: 3rem;
+  }
+
+  .sm\:pr-\[16px\] {
+    padding-right: 16px;
+  }
+
+  .sm\:pt-40px {
+    padding-top: 40px;
+  }
+
+  .sm\:pl-40px {
+    padding-left: 40px;
   }
 }
 

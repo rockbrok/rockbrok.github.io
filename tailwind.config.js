@@ -72,6 +72,7 @@ module.exports = {
       },
       margin: {
         '75px': '75px',
+        '130px': '130px'
       },
       width: {
         '70p': '70%',
