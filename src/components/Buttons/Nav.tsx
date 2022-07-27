@@ -1,27 +1,27 @@
+import { MouseEventHandler } from "react";
+
 export const FileNav = (obj: {decrease:() => void; increase:() => void; show:boolean; setShow:any}) => (
   <div className="md:flex justify-center fixed bottom-0 bg-white w-full md:w-768 mx-auto">
     <div className="h-60 mt-0 mb-10px mx-45px border-t-2 border-solid border-light-green w-[calc(100%-90px)] flex flex-row items-center justify-evenly md:w-768">
-      <LeftArrow decrease={obj.decrease} />
+      <Arrow 
+        click={obj.decrease}
+        title="Previous"
+        style="arrow-icon rotate-270"
+      />
       <Close show={obj.show} setShow={obj.setShow} />
-      <RightArrow increase={obj.increase} />
+      <Arrow 
+        click={obj.increase}
+        title="Next"
+        style="arrow-icon rotate-90"
+      />
     </div>
   </div>
 );
 
-const RightArrow = (obj: {increase: () => void}) => (
-  <button className="h-12 w-12" onClick={() => {obj.increase();}} title="Next">
+const Arrow = (props: { click: MouseEventHandler<HTMLButtonElement> | undefined; title: string | undefined; style: string | undefined; }) => (
+  <button className="h-12 w-12" onClick={props.click} title={props.title}>
     <div className="flex scale-50 items-center justify-center">
-      <div className="arrow-icon rotate-90">
-        <span className="arrow" />
-      </div>
-    </div>
-  </button>
-);
-
-const LeftArrow = (obj: {decrease: () => void}) => (
-  <button className="h-12 w-12" onClick={obj.decrease} title="Previous">
-    <div className="flex scale-50 items-center justify-center">
-      <div className="arrow-icon rotate-270">
+      <div className={props.style}>
         <span className="arrow" />
       </div>
     </div>

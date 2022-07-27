@@ -1,6 +1,6 @@
 import axios from 'axios';
 import OutsideClickHandler from 'react-outside-click-handler';
-import { FC, useState, useEffect } from 'react';
+import { FC, useState, useEffect, JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, ClassAttributes, HTMLAttributes, MouseEventHandler, CSSProperties } from 'react';
 import { useSwipeable } from "react-swipeable";
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { FileNav, X } from '../../../components/Buttons/Nav';
@@ -168,26 +168,36 @@ const Blog = () => {
         <section className="flex flex-col w-auto justify-center md:flex-row-reverse md:gap-x-12 md:absolute">
           <>
             <div className="flex flex-col gap-16 md:mb-[-2px] lg:mb-[4px]">
-              <BlogPostMini 
-                showBlog1={showBlog1}
-                setShowBlog1={setShowBlog1}
-                title={title} 
-                time={time}
-                text={text}
-                day={day}
-                date={date}
-              />              
-              <BlogPost2Mini 
-                showBlog2={showBlog2}
-                setShowBlog2={setShowBlog2}
-                title2={title2}
-                text2={text2}
-              />
+              <>
+                <BlogMini 
+                  click={() => setShowBlog1(!showBlog1)}
+                  style={{height: "208px", paddingBottom: "16px"}}
+                  title={title} 
+                  time={time}
+                  text={text}
+                  day={day}
+                  date={date}
+                  scroll={showBlog1 ? disableBodyScroll(Document as unknown as HTMLElement | Element) : enableBodyScroll(Document as unknown as HTMLElement | Element) }           
+                />
+                <div className="h-0 w-0 border-t-white border-l-transparent border-r-transparent border-b-transparent border-solid border-t-30 border-r-30 border-b-0 border-l-0 mt-200px ml-30px absolute" />
+              </>
+              <>
+                <BlogMini 
+                  click={() => setShowBlog2(!showBlog2)}
+                  style={{height: "112px"}}
+                  title={title2} 
+                  text={text2}
+                  scroll={showBlog2 ? disableBodyScroll(Document as unknown as HTMLElement | Element) : null } 
+                />  
+                <div className="h-8 z-10 -mt-75px mb-8 md:mb-0 -mx-2 bg-dark-grey" />
+                <div className="flex md:hidden w-full h-2 z-20 bg-white -mt-130px mb-8 md:mb-0" />
+              </>  
             </div>
             { showBlog1 ? 
-              <BlogPostOverlay 
-                showBlog1={showBlog1}
-                setShowBlog1={setShowBlog1}
+              <BlogPost
+                click={() => setShowBlog1(false)}
+                show={showBlog1}
+                setShow={setShowBlog1}
                 title={title}
                 time={time}
                 text={text}
@@ -196,17 +206,18 @@ const Blog = () => {
                 handlers={handlers}
                 increase={increase}
                 decrease={decrease}
-              /> 
+              />
             : null }
             { showBlog2 ? 
-              <BlogPost2Overlay 
-                showBlog2={showBlog2}
-                setShowBlog2={setShowBlog2}
-                title2={title2}
-                text2={text2}
-                time2={time2}
-                day2={day2}
-                date2={date2}
+              <BlogPost
+                click={() => setShowBlog2(false)}
+                show={showBlog2}
+                setShow={setShowBlog2}
+                title={title2}
+                time={time2}
+                text={text2}
+                day={day2}
+                date={date2}
                 handlers={handlers}
                 increase={increase}
                 decrease={decrease}
@@ -234,137 +245,45 @@ const BlogPic = () => (
     <div className="hidden md:flex self-center md:self-end z-30 bg-[url('https://glennphil.github.io/assets/imgs/blog-man.png')] bg-no-repeat bg-center bg-[length:320px_244px] w-320 h-244 lg:bg-[length:400px_302px] lg:w-400 lg:h-302" />
     <div className="hidden md:flex z-20 h-2 bg-white md:w-688 lg:w-884 xl:w-1040 absolute bottom-28px lg:bottom-35px" />
   </>
-)
+);
 
-const BlogPostMini = (obj: {showBlog1:boolean, setShowBlog1:any, title:string; text:string; time:string; day:string; date:number}) => (
-  <>
-    <button onClick={() => obj.setShowBlog1(!obj.showBlog1)}>
-      <>
-        <div className="flex flex-col font-mono bg-white w-full h-52 pt-6 px-7 pb-4 rounded-xl relative justify-between md:w-80">
-          <h6 className="flex text-dark-grey text-left font-bold uppercase font-mono">
-            {obj.title}
-          </h6>
-          <p className="line-clamp-4 text-left">
-            {obj.text}
-          </p>
-          <h6 className="flex text-dark-grey text-sm font-mono self-end justify-end uppercase">
-            {obj.time}&nbsp;{obj.day}&nbsp;{obj.date}
-          </h6>
+const BlogMini:any = (props: { click: MouseEventHandler<HTMLButtonElement> | undefined; style: CSSProperties | undefined; title: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; text: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; time: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; day: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; date: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; scroll: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; }) => {
+  return (
+    <>
+      <button onClick={props.click}>
+        <div className="flex flex-col font-mono bg-white w-full pt-6 px-7 rounded-xl relative justify-between md:w-80" style={props.style}>
+          <h6 className="flex text-dark-grey text-left font-bold uppercase font-mono">{props.title}</h6>
+          <p className="line-clamp-4 text-left">{props.text}</p>
+          <h6 className="flex text-dark-grey text-sm font-mono self-end justify-end uppercase">{props.time}&nbsp;{props.day}&nbsp;{props.date}</h6>
         </div>
-        { obj.showBlog1 ? disableBodyScroll(Document as unknown as HTMLElement | Element) : enableBodyScroll(Document as unknown as HTMLElement | Element) } 
-      </>
-    </button>
-    <div className="h-0 w-0 border-t-white border-l-transparent border-r-transparent border-b-transparent border-solid border-t-30 border-r-30 border-b-0 border-l-0 mt-200px ml-30px absolute" />
-  </>
-)
+        {props.scroll}
+      </button>
+    </>
+  )
+}
 
-const BlogPost2Mini = (obj: {showBlog2:boolean, setShowBlog2:any; title2:string; text2:string}) => (
-  <>
-    <button onClick={() => obj.setShowBlog2(!obj.showBlog2)}>
-      <>
-        <div className="flex flex-col text-left font-mono bg-white w-full h-28 pt-6 px-7 pb-0 rounded-t-xl relative justify-between md:w-80">
-          <h6 className="flex text-dark-grey font-bold uppercase font-mono mb-4 select-none">
-            {obj.title2}
-          </h6>
-          <p className="line-clamp-4 text-left select-none">
-            {obj.text2}
-          </p>
-        </div>
-        { obj.showBlog2 ? disableBodyScroll(Document as unknown as HTMLElement | Element) : null } 
-      </>
-    </button>
-
-    <div className="h-8 z-10 -mt-75px mb-8 md:mb-0 -mx-2 bg-dark-grey" />
-    <div className="flex md:hidden w-full h-2 z-20 bg-white -mt-130px mb-8 md:mb-0" />
-  </>
-)
-
-const BlogPostOverlay = (obj: {showBlog1:boolean; setShowBlog1:any; title:string; time: string; text: string; day: string; date: number; handlers: object; increase:() => void; decrease:() => void}) => (
+const BlogPost = (props: { click: (e: MouseEvent) => void; handlers: JSX.IntrinsicAttributes & ClassAttributes<HTMLDivElement> & HTMLAttributes<HTMLDivElement>; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; text: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; time: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; day: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; date: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; show: boolean; setShow: any; increase: () => void; decrease: () => void; }) => (
   <div className="z-40 fixed w-full h-full inset-0 bg-dark-grey">
     <X />
     <div className="z-40 fixed mx-auto md:w-768 inset-0">
-      <OutsideClickHandler onOutsideClick={() => { obj.setShowBlog1(false) }}>
+      <OutsideClickHandler onOutsideClick={props.click}>
         <>
-        <BlogPostBig
-          title={obj.title}
-          time={obj.time}
-          text={obj.text}
-          day={obj.day}
-          date={obj.date}
-          handlers={obj.handlers}
-        /> 
+        <div className="h-[calc(100%-70px)] fixed overflow-y-scroll w-full md:w-768 bg-white scrollbar-hide pt-50px pb-10px px-45px md:mx-auto lg:scrollbar-default" {...props.handlers}>
+          <h6 className="flex text-dark-grey font-bold uppercase font-mono mb-3">{props.title}</h6>
+          <p className="whitespace-pre-line break-words leading-5">{props.text}</p>
+          <div className="flex flex-col text-dark-grey text-sm text-left font-mono mt-3 items-end">
+            <h6 className="uppercase">{props.time}&nbsp;{props.day}</h6>
+            <h6 className="uppercase">{props.date}</h6>
+          </div>
+        </div>
         <FileNav
-          show={obj.showBlog1} 
-          setShow={obj.setShowBlog1} 
-          increase={obj.increase}
-          decrease={obj.decrease}
+          show={props.show} 
+          setShow={props.setShow} 
+          increase={props.increase}
+          decrease={props.decrease}
         />
         </>
       </OutsideClickHandler>
-    </div>
-  </div>
-)
-
-const BlogPost2Overlay = (obj: { showBlog2:boolean; setShowBlog2:any; title2:string; time2: string; text2: string; day2: string; date2: number; handlers: object; increase:() => void; decrease:() => void}) => (
-  <div className="z-40 fixed w-full h-full inset-0 bg-dark-grey">
-    <X />
-    <div className="z-40 fixed mx-auto md:w-768 inset-0">
-      <OutsideClickHandler onOutsideClick={() => { obj.setShowBlog2(false) }}>
-        <>
-        <BlogPost2Big 
-          title2={obj.title2}
-          text2={obj.text2}
-          time2={obj.time2}
-          day2={obj.day2}
-          date2={obj.date2}
-          handlers={obj.handlers}
-        /> 
-        <FileNav
-          show={obj.showBlog2} 
-          setShow={obj.setShowBlog2} 
-          increase={obj.increase}
-          decrease={obj.decrease}
-        />
-        </>
-      </OutsideClickHandler>
-    </div>
-  </div>
-)
-
-const BlogPostBig = (obj: {title:string; text:string; time:string; day:string; date:number; handlers:object}) => (
-  <div className="h-[calc(100%-70px)] fixed overflow-y-scroll w-full md:w-768 bg-white scrollbar-hide pt-50px pb-10px px-45px md:mx-auto lg:scrollbar-default" {...obj.handlers}>
-    <h6 className="flex text-dark-grey font-bold uppercase font-mono mb-3">
-      {obj.title}
-    </h6>
-    <p className="whitespace-pre-line break-words leading-5">
-      {obj.text}
-    </p>
-    <div className="flex flex-col text-dark-grey text-sm text-left font-mono mt-3 items-end">
-      <h6 className="uppercase">
-        {obj.time}&nbsp;{obj.day}
-      </h6>
-      <h6 className="uppercase">
-        {obj.date}
-      </h6>
-    </div>
-  </div>
-)
-
-const BlogPost2Big = (obj: {title2:string; text2:string; time2:string; day2:string; date2:number; handlers:object}) => (
-  <div className="h-[calc(100%-70px)] fixed overflow-y-scroll w-full md:w-768 bg-white scrollbar-hide pt-50px pb-10px px-45px md:mx-auto lg:scrollbar-default" {...obj.handlers}>
-    <h6 className="flex text-dark-grey font-bold uppercase font-mono mb-3">
-      {obj.title2}
-    </h6>
-    <p className="whitespace-pre-line break-words leading-5">
-      {obj.text2}
-    </p>
-    <div className="flex flex-col text-dark-grey text-sm text-left font-mono mt-3 items-end">
-      <h6 className="uppercase">
-        {obj.time2}&nbsp;{obj.day2}
-      </h6>
-      <h6 className="uppercase">
-        {obj.date2}
-      </h6>
     </div>
   </div>
 );
