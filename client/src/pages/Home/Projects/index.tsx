@@ -11,6 +11,8 @@ const Projects = () => {
   const viewProject = "see the full project";
   const viewCode = "view code";
   const tech = "Tech used";
+  const p0paragraph1 = "The purpose of this project was to experiment and create a fun, and interactive app using the 3D JavaScript and physics libraries of Three.js and Cannon.js."
+  const p0paragraph2 = "3DSearch currently works with the English alphabet and Arabic numerals with the possibility to support other languages in the near future. I intend to add functionality for custom settings, and an increase in modularity.";
   const p1paragraph1 = "This project developed from a suggestion that my friend Pae gave which was to recreate the Google landing page. Currently, the goal of this project is to replicate the design and function of the Google (Argentina) Search landing page and of the Sign In, Sign Up, Login, Account, and 404 pages."
   const p1paragraph2 = "I used many image assets from Google including Logos, App Icons, etc. For icons I used HeroIcons by Tailwind. There is no encryption for user information, however, in the future I would like to implement the use of JSON Web Tokens for this purpose."
   const p2paragraph1 = "This project's purpose is to serve as a demonstration of my past projects, and skills as a front-end developer. It was made using TailwindCSS, ReactJS, and TypeScript. It was designed by my partner. It was built with a mobile-first design."
@@ -21,7 +23,7 @@ const Projects = () => {
   const p4paragraph2 = "This is very exciting for me as I've been heavily interested in user authentication and 3D rendering within the browser for some time. Stay tuned to check the progress of this project and for future projects!"
 
   // total projects
-  const numProjects = 3;
+  const numProjects = 5;
 
   const increase = () => {
     setCounter(c => (c + 1) % numProjects);
@@ -45,10 +47,45 @@ const Projects = () => {
       </div>
       <section className="flex flex-wrap container justify-center md:grid md:grid-cols-2 lg:grid-cols-3 md:auto-rows-fr gap-y-20 gap-x-[50px] md:gap-x-[110px] lg:gap-x-[46px] xl:gap-x-[124px] z-40">
         <Project
-          click={() => {setCounter(0); setShow(!show);}}
-          title={`Google Frontend`}
-          scroll={counter === 0 && show ? disableBodyScroll(Document as unknown as HTMLElement | Element) : enableBodyScroll(Document as unknown as HTMLElement | Element) }
+          click={() => { setCounter(0); setShow(!show); }}
+          title={`3DSearch`}
+          scroll={counter === 0 && show ? disableBodyScroll(Document as unknown as HTMLElement | Element) : enableBodyScroll(Document as unknown as HTMLElement | Element)}
           counterShow={counter === 0 && show}
+          outsideClick={() => setShow(false)}
+          handlers={handlers}
+          style="bg-3d-logo bg-no-repeat bg-46 bg-center"
+          styleBig="bg-3d-logo bg-no-repeat bg-46 bg-center my-9 self-center justify-self-center"
+          projectPath="https://glennphil.github.io/3d-search/"
+          viewProject={viewProject}
+          codePath="https://github.com/glennphil/3d-search"
+          viewCode={viewCode}
+          description={description}
+          paragraph1={p0paragraph1}
+          paragraph2={p0paragraph2}
+          tech={tech}
+          text0="React.js"
+          text1="Tailwind CSS"
+          text2="Three.js"
+          text3="Cannon.js"
+          text4="Use-gesture/react"
+          text5="React-three Cannon"
+          text6="React-three Drei"
+          text7="React-three Fiber"
+          text8="React Hook Form"
+          show={show}
+          setShow={setShow}
+          increase={increase}
+          decrease={decrease}
+        >
+          <Circle />
+          <Square />
+          <Star />
+        </Project>
+        <Project
+          click={() => { setCounter(1); setShow(!show); }}
+          title={`Google Frontend`}
+          scroll={counter === 1 && show ? disableBodyScroll(Document as unknown as HTMLElement | Element) : enableBodyScroll(Document as unknown as HTMLElement | Element)}
+          counterShow={counter === 1 && show}
           outsideClick={() => setShow(false)}
           handlers={handlers}
           style="bg-google-logo bg-no-repeat bg-160 bg-center"
@@ -56,12 +93,20 @@ const Projects = () => {
           projectPath="https://glennphil.github.io/Google/"
           viewProject={viewProject}
           codePath="https://github.com/glennphil/Google"
-          viewCode={viewCode} 
+          viewCode={viewCode}
           description={description}
           paragraph1={p1paragraph1}
           paragraph2={p1paragraph2}
           tech={tech}
-          textstuff={<Project1 />}
+          text0="CSS"
+          text1="React.js"
+          text2="i18next"
+          text3="React Hook Form"
+          text4="React Router"
+          text5="React Outside Click Handler"
+          text6="Styled Components"
+          text7="React Helmet"
+          text8="Axios"
           show={show}
           setShow={setShow}
           increase={increase}
@@ -72,10 +117,10 @@ const Projects = () => {
           <Square />
         </Project>
         <Project
-          click={() => {setCounter(1); setShow(!show);}}
+          click={() => { setCounter(2); setShow(!show); }}
           title={`Portfolio`}
-          scroll={counter === 1 && show ? disableBodyScroll(Document as unknown as HTMLElement | Element) : null }
-          counterShow={counter === 1 && show}
+          scroll={counter === 2 && show ? disableBodyScroll(Document as unknown as HTMLElement | Element) : null}
+          counterShow={counter === 2 && show}
           outsideClick={() => setShow(false)}
           handlers={handlers}
           style="bg-portfolio-logo bg-no-repeat bg-200 bg-center"
@@ -83,12 +128,20 @@ const Projects = () => {
           projectPath={undefined}
           viewProject={undefined}
           codePath="https://github.com/glennphil/glennphil.github.io"
-          viewCode={viewCode} 
+          viewCode={viewCode}
           description={description}
           paragraph1={p2paragraph1}
           paragraph2={p2paragraph2}
           tech={tech}
-          textstuff={<Project2 />}
+          text0="TypeScript"
+          text1="React Swipeable"
+          text2="React.js"
+          text3="React Router"
+          text4="Tailwind CSS"
+          text5="Axios"
+          text6="JSON Server"
+          text7="Body Scroll Lock"
+          text8="React Scroll"
           show={show}
           setShow={setShow}
           increase={increase}
@@ -99,37 +152,45 @@ const Projects = () => {
           <Star />
         </Project>
         <Project
-          click={() => {setCounter(2); setShow(!show);}}
+          click={() => { setCounter(3); setShow(!show); }}
           title={`Rainmap`}
-          scroll={counter === 2 && show ? disableBodyScroll(Document as unknown as HTMLElement | Element) : null }
-          counterShow={counter === 2 && show}
+          scroll={counter === 3 && show ? disableBodyScroll(Document as unknown as HTMLElement | Element) : null}
+          counterShow={counter === 3 && show}
           outsideClick={() => setShow(false)}
           handlers={handlers}
-          style="bg-no-repeat bg-200 bg-center"
-          styleBig="bg-no-repeat bg-200 bg-center my-9 self-center justify-self-center"
+          style="bg-rain-logo bg-no-repeat bg-46 bg-center"
+          styleBig="bg-rain-logo bg-46 bg-no-repeat bg-center my-9 self-center justify-self-center"
           projectPath="https://glennphil.github.io/rainmap/"
           viewProject={viewProject}
           codePath="https://github.com/glennphil/rainmap"
-          viewCode={viewCode} 
+          viewCode={viewCode}
           description={description}
           paragraph1={p3paragraph1}
           paragraph2={p3paragraph2}
           tech={tech}
-          textstuff={<Project3 />}
+          text0="React.js"
+          text1="Python Flask"
+          text2="i18next"
+          text3="React Router"
+          text4="CSS"
+          text5="React Hook Form"
+          text6="SQLite"
+          text7="React Helmet"
+          text8="Leaflet.js"
           show={show}
           setShow={setShow}
           increase={increase}
           decrease={decrease}
         >
-          <Triangle />
           <Circle />
           <Square />
+          <Star />
         </Project>
         <Project
-          click={() => {setCounter(3); setShow(!show);}}
+          click={() => { setCounter(4); setShow(!show); }}
           title={`Coffee Shop`}
-          scroll={counter === 3 && show ? disableBodyScroll(Document as unknown as HTMLElement | Element) : null }
-          counterShow={counter === 3 && show}
+          scroll={counter === 4 && show ? disableBodyScroll(Document as unknown as HTMLElement | Element) : null}
+          counterShow={counter === 4 && show}
           outsideClick={() => setShow(false)}
           handlers={handlers}
           style="bg-no-repeat bg-200 bg-center"
@@ -137,12 +198,20 @@ const Projects = () => {
           projectPath=""
           viewProject={viewProject}
           codePath="https://github.com/glennphil/CoffeeStore"
-          viewCode={viewCode} 
+          viewCode={viewCode}
           description={description}
           paragraph1={p4paragraph1}
           paragraph2={p4paragraph2}
           tech={tech}
-          textstuff={<Project4 />}
+          text0="TypeScript"
+          text1="JavaScript"
+          text2="CSS"
+          text3="React Three Fiber"
+          text4="React Hook Form"
+          text5="Mongoose"
+          text6="Shopify"
+          text7="React Router"
+          text8="MongoDB"
           show={show}
           setShow={setShow}
           increase={increase}
@@ -150,6 +219,7 @@ const Projects = () => {
         >
           <Circle />
           <Square />
+          <Diamond />
         </Project>
       </section>
     </section>
@@ -183,13 +253,13 @@ const Key = () => (
   </section>
 );
 
-const Project = (props: { children: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; click: MouseEventHandler<HTMLButtonElement> | undefined; style: string | undefined; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | null | undefined; scroll: any; counterShow: any; outsideClick: (e: MouseEvent) => void; handlers: JSX.IntrinsicAttributes & ClassAttributes<HTMLElement> & HTMLAttributes<HTMLElement>; styleBig: string | undefined; projectPath: string | undefined; viewProject: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; codePath: string | undefined; viewCode: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; description: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; paragraph1: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; paragraph2: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; tech: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; textstuff: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; show: boolean; setShow: any; increase: () => void; decrease: () => void; }) => (
+const Project = (props: { children: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; click: MouseEventHandler<HTMLButtonElement> | undefined; style: string | undefined; title: string | number | boolean | ReactFragment | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; scroll: any; counterShow: any; outsideClick: (e: MouseEvent) => void; handlers: JSX.IntrinsicAttributes & ClassAttributes<HTMLElement> & HTMLAttributes<HTMLElement>; styleBig: string | undefined; projectPath: string | undefined; viewProject: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; codePath: string | undefined; viewCode: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; description: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; paragraph1: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; paragraph2: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; tech: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; text0: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; text2: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; text4: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; text6: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; text8: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; text1: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; text3: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; text5: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; text7: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; show: boolean; setShow: any; increase: () => void; decrease: () => void; }) => (
   <section className="w-264 h-364 relative">
     <div className="flex flex-row absolute top-0px h-50 w-118 border-solid border-t-2 border-x-2 border-white border-b-0 rounded-t-3xl justify-center gap-x-3 items-center">{props.children}</div>
     <button onClick={props.click}>
       <>
         <div className="flex border-2 border-solid border-white justify-center items-center absolute cursor-pointer top-50px w-full h-264">
-          <span className={props.style} style={{display: "flex", height: "56px", width: "200px"}}/>
+          <span className={props.style} style={{ display: "flex", height: "56px", width: "200px" }} />
         </div>
         <div className="flex absolute justify-center items-center bottom-0px w-full cursor-pointer h-50 border-2 border-solid border-white border-t-0 rounded-br-3xl rounded-bl-3xl text-light-grey bg-white">
           <h4 className="text-grey text-xl font-mono select-none">{props.title}</h4>
@@ -197,16 +267,16 @@ const Project = (props: { children: string | number | boolean | ReactElement<any
         {props.scroll}
       </>
     </button>
-    { props.counterShow ?
+    {props.counterShow ?
       <div className="z-40 fixed w-full h-full inset-0 bg-dark-grey">
         <X />
         <div className="z-40 fixed mx-auto md:w-768 inset-0 overflow-y-scroll scrollbar-default">
           <OutsideClickHandler onOutsideClick={props.outsideClick}>
-              <>
+            <>
               <section {...props.handlers}>
                 <div className="flex flex-col bg-dark-grey h-auto justify-self-center justify-evenly md:w-768">
                   <div className="fixed flex flex-col top-0 justify-self-center h-206 w-full md:w-768 bg-dark-grey border-b-[5px] border-forest-green">
-                    <span className={props.styleBig} style={{display: "flex", height: "80px", width: "200px"}}/>
+                    <span className={props.styleBig} style={{ display: "flex", height: "80px", width: "200px" }} />
                     <div className="flex flex-row flex-wrap gap-x-4  gap-y-2 justify-evenly text-white">
                       <a className="whitespace-nowrap" href={props.projectPath} target="_blank" rel="noreferrer">{props.viewProject}</a>
                       <a className="whitespace-nowrap" href={props.codePath} target="_blank" rel="noreferrer">{props.viewCode}</a>
@@ -220,7 +290,21 @@ const Project = (props: { children: string | number | boolean | ReactElement<any
                     <p className="font-mono text-black leading-5">{props.paragraph1}</p>
                     <p className="font-mono text-black leading-5 mt-4">{props.paragraph2}</p>
                     <h3 className="text-forest-green text-2xl font-mono mt-6 mb-3 leading-10">{props.tech}</h3>
-                    {props.textstuff}
+                    <div className="flex flex-row justify-start sm:gap-x-12 md:gap-x-16 mb-2">
+                      <ul className="list-disc list-outside flex flex-col w-40 sm:w-48">
+                        <ListItem>{props.text0}</ListItem>
+                        <ListItem>{props.text2}</ListItem>
+                        <ListItem>{props.text4}</ListItem>
+                        <ListItem>{props.text6}</ListItem>
+                        <ListItem>{props.text8}</ListItem>
+                      </ul>
+                      <ul className="list-disc list-outside flex flex-col w-40 sm:w-48">
+                        <ListItem>{props.text1}</ListItem>
+                        <ListItem>{props.text3}</ListItem>
+                        <ListItem>{props.text5}</ListItem>
+                        <ListItem>{props.text7}</ListItem>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -234,126 +318,18 @@ const Project = (props: { children: string | number | boolean | ReactElement<any
           </OutsideClickHandler>
         </div>
       </div>
-    : null }
+      : null}
   </section>
 );
 
-const Project1 = () => (
-  <>
-    <div className="flex flex-row justify-start sm:gap-x-12 md:gap-x-16">
-      <ul className="list-disc list-outside flex flex-col w-40 sm:w-48">
-        <li className="ml-4">CSS</li>
-        <li className="ml-4">ReactJS</li>
-        <li className="ml-4">i18next</li>
-        <li className="ml-4">React Router</li>
-        <li className="ml-4">Styled Components</li>
-        <li className="ml-4">Axios</li>
-      </ul>
-      <ul className="list-disc list-outside flex flex-col w-40 sm:w-48">
-        <li className="ml-4">ESLint</li>
-        <li className="ml-4">JSON Server</li>
-        <li className="ml-4">React Hook Form</li>
-        <li className="ml-4">React Outside Click Handler</li>
-        <li className="ml-4">React Helmet</li>
-      </ul>
-    </div>
-    <div className="flex flex-row justify-end mt-8 mb-2 gap-x-3">
-      <div className="mt-2px">
-        <Triangle />
-      </div>
-      <Circle />
-      <Square />
-    </div>
-  </>
+const ListItem = (props: { children: string | number | boolean | ReactFragment | ReactPortal | ReactElement<any, string | JSXElementConstructor<any>> | null | undefined; }) => (
+  <li className="ml-4">{props.children}</li>
 );
 
-const Project2 = () => (
-  <>
-    <div className="flex flex-row justify-start sm:gap-x-12 md:gap-x-16">
-      <ul className="list-disc list-outside flex flex-col w-40 sm:w-48">
-        <li className="ml-4">Typescript</li>
-        <li className="ml-4">ReactJS</li>
-        <li className="ml-4">Tailwind CSS</li>
-        <li className="ml-4">JSON Server</li>
-        <li className="ml-4">Body Scroll Lock</li>
-        <li className="ml-4">React Scroll</li>
-      </ul>
-      <ul className="list-disc list-outside flex flex-col w-40 sm:w-48">
-        <li className="ml-4">React Swipeable</li>
-        <li className="ml-4">React Router</li>
-        <li className="ml-4">Axios</li>
-        <li className="ml-4">Function Components</li>
-      </ul>
-    </div>
-    <div className="flex flex-row justify-end align-items-center mt-8 mb-2 gap-x-3 mr-4">
-      <Circle />
-      <Diamond />
-      <DarkStar />
-    </div>
-  </>
-);
-
-const Project3 = () => (
-  <>
-    <div className="flex flex-row justify-start sm:gap-x-12 md:gap-x-16">
-      <ul className="list-disc list-outside flex flex-col w-40 sm:w-48">
-        <li className="ml-4">ReactJS</li>
-        <li className="ml-4">i18next</li>
-        <li className="ml-4">CSS</li>
-        <li className="ml-4">MySQL</li>
-        <li className="ml-4">Leaflet</li>
-      </ul>
-      <ul className="list-disc list-outside flex flex-col w-40 sm:w-48">
-        <li className="ml-4">Python Flask</li>
-        <li className="ml-4">React Router</li>
-        <li className="ml-4">React Helmet</li>
-        <li className="ml-4">React Hook Form</li>
-      </ul>
-    </div>
-    <div className="flex flex-row justify-end mt-8 mb-2 gap-x-3">
-      <div className="mt-2px">
-        <Triangle />
-      </div>
-      <Circle />
-      <Square />
-    </div>
-  </>
-);
-
-const Project4 = () => (
-  <>
-    <div className="flex flex-row justify-start sm:gap-x-12 md:gap-x-16">
-      <ul className="list-disc list-outside flex flex-col w-40 sm:w-48">
-        <li className="ml-4">ReactJS</li>
-        <li className="ml-4">TypeScript</li>
-        <li className="ml-4">CSS</li>
-        <li className="ml-4">React Hook Form</li>
-        <li className="ml-4">JSON Web Tokens (JWT)</li>
-      </ul>
-      <ul className="list-disc list-outside flex flex-col w-40 sm:w-48">
-        <li className="ml-4">MongoDB</li>
-        <li className="ml-4">Mongoose</li>
-        <li className="ml-4">React Router</li>
-        <li className="ml-4">React Stripe</li>
-        <li className="ml-4">Three Fiber</li>
-      </ul>
-    </div>
-    <div className="flex flex-row justify-end mt-8 mb-2 gap-x-3">
-      <Circle />
-      <Square />
-    </div>
-  </>
-);
-
-const Triangle = () => <span className="flex triangle"/>;
-const Circle = () => <span className="flex circle"/>;
-const Square = () => <span className="flex square"/>;
+const Triangle = () => <span className="flex triangle" />;
+const Circle = () => <span className="flex circle" />;
+const Square = () => <span className="flex square" />;
 const Diamond = () => <div className="diamond" />;
 const Star = () => <div className="star" />;
-const DarkStar = () => (
-  <div className="ml-[2px] mt-[12px]">
-    <div className="star filter contrast-200 brightness-50 drop-shadow" />
-  </div>
-);
 
 export default Projects;

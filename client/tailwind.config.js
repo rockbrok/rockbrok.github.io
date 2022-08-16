@@ -49,6 +49,8 @@ module.exports = {
         'linkedin-icon': "url('../assets/imgs/linkedin-icon.png')",
         'google-logo': "url('../assets/imgs/google-logo.png')",
         'portfolio-logo': "url('../assets/imgs/portfolio-logo.png')",
+        '3d-logo': "url('../assets/imgs/3d-logo.svg')",
+        'rain-logo': "url('../assets/imgs/rainmap.svg')"
       },
       rotate: {
         '270': '270deg',
