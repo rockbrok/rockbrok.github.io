@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.4 | MIT License | https://tailwindcss.com
+! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -610,16 +610,12 @@ video {
   left: 70px;
 }
 
-.right-10px {
-  right: 10px;
+.bottom-28px {
+  bottom: 28px;
 }
 
 .top-0px {
   top: 0px;
-}
-
-.bottom-28px {
-  bottom: 28px;
 }
 
 .top-50px {
@@ -636,6 +632,10 @@ video {
 
 .top-206px {
   top: 206px;
+}
+
+.right-10px {
+  right: 10px;
 }
 
 .bottom-0 {
@@ -856,18 +856,6 @@ video {
   width: 100%;
 }
 
-.w-600 {
-  width: 600px;
-}
-
-.w-400 {
-  width: 400px;
-}
-
-.w-118 {
-  width: 118px;
-}
-
 .w-auto {
   width: auto;
 }
@@ -913,8 +901,20 @@ video {
   width: 264px;
 }
 
+.w-118 {
+  width: 118px;
+}
+
 .w-40 {
   width: 10rem;
+}
+
+.w-600 {
+  width: 600px;
+}
+
+.w-400 {
+  width: 400px;
 }
 
 .w-\[calc\(100\%-90px\)\] {
@@ -923,10 +923,6 @@ video {
 
 .w-9 {
   width: 2.25rem;
-}
-
-.w-\[100\%\] {
-  width: 100%;
 }
 
 .max-w-lg {
@@ -1028,14 +1024,6 @@ video {
   justify-items: center;
 }
 
-.gap-10px {
-  gap: 10px;
-}
-
-.gap-2px {
-  gap: 2px;
-}
-
 .gap-4 {
   gap: 1rem;
 }
@@ -1046,6 +1034,14 @@ video {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-10px {
+  gap: 10px;
+}
+
+.gap-2px {
+  gap: 2px;
 }
 
 .gap-x-2 {
@@ -1114,16 +1110,16 @@ video {
   overflow-wrap: break-word;
 }
 
-.rounded-md {
-  border-radius: 0.375rem;
-}
-
 .rounded-xl {
   border-radius: 0.75rem;
 }
 
 .rounded-full {
   border-radius: 9999px;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
 }
 
 .rounded-t-3xl {
@@ -1204,16 +1200,6 @@ video {
   border-bottom-color: transparent;
 }
 
-.bg-grey {
-  --tw-bg-opacity: 1;
-  background-color: rgb(164 164 164 / var(--tw-bg-opacity));
-}
-
-.bg-blue {
-  --tw-bg-opacity: 1;
-  background-color: rgb(66 133 245 / var(--tw-bg-opacity));
-}
-
 .bg-dark-grey {
   --tw-bg-opacity: 1;
   background-color: rgb(34 34 34 / var(--tw-bg-opacity));
@@ -1228,12 +1214,22 @@ video {
   background-color: transparent;
 }
 
-.bg-\[url\(\'https\:\/\/glennphil\.github\.io\/assets\/imgs\/404-man\.png\'\)\] {
-  background-image: url('https://glennphil.github.io/assets/imgs/404-man.png');
+.bg-grey {
+  --tw-bg-opacity: 1;
+  background-color: rgb(164 164 164 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'https\:\/\/glennphil\.github\.io\/assets\/imgs\/blog-man\.png\'\)\] {
-  background-image: url('https://glennphil.github.io/assets/imgs/blog-man.png');
+.bg-blue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(66 133 245 / var(--tw-bg-opacity));
+}
+
+.bg-\[url\(\'https\:\/\/rockbrok\.github\.io\/assets\/imgs\/404-man\.png\'\)\] {
+  background-image: url('https://rockbrok.github.io/assets/imgs/404-man.png');
+}
+
+.bg-\[url\(\'https\:\/\/rockbrok\.github\.io\/assets\/imgs\/blog-man\.png\'\)\] {
+  background-image: url('https://rockbrok.github.io/assets/imgs/blog-man.png');
 }
 
 .bg-github-icon {
@@ -1252,20 +1248,12 @@ video {
   background-image: url('../assets/imgs/download-icon.png');
 }
 
-.bg-\[url\(\'https\:\/\/glennphil\.github\.io\/assets\/imgs\/profile\.png\'\)\] {
-  background-image: url('https://glennphil.github.io/assets/imgs/profile.png');
+.bg-\[url\(\'https\:\/\/rockbrok\.github\.io\/assets\/imgs\/profile\.png\'\)\] {
+  background-image: url('https://rockbrok.github.io/assets/imgs/profile.png');
 }
 
 .bg-3d-logo {
   background-image: url('../assets/imgs/3d-logo.svg');
-}
-
-.bg-google-logo {
-  background-image: url('../assets/imgs/google-logo.png');
-}
-
-.bg-rain-logo {
-  background-image: url('../assets/imgs/rainmap.svg');
 }
 
 .bg-\[length\:100\%_100\%\] {
@@ -1286,10 +1274,6 @@ video {
 
 .bg-\[length\:430px_552px\] {
   background-size: 430px 552px;
-}
-
-.bg-160 {
-  background-size: 160px;
 }
 
 .bg-center {
@@ -1399,8 +1383,8 @@ video {
   font-family: Courier New;
 }
 
-.font-\[\'Roboto\'\] {
-  font-family: 'Roboto';
+.font-\[\'Montserrat\'\] {
+  font-family: 'Montserrat';
 }
 
 .text-5xl {
@@ -1441,6 +1425,18 @@ video {
   font-weight: 700;
 }
 
+.font-\[1500\] {
+  font-weight: 1500;
+}
+
+.font-\[900\] {
+  font-weight: 900;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -1459,14 +1455,6 @@ video {
 
 .tracking-wide {
   letter-spacing: 0.025em;
-}
-
-.tracking-wider {
-  letter-spacing: 0.05em;
-}
-
-.tracking-widest {
-  letter-spacing: 0.1em;
 }
 
 .text-white {
@@ -1676,16 +1664,16 @@ video {
     height: 302px;
   }
 
-  .lg\:w-1180 {
-    width: 1180px;
-  }
-
   .lg\:w-400 {
     width: 400px;
   }
 
   .lg\:w-884 {
     width: 884px;
+  }
+
+  .lg\:w-1180 {
+    width: 1180px;
   }
 
   .lg\:grid-cols-3 {

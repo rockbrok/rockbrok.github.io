@@ -77,9 +77,9 @@ const Projects = () => {
           style="bg-3d-logo bg-no-repeat bg-46 bg-center"
           span=""
           styleBig="bg-3d-logo bg-no-repeat bg-46 bg-center my-9 self-center justify-self-center"
-          projectPath="https://glennphil.github.io/3d-search/"
+          projectPath="https://3dsearch.github.io/3DSearch/"
           viewProject={viewProject}
-          codePath="https://github.com/glennphil/3d-search"
+          codePath="https://github.com/3DSearch/3DSearch"
           viewCode={viewCode}
           description={description}
           paragraph1={p0paragraph1}
@@ -93,7 +93,7 @@ const Projects = () => {
           text5="React-three Cannon"
           text6="React-three Drei"
           text7="React-three Fiber"
-          text8="React Hook Form"
+          text8="TypeScript"
           show={show}
           setShow={setShow}
           increase={increase}
@@ -120,9 +120,9 @@ const Projects = () => {
           style="flex flex-col items-center justify-center text-4xl text-gold text-center text-white font-sans tracking-wide"
           span="Google"
           styleBig="flex flex-col items-center justify-center text-4xl text-gold text-center text-white font-sans tracking-wide my-9 mx-auto"
-          projectPath="https://glennphil.github.io/Google/"
+          projectPath="https://rockbrok.github.io/Google-Clone/"
           viewProject={viewProject}
-          codePath="https://github.com/glennphil/Google"
+          codePath="https://github.com/rockbrok/Google-Clone/"
           viewCode={viewCode}
           description={description}
           paragraph1={p1paragraph1}
@@ -163,9 +163,9 @@ const Projects = () => {
           style="flex flex-col items-center justify-center text-4xl text-center text-white font-sans tracking-wide"
           span="Rainmap"
           styleBig="flex flex-col items-center justify-center text-4xl text-center text-white font-sans tracking-wide my-9 mx-auto"
-          projectPath="https://glennphil.github.io/rainmap/"
+          projectPath="https://rockbrok.github.io/Rainmap/"
           viewProject={viewProject}
-          codePath="https://github.com/glennphil/rainmap"
+          codePath="https://github.com/rockbrok/Rainmap/"
           viewCode={viewCode}
           description={description}
           paragraph1={p2paragraph1}
@@ -224,168 +224,168 @@ const Key = () => (
 const Project = (props: {
   span: ReactNode;
   children:
-    | string
-    | number
-    | boolean
-    | ReactFragment
-    | ReactPortal
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactFragment
+  | ReactPortal
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | null
+  | undefined;
   click: MouseEventHandler<HTMLButtonElement> | undefined;
   style: string | undefined;
   title:
-    | string
-    | number
-    | boolean
-    | ReactFragment
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactFragment
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | null
+  | undefined;
   scroll: any;
   counterShow: any;
   outsideClick: (e: MouseEvent) => void;
   handlers: JSX.IntrinsicAttributes &
-    ClassAttributes<HTMLElement> &
-    HTMLAttributes<HTMLElement>;
+  ClassAttributes<HTMLElement> &
+  HTMLAttributes<HTMLElement>;
   styleBig: string | undefined;
   projectPath: string | undefined;
   viewProject:
-    | string
-    | number
-    | boolean
-    | ReactFragment
-    | ReactPortal
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactFragment
+  | ReactPortal
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | null
+  | undefined;
   codePath: string | undefined;
   viewCode:
-    | string
-    | number
-    | boolean
-    | ReactFragment
-    | ReactPortal
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactFragment
+  | ReactPortal
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | null
+  | undefined;
   description:
-    | string
-    | number
-    | boolean
-    | ReactFragment
-    | ReactPortal
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactFragment
+  | ReactPortal
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | null
+  | undefined;
   paragraph1:
-    | string
-    | number
-    | boolean
-    | ReactFragment
-    | ReactPortal
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactFragment
+  | ReactPortal
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | null
+  | undefined;
   paragraph2:
-    | string
-    | number
-    | boolean
-    | ReactFragment
-    | ReactPortal
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactFragment
+  | ReactPortal
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | null
+  | undefined;
   tech:
-    | string
-    | number
-    | boolean
-    | ReactFragment
-    | ReactPortal
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactFragment
+  | ReactPortal
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | null
+  | undefined;
   text0:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | ReactFragment
+  | ReactPortal
+  | null
+  | undefined;
   text2:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | ReactFragment
+  | ReactPortal
+  | null
+  | undefined;
   text4:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | ReactFragment
+  | ReactPortal
+  | null
+  | undefined;
   text6:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | ReactFragment
+  | ReactPortal
+  | null
+  | undefined;
   text8:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | ReactFragment
+  | ReactPortal
+  | null
+  | undefined;
   text1:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | ReactFragment
+  | ReactPortal
+  | null
+  | undefined;
   text3:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | ReactFragment
+  | ReactPortal
+  | null
+  | undefined;
   text5:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | ReactFragment
+  | ReactPortal
+  | null
+  | undefined;
   text7:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | ReactFragment
+  | ReactPortal
+  | null
+  | undefined;
   show: boolean;
   setShow: any;
   increase: () => void;
@@ -503,14 +503,14 @@ const Project = (props: {
 
 const ListItem = (props: {
   children:
-    | string
-    | number
-    | boolean
-    | ReactFragment
-    | ReactPortal
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactFragment
+  | ReactPortal
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | null
+  | undefined;
 }) => <li className="ml-4">{props.children}</li>;
 
 const Triangle = () => <span className="flex triangle" />;

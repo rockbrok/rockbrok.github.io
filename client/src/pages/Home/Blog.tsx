@@ -175,11 +175,11 @@ const Blog = () => {
                   scroll={
                     showBlog1
                       ? disableBodyScroll(
-                          Document as unknown as HTMLElement | Element
-                        )
+                        Document as unknown as HTMLElement | Element
+                      )
                       : enableBodyScroll(
-                          Document as unknown as HTMLElement | Element
-                        )
+                        Document as unknown as HTMLElement | Element
+                      )
                   }
                 />
                 <div className="h-0 w-0 border-t-white border-l-transparent border-r-transparent border-b-transparent border-solid border-t-30 border-r-30 border-b-0 border-l-0 mt-200px ml-30px absolute" />
@@ -193,8 +193,8 @@ const Blog = () => {
                   scroll={
                     showBlog2
                       ? disableBodyScroll(
-                          Document as unknown as HTMLElement | Element
-                        )
+                        Document as unknown as HTMLElement | Element
+                      )
                       : null
                   }
                 />
@@ -252,9 +252,9 @@ const Heading: FC<BlogProps> = ({ heading }) => (
 const BlogPic = () => (
   <>
     <div className="md:hidden flex h-0 w-3/4 pb-55p relative self-center">
-      <div className="absolute inset-0 md:flex self-center md:self-end z-30 bg-[url('https://glennphil.github.io/assets/imgs/blog-man.png')] bg-no-repeat bg-center bg-[length:100%_100%] w-full h-full" />
+      <div className="absolute inset-0 md:flex self-center md:self-end z-30 bg-[url('https://rockbrok.github.io/assets/imgs/blog-man.png')] bg-no-repeat bg-center bg-[length:100%_100%] w-full h-full" />
     </div>
-    <div className="hidden md:flex self-center md:self-end z-30 bg-[url('https://glennphil.github.io/assets/imgs/blog-man.png')] bg-no-repeat bg-center bg-[length:320px_244px] w-320 h-244 lg:bg-[length:400px_302px] lg:w-400 lg:h-302" />
+    <div className="hidden md:flex self-center md:self-end z-30 bg-[url('https://rockbrok.github.io/assets/imgs/blog-man.png')] bg-no-repeat bg-center bg-[length:320px_244px] w-320 h-244 lg:bg-[length:400px_302px] lg:w-400 lg:h-302" />
     <div className="hidden md:flex z-20 h-2 bg-white md:w-688 lg:w-884 xl:w-1040 absolute bottom-28px lg:bottom-35px" />
   </>
 );
@@ -263,59 +263,59 @@ const BlogMini: any = (props: {
   click: MouseEventHandler<HTMLButtonElement> | undefined;
   style: CSSProperties | undefined;
   title:
-    | string
-    | number
-    | boolean
-    | ReactFragment
-    | ReactPortal
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactFragment
+  | ReactPortal
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | null
+  | undefined;
   text:
-    | string
-    | number
-    | boolean
-    | ReactFragment
-    | ReactPortal
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactFragment
+  | ReactPortal
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | null
+  | undefined;
   time:
-    | string
-    | number
-    | boolean
-    | ReactFragment
-    | ReactPortal
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactFragment
+  | ReactPortal
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | null
+  | undefined;
   day:
-    | string
-    | number
-    | boolean
-    | ReactFragment
-    | ReactPortal
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactFragment
+  | ReactPortal
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | null
+  | undefined;
   date:
-    | string
-    | number
-    | boolean
-    | ReactFragment
-    | ReactPortal
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactFragment
+  | ReactPortal
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | null
+  | undefined;
   scroll:
-    | string
-    | number
-    | boolean
-    | ReactFragment
-    | ReactPortal
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactFragment
+  | ReactPortal
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | null
+  | undefined;
 }) => {
   return (
     <>
@@ -341,53 +341,53 @@ const BlogMini: any = (props: {
 const BlogPost = (props: {
   click: (e: MouseEvent) => void;
   handlers: JSX.IntrinsicAttributes &
-    ClassAttributes<HTMLDivElement> &
-    HTMLAttributes<HTMLDivElement>;
+  ClassAttributes<HTMLDivElement> &
+  HTMLAttributes<HTMLDivElement>;
   title:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | ReactFragment
+  | ReactPortal
+  | null
+  | undefined;
   text:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | ReactFragment
+  | ReactPortal
+  | null
+  | undefined;
   time:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | ReactFragment
+  | ReactPortal
+  | null
+  | undefined;
   day:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | ReactFragment
+  | ReactPortal
+  | null
+  | undefined;
   date:
-    | string
-    | number
-    | boolean
-    | ReactElement<any, string | JSXElementConstructor<any>>
-    | ReactFragment
-    | ReactPortal
-    | null
-    | undefined;
+  | string
+  | number
+  | boolean
+  | ReactElement<any, string | JSXElementConstructor<any>>
+  | ReactFragment
+  | ReactPortal
+  | null
+  | undefined;
   show: boolean;
   setShow: any;
   increase: () => void;
